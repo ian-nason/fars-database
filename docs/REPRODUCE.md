@@ -2,7 +2,7 @@
 
 [Overview](../README.md) · [Dictionary](../DICTIONARY.md) · [Publication verification](../PUBLICATION.md)
 
-These detailed notes preserve the audited release documentation. Statements about local-only checks and later publication gates describe that earlier build stage; [PUBLICATION.md](../PUBLICATION.md) records the completed public-host verification. Catalog integration is still pending.
+These detailed notes preserve the audited release documentation. Statements about local-only checks and later publication gates describe that earlier build stage; [PUBLICATION.md](../PUBLICATION.md) records the completed public-host verification. Catalog integration is complete; see the current [consumer verification](CONSUMERS.md).
 
 
 `source-lock.json` pins the 32,672,161-byte original ZIP (SHA-256 `5112727a8c0dc91ffee27ca05bddb073934f2d192ce4fae997da767dccdbe04f`), every member, release notes and official manual. Download size does not estimate RAM or output size. A changed archive fails closed; do not silently update checksums. The manual is DOT HS 813 794, SHA-256 `210bc33d0572147bf695a39d5261e75158d88b269221e18e460b23d0504cc574`.
