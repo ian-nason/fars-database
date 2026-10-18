@@ -1,3 +1,5 @@
+> **Published October 18, 2026:** see [verified public release and immutable query URL](PUBLICATION.md). Audit/status statements below record the frozen pre-publication snapshot. Registry discovery awaits draft PR review.
+
 # FARS 2024 national Annual Report File
 
 A pinned DuckDB edition of NHTSA's [Fatality Analysis Reporting System](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars). This is the **2024 Annual Report File (ARF), first released April 1, 2026**, acquired October 18, 2026. It is not the later final file. The national archive covers the 50 states and District of Columbia; Puerto Rico is a separate official archive and is not included.

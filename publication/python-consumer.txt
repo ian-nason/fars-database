@@ -1,0 +1,134 @@
+  accident           36,297 rows  One record per fatal crash in the 2024 national Annual Report File.
+  code_labels        10,164 rows  Distinct observed code/label tuples for 30 selected fields; county/city scoped by state. Four city codes have multiple source labels. Use unambiguous_code_labels for unique lookups. MAK_MOD is combined make/model; this is not a full/historical catalog.
+  person             88,326 rows  One record per involved person, including nonoccupants and occupants of vehicles not in transport.
+  vehicle            56,011 rows  One record per motor vehicle in transport; parked/working vehicles are in omitted Parkwork.
+  person (88,326 rows)
+
+  Column             Type      Nulls  Example                                   Join
+  -----------------  -------  ------  ----------------------------------------  ----
+  state              BIGINT     0.0%  1                                         
+  statename          VARCHAR    0.0%  Alabama                                   
+  st_case            BIGINT     0.0%  100001                                    Within this year: join accident by state/st_case; aggregate child tables before crash-level joins.
+  veh_no             BIGINT     0.0%  0                                         Join transport occupants by state/st_case/veh_no; 0 denotes nonoccupants and PER_TYP=3 belongs to omitted Parkwork.
+  per_no             BIGINT     0.0%  1                                         Person identity requires state/st_case/veh_no/per_no.
+  ve_forms           BIGINT     0.0%  1                                         
+  county             BIGINT     0.0%  1                                         
+  month              BIGINT     0.0%  1                                         
+  monthname          VARCHAR    0.0%  April                                     
+  day                BIGINT     0.0%  1                                         
+  dayname            VARCHAR    0.0%  1                                         
+  hour               BIGINT     0.0%  0                                         
+  hourname           VARCHAR    0.0%  0:00am-0:59am                             
+  minute             BIGINT     0.0%  0                                         
+  minutename         VARCHAR    0.0%  0                                         
+  harm_ev            BIGINT     0.0%  1                                         
+  harm_evname        VARCHAR    0.0%  Boulder                                   
+  man_coll           BIGINT     0.0%  0                                         
+  man_collname       VARCHAR    0.0%  Angle                                     
+  sch_bus            BIGINT     0.0%  0                                         
+  sch_busname        VARCHAR    0.0%  No                                        
+  rur_urb            BIGINT     0.0%  1                                         
+  rur_urbname        VARCHAR    0.0%  Not Reported                              
+  func_sys           BIGINT     0.0%  1                                         
+  func_sysname       VARCHAR    0.0%  Interstate                                
+  mod_year           BIGINT    10.2%  1929                                      
+  mod_yearname       VARCHAR    0.0%                                            
+  vpicmake           BIGINT    10.2%  10019                                     
+  vpicmakename       VARCHAR    0.0%                                            
+  vpicmodel          BIGINT    10.2%  10007                                     
+  vpicmodelname      VARCHAR    0.0%                                            
+  vpicbodyclass      BIGINT    10.2%  1                                         
+  vpicbodyclassname  VARCHAR    0.0%                                            
+  make               BIGINT    10.2%  12                                        
+  makename           VARCHAR    0.0%                                            
+  body_typ           BIGINT    10.2%  1                                         
+  body_typname       VARCHAR    0.0%                                            
+  icfinalbody        BIGINT    10.2%  0                                         
+  icfinalbodyname    VARCHAR    0.0%                                            
+  gvwr_from          BIGINT    10.2%  11                                        
+  gvwr_fromname      VARCHAR    0.0%                                            
+  gvwr_to            BIGINT    10.2%  11                                        
+  gvwr_toname        VARCHAR    0.0%                                            
+  tow_veh            BIGINT    10.2%  0                                         
+  tow_vehname        VARCHAR    0.0%                                            
+  spec_use           BIGINT    10.2%  0                                         
+  spec_usename       VARCHAR    0.0%                                            
+  emer_use           BIGINT    10.2%  0                                         
+  emer_usename       VARCHAR    0.0%                                            
+  rollover           BIGINT    10.2%  0                                         
+  rollovername       VARCHAR    0.0%                                            
+  impact1            BIGINT    10.2%  0                                         
+  impact1name        VARCHAR    0.0%                                            
+  fire_exp           BIGINT    10.2%  0                                         
+  fire_expname       VARCHAR    0.0%                                            
+  mak_mod            BIGINT    10.2%  12002                                     
+  mak_modname        VARCHAR    0.0%                                            
+  age                BIGINT     0.0%  0                                         
+  agename            VARCHAR    0.0%  1 Year                                    
+  sex                BIGINT     0.0%  1                                         
+  sexname            VARCHAR    0.0%  Female                                    
+  per_typ            BIGINT     0.0%  1                                         
+  per_typname        VARCHAR    0.0%  Bicyclist                                 
+  inj_sev            BIGINT     0.0%  0                                         
+  inj_sevname        VARCHAR    0.0%  Died Prior to Crash*                      
+  seat_pos           BIGINT     0.0%  0                                         
+  seat_posname       VARCHAR    0.0%  Appended to a Motor Vehicle for Motion    
+  rest_use           BIGINT     0.0%  1                                         
+  rest_usename       VARCHAR    0.0%  Booster Seat                              
+  rest_mis           BIGINT     0.0%  0                                         
+  rest_misname       VARCHAR    0.0%  No Indication of Misuse                   
+  helm_use           BIGINT     0.0%  16                                        
+  helm_usename       VARCHAR    0.0%  DOT-Compliant Motorcycle Helmet           
+  helm_mis           BIGINT     0.0%  0                                         
+  helm_misname       VARCHAR    0.0%  No Indication of Misuse                   
+  air_bag            BIGINT     0.0%  1                                         
+  air_bagname        VARCHAR    0.0%  Deployed- Combination                     
+  ejection           BIGINT     0.0%  0                                         
+  ejectionname       VARCHAR    0.0%  Ejected - Unknown Degree                  
+  ej_path            BIGINT     0.0%  0                                         
+  ej_pathname        VARCHAR    0.0%  Ejection Path Not Applicable              
+  extricat           BIGINT     0.0%  0                                         
+  extricatname       VARCHAR    0.0%  Extricated                                
+  drinking           BIGINT     0.0%  0                                         
+  drinkingname       VARCHAR    0.0%  No (Alcohol Not Involved)                 
+  alc_status         BIGINT     0.0%  0                                         
+  alc_statusname     VARCHAR    0.0%  Not Reported                              
+  atst_typ           BIGINT     0.0%  0                                         
+  atst_typname       VARCHAR    0.0%  Blood                                     
+  alc_res            BIGINT     0.0%  0                                         
+  alc_resname        VARCHAR    0.0%  0.000 % BAC                               
+  drugs              BIGINT     0.0%  0                                         
+  drugsname          VARCHAR    0.0%  No (drugs not involved)                   
+  dstatus            BIGINT     0.0%  0                                         
+  dstatusname        VARCHAR    0.0%  Not Reported                              
+  hospital           BIGINT     0.0%  0                                         
+  hospitalname       VARCHAR    0.0%  EMS Air                                   
+  doa                BIGINT     0.0%  0                                         
+  doaname            VARCHAR    0.0%  Died En Route                             
+  death_mo           BIGINT     0.0%  1                                         
+  death_moname       VARCHAR    0.0%  April                                     
+  death_da           BIGINT     0.0%  1                                         
+  death_daname       VARCHAR    0.0%  1                                         
+  death_yr           BIGINT     0.0%  2024                                      
+  death_yrname       VARCHAR    0.0%  2024                                      
+  death_tm           BIGINT     0.0%  0                                         
+  death_tmname       VARCHAR    0.0%  0                                         
+  death_hr           BIGINT     0.0%  0                                         
+  death_hrname       VARCHAR    0.0%  0:00-0:59                                 
+  death_mn           BIGINT     0.0%  0                                         
+  death_mnname       VARCHAR    0.0%  0                                         
+  lag_hrs            BIGINT     0.0%  0                                         
+  lag_hrsname        VARCHAR    0.0%  0                                         
+  lag_mins           BIGINT     0.0%  0                                         
+  lag_minsname       VARCHAR    0.0%  0                                         
+  str_veh            BIGINT     0.0%  0                                         
+  devtype            BIGINT     0.0%  0                                         
+  devtypename        VARCHAR    0.0%  Bicycle                                   
+  devmotor           BIGINT     0.0%  0                                         
+  devmotorname       VARCHAR    0.0%  Motorized                                 
+  location           BIGINT     0.0%  0                                         
+  locationname       VARCHAR    0.0%  At Intersection - In Marked Crosswalk     
+  work_inj           BIGINT     0.0%  0                                         
+  work_injname       VARCHAR    0.0%  No                                        
+  hispanic           BIGINT     0.0%  0                                         
+  hispanicname       VARCHAR    0.0%  Central or South American                 

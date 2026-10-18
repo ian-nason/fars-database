@@ -1,0 +1,489 @@
+[
+  {
+    "sql": "SELECT count(*) AS fatal_crashes,sum(fatals) AS fatalities,sum(vehicle_records) AS vehicles_in_transport,sum(person_records) AS people_recorded\nFROM crashes",
+    "columns": [
+      "fatal_crashes",
+      "fatalities",
+      "vehicles_in_transport",
+      "people_recorded"
+    ],
+    "rows": [
+      [
+        36297,
+        39254,
+        56011,
+        88326
+      ]
+    ]
+  },
+  {
+    "sql": "SELECT state,statename,count(*) AS fatal_crashes,sum(fatals) AS fatalities,sum(nonoccupant_fatalities) AS nonoccupant_fatalities\nFROM crashes GROUP BY state,statename ORDER BY fatalities DESC,state LIMIT 15",
+    "columns": [
+      "state",
+      "statename",
+      "fatal_crashes",
+      "fatalities",
+      "nonoccupant_fatalities"
+    ],
+    "rows": [
+      [
+        48,
+        "Texas",
+        3774,
+        4160,
+        868
+      ],
+      [
+        6,
+        "California",
+        3583,
+        3876,
+        1304
+      ],
+      [
+        12,
+        "Florida",
+        2931,
+        3138,
+        917
+      ],
+      [
+        37,
+        "North Carolina",
+        1509,
+        1619,
+        311
+      ],
+      [
+        13,
+        "Georgia",
+        1312,
+        1403,
+        315
+      ],
+      [
+        4,
+        "Arizona",
+        1118,
+        1229,
+        306
+      ],
+      [
+        47,
+        "Tennessee",
+        1093,
+        1197,
+        176
+      ],
+      [
+        17,
+        "Illinois",
+        1085,
+        1177,
+        255
+      ],
+      [
+        39,
+        "Ohio",
+        1077,
+        1157,
+        155
+      ],
+      [
+        42,
+        "Pennsylvania",
+        1060,
+        1127,
+        205
+      ],
+      [
+        36,
+        "New York",
+        1036,
+        1101,
+        348
+      ],
+      [
+        26,
+        "Michigan",
+        1011,
+        1098,
+        186
+      ],
+      [
+        45,
+        "South Carolina",
+        948,
+        1038,
+        192
+      ],
+      [
+        1,
+        "Alabama",
+        895,
+        962,
+        140
+      ],
+      [
+        29,
+        "Missouri",
+        882,
+        955,
+        161
+      ]
+    ]
+  },
+  {
+    "sql": "SELECT month,monthname,count(*) AS fatal_crashes,sum(fatals) AS fatalities\nFROM crashes GROUP BY month,monthname ORDER BY month",
+    "columns": [
+      "month",
+      "monthname",
+      "fatal_crashes",
+      "fatalities"
+    ],
+    "rows": [
+      [
+        1,
+        "January",
+        2538,
+        2729
+      ],
+      [
+        2,
+        "February",
+        2498,
+        2710
+      ],
+      [
+        3,
+        "March",
+        2893,
+        3135
+      ],
+      [
+        4,
+        "April",
+        2938,
+        3185
+      ],
+      [
+        5,
+        "May",
+        3178,
+        3461
+      ],
+      [
+        6,
+        "June",
+        3199,
+        3461
+      ],
+      [
+        7,
+        "July",
+        3092,
+        3366
+      ],
+      [
+        8,
+        "August",
+        3342,
+        3611
+      ],
+      [
+        9,
+        "September",
+        3277,
+        3528
+      ],
+      [
+        10,
+        "October",
+        3369,
+        3620
+      ],
+      [
+        11,
+        "November",
+        3077,
+        3292
+      ],
+      [
+        12,
+        "December",
+        2896,
+        3156
+      ]
+    ]
+  },
+  {
+    "sql": "SELECT per_typ,per_typname,\n CASE WHEN age_years IS NULL THEN 'Unknown/not reported' WHEN age_years<18 THEN '0-17' WHEN age_years<65 THEN '18-64' ELSE '65+' END AS age_group,\n count(*) AS fatalities\nFROM people WHERE inj_sev=4 GROUP BY ALL ORDER BY per_typ,age_group",
+    "columns": [
+      "per_typ",
+      "per_typname",
+      "age_group",
+      "fatalities"
+    ],
+    "rows": [
+      [
+        1,
+        "Driver of a Motor Vehicle In-Transport",
+        "0-17",
+        630
+      ],
+      [
+        1,
+        "Driver of a Motor Vehicle In-Transport",
+        "18-64",
+        19055
+      ],
+      [
+        1,
+        "Driver of a Motor Vehicle In-Transport",
+        "65+",
+        4917
+      ],
+      [
+        1,
+        "Driver of a Motor Vehicle In-Transport",
+        "Unknown/not reported",
+        34
+      ],
+      [
+        2,
+        "Passenger of a Motor Vehicle In-Transport",
+        "0-17",
+        1110
+      ],
+      [
+        2,
+        "Passenger of a Motor Vehicle In-Transport",
+        "18-64",
+        3640
+      ],
+      [
+        2,
+        "Passenger of a Motor Vehicle In-Transport",
+        "65+",
+        1245
+      ],
+      [
+        2,
+        "Passenger of a Motor Vehicle In-Transport",
+        "Unknown/not reported",
+        27
+      ],
+      [
+        3,
+        "Occupant of a Motor Vehicle Not In- Transport",
+        "0-17",
+        3
+      ],
+      [
+        3,
+        "Occupant of a Motor Vehicle Not In- Transport",
+        "18-64",
+        54
+      ],
+      [
+        3,
+        "Occupant of a Motor Vehicle Not In- Transport",
+        "65+",
+        10
+      ],
+      [
+        4,
+        "Occupant of a Non-Motor Vehicle Transport Device",
+        "0-17",
+        4
+      ],
+      [
+        4,
+        "Occupant of a Non-Motor Vehicle Transport Device",
+        "18-64",
+        10
+      ],
+      [
+        4,
+        "Occupant of a Non-Motor Vehicle Transport Device",
+        "65+",
+        2
+      ],
+      [
+        5,
+        "Pedestrian",
+        "0-17",
+        263
+      ],
+      [
+        5,
+        "Pedestrian",
+        "18-64",
+        5170
+      ],
+      [
+        5,
+        "Pedestrian",
+        "65+",
+        1535
+      ],
+      [
+        5,
+        "Pedestrian",
+        "Unknown/not reported",
+        112
+      ],
+      [
+        6,
+        "Bicyclist",
+        "0-17",
+        78
+      ],
+      [
+        6,
+        "Bicyclist",
+        "18-64",
+        748
+      ],
+      [
+        6,
+        "Bicyclist",
+        "65+",
+        233
+      ],
+      [
+        6,
+        "Bicyclist",
+        "Unknown/not reported",
+        16
+      ],
+      [
+        7,
+        "Other Pedalcyclist",
+        "0-17",
+        5
+      ],
+      [
+        7,
+        "Other Pedalcyclist",
+        "18-64",
+        19
+      ],
+      [
+        7,
+        "Other Pedalcyclist",
+        "65+",
+        4
+      ],
+      [
+        8,
+        "Person on a Personal Conveyance",
+        "0-17",
+        31
+      ],
+      [
+        8,
+        "Person on a Personal Conveyance",
+        "18-64",
+        164
+      ],
+      [
+        8,
+        "Person on a Personal Conveyance",
+        "65+",
+        69
+      ],
+      [
+        8,
+        "Person on a Personal Conveyance",
+        "Unknown/not reported",
+        7
+      ],
+      [
+        9,
+        "Unknown Occupant Type in a Motor Vehicle In- Transport",
+        "0-17",
+        4
+      ],
+      [
+        9,
+        "Unknown Occupant Type in a Motor Vehicle In- Transport",
+        "18-64",
+        39
+      ],
+      [
+        10,
+        "Person In/On a Building",
+        "0-17",
+        2
+      ],
+      [
+        10,
+        "Person In/On a Building",
+        "18-64",
+        10
+      ],
+      [
+        10,
+        "Person In/On a Building",
+        "65+",
+        4
+      ]
+    ]
+  },
+  {
+    "sql": "SELECT alc_status,alc_statusname,count(*) AS drivers,\n count(measured_bac_g_dl) AS exact_numeric_test_results,\n count(*) FILTER(WHERE bac_top_coded_at_094_or_more) AS top_coded_test_results\nFROM people WHERE per_typ=1 GROUP BY alc_status,alc_statusname ORDER BY alc_status",
+    "columns": [
+      "alc_status",
+      "alc_statusname",
+      "drivers",
+      "exact_numeric_test_results",
+      "top_coded_test_results"
+    ],
+    "rows": [
+      [
+        0,
+        "Test Not Given",
+        22973,
+        0,
+        0
+      ],
+      [
+        2,
+        "Test Given",
+        20943,
+        19988,
+        0
+      ],
+      [
+        8,
+        "Not Reported",
+        11479,
+        2,
+        0
+      ],
+      [
+        9,
+        "Reported as Unknown if Tested",
+        225,
+        0,
+        0
+      ]
+    ]
+  },
+  {
+    "sql": "SELECT count(*) AS fatal_crashes,\n count(*) FILTER(WHERE latitude_degrees IS NOT NULL AND longitude_degrees IS NOT NULL) AS coordinates_available,\n count(*) FILTER(WHERE latitude_degrees IS NULL OR longitude_degrees IS NULL) AS coordinates_missing\nFROM crashes",
+    "columns": [
+      "fatal_crashes",
+      "coordinates_available",
+      "coordinates_missing"
+    ],
+    "rows": [
+      [
+        36297,
+        36127,
+        170
+      ]
+    ]
+  }
+]

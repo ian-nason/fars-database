@@ -1,0 +1,12 @@
+{
+  "databases": [
+    {
+      "id": "fars",
+      "name": "FARS audited release",
+      "rows": 190798,
+      "tables": 4,
+      "size_gb": 0.026488832,
+      "attach_url": "https://huggingface.co/datasets/Nason/fars-database/resolve/adb6da02a314c39d8b6caf776529bf4a373075da/fars.duckdb"
+    }
+  ]
+}
