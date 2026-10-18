@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "release_artifact_sha256": "3f7f79d071b7179d7bb68f7c6d17e8cd53c7e4b59941bc85ae6242517fe78bbc",
+  "earlier_candidate_sha256": "d4afd1d07bd1b56423066ab7f7d3d591206713dcaac5b4a124a3a1a9390aeac8",
+  "all_typed_rows_null_counts_samples_invariants_and_dictionary_bytes_identical": true,
+  "changes": "Cache directories now created for a fresh checkout; downloads restricted to guarded repository. No data transformations changed.",
+  "physical_bytes": "Not required to match: metadata timestamps differ; DuckDB serialization is not a reproducibility guarantee."
+}

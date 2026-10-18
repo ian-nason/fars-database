@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "artifact_sha256": "2bc31f9e9fdd973ddf728cc4e1e0811a7bacf9450dd80c7671c36fa6a1fc7442",
+  "checks": {
+    "consistent copied crash fields in vehicle": 0,
+    "consistent copied crash fields in person": 0,
+    "numeric blanks confined exactly to nonoccupants: mod_year": 0,
+    "numeric blanks confined exactly to nonoccupants: vpicmake": 0,
+    "numeric blanks confined exactly to nonoccupants: vpicmodel": 0,
+    "numeric blanks confined exactly to nonoccupants: vpicbodyclass": 0,
+    "numeric blanks confined exactly to nonoccupants: make": 0,
+    "numeric blanks confined exactly to nonoccupants: body_typ": 0,
+    "numeric blanks confined exactly to nonoccupants: icfinalbody": 0,
+    "numeric blanks confined exactly to nonoccupants: gvwr_from": 0,
+    "numeric blanks confined exactly to nonoccupants: gvwr_to": 0,
+    "numeric blanks confined exactly to nonoccupants: tow_veh": 0,
+    "numeric blanks confined exactly to nonoccupants: spec_use": 0,
+    "numeric blanks confined exactly to nonoccupants: emer_use": 0,
+    "numeric blanks confined exactly to nonoccupants: rollover": 0,
+    "numeric blanks confined exactly to nonoccupants: impact1": 0,
+    "numeric blanks confined exactly to nonoccupants: fire_exp": 0,
+    "numeric blanks confined exactly to nonoccupants: mak_mod": 0,
+    "all age NULL mappings": 0,
+    "all BAC mappings": 0,
+    "all coordinate NULL mappings": 0,
+    "ambiguous codes excluded from unique view": 0,
+    "unique lookup key": 0,
+    "derived field documentation and NULL statistics": 0
+  },
+  "schema_metadata_dictionary_verified": true,
+  "diagnostics": {
+    "national_totals": [
+      36297,
+      39254,
+      56011,
+      88326
+    ],
+    "city_label_conflicts": [
+      [
+        "accident",
+        "city",
+        "state",
+        4,
+        428,
+        [
+          "SEDONA",
+          "Sedona"
+        ]
+      ],
+      [
+        "accident",
+        "city",
+        "state",
+        13,
+        2190,
+        [
+          "FORSYTH",
+          "STONECREST"
+        ]
+      ],
+      [
+        "accident",
+        "city",
+        "state",
+        36,
+        4170,
+        [
+          "MIDDLE VILLAGE",
+          "NEW YORK",
+          "NEW YORK CITY"
+        ]
+      ],
+      [
+        "accident",
+        "city",
+        "state",
+        42,
+        3950,
+        [
+          "JEFFERSON",
+          "JEFFERSON HILLS"
+        ]
+      ]
+    ],
+    "numeric_missing_person_fields": [
+      [
+        "body_typ",
+        10.2
+      ],
+      [
+        "emer_use",
+        10.2
+      ],
+      [
+        "fire_exp",
+        10.2
+      ],
+      [
+        "gvwr_from",
+        10.2
+      ],
+      [
+        "gvwr_to",
+        10.2
+      ],
+      [
+        "icfinalbody",
+        10.2
+      ],
+      [
+        "impact1",
+        10.2
+      ],
+      [
+        "mak_mod",
+        10.2
+      ],
+      [
+        "make",
+        10.2
+      ],
+      [
+        "mod_year",
+        10.2
+      ],
+      [
+        "rollover",
+        10.2
+      ],
+      [
+        "spec_use",
+        10.2
+      ],
+      [
+        "tow_veh",
+        10.2
+      ],
+      [
+        "vpicbodyclass",
+        10.2
+      ],
+      [
+        "vpicmake",
+        10.2
+      ],
+      [
+        "vpicmodel",
+        10.2
+      ]
+    ],
+    "alcohol_test_categories": [
+      [
+        0,
+        "Test Not Given",
+        44074
+      ],
+      [
+        2,
+        "Test Given",
+        27510
+      ],
+      [
+        8,
+        "Not Reported",
+        16407
+      ],
+      [
+        9,
+        "Reported as Unknown if Tested",
+        335
+      ]
+    ],
+    "source_labels_compared": 10164,
+    "coordinate_missing": 170
+  }
+}

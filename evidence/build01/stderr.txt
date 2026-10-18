@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 158, in <module>
+    build(a.archive,a.output)
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 130, in build
+    validation=checks(con);proof=compare_source(con,archive)
+               ^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 95, in checks
+    zero('unique code-label context','SELECT count(*) FROM (SELECT table_name,column_name,context_column,context_value,code,count(*) n FROM code_labels GROUP BY ALL HAVING n<>1)')
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 79, in zero
+    n=con.execute(sql).fetchone()[0];result[name]=n;require(n==0,name+': '+str(n)+' violations')
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 11, in require
+    if not ok:raise ValueError(message)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: unique code-label context: 4 violations

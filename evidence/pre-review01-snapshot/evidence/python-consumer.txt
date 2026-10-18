@@ -1,0 +1,88 @@
+  accident           36,297 rows  One record per fatal crash in the 2024 national Annual Report File.
+  code_labels        10,164 rows  Distinct observed code/label tuples for 30 selected fields; county/city scoped by state. Four city codes have multiple source labels. Use unambiguous_code_labels for unique lookups. MAK_MOD is combined make/model; this is not a full/historical catalog.
+  person             88,326 rows  One record per involved person, including nonoccupants and occupants of vehicles not in transport.
+  vehicle            56,011 rows  One record per motor vehicle in transport; parked/working vehicles are in omitted Parkwork.
+  accident (36,297 rows)
+
+  Column        Type             Nulls  Example                                   Join
+  ------------  --------------  ------  ----------------------------------------  ----
+  state         BIGINT            0.0%  1                                         
+  statename     VARCHAR           0.0%  Alabama                                   
+  st_case       BIGINT            0.0%  100001                                    Within this year: join accident by state/st_case; aggregate child tables before crash-level joins.
+  peds          BIGINT            0.0%  0                                         
+  pernotmvit    BIGINT            0.0%  0                                         
+  ve_total      BIGINT            0.0%  1                                         
+  ve_forms      BIGINT            0.0%  1                                         
+  pvh_invl      BIGINT            0.0%  0                                         
+  persons       BIGINT            0.0%  0                                         
+  permvit       BIGINT            0.0%  0                                         
+  county        BIGINT            0.0%  1                                         
+  countyname    VARCHAR           0.0%  ABBEVILLE (1)                             
+  city          BIGINT            0.0%  0                                         
+  cityname      VARCHAR           0.0%  ABBEVILLE                                 
+  month         BIGINT            0.0%  1                                         
+  monthname     VARCHAR           0.0%  April                                     
+  day           BIGINT            0.0%  1                                         
+  dayname       VARCHAR           0.0%  1                                         
+  day_week      BIGINT            0.0%  1                                         
+  day_weekname  VARCHAR           0.0%  Friday                                    
+  year          BIGINT            0.0%  2024                                      
+  hour          BIGINT            0.0%  0                                         
+  hourname      VARCHAR           0.0%  0:00am-0:59am                             
+  minute        BIGINT            0.0%  0                                         
+  minutename    VARCHAR           0.0%  0                                         
+  tway_id       VARCHAR           0.0%                                            
+  tway_id2      VARCHAR           0.0%                                            
+  route         BIGINT            0.0%  0                                         
+  routename     VARCHAR           0.0%  Bureau of Indian Affairs                  
+  rur_urb       BIGINT            0.0%  1                                         
+  rur_urbname   VARCHAR           0.0%  Not Reported                              
+  func_sys      BIGINT            0.0%  1                                         
+  func_sysname  VARCHAR           0.0%  Interstate                                
+  rd_owner      BIGINT            0.0%  1                                         
+  rd_ownername  VARCHAR           0.0%  Army                                      
+  nhs           BIGINT            0.0%  0                                         
+  nhsname       VARCHAR           0.0%  This Section IS NOT on the NHS            
+  sp_jur        BIGINT            0.0%  0                                         
+  sp_jurname    VARCHAR           0.0%  College/University Campus*                
+  milept        BIGINT            0.0%  0                                         
+  mileptname    VARCHAR           0.0%  1                                         
+  latitude      DECIMAL(18,12)    0.0%  19.064066670000                           
+  latitudename  VARCHAR           0.0%  19.06406667                               
+  longitud      DECIMAL(18,12)    0.0%  -100.014730560000                         
+  longitudname  VARCHAR           0.0%  -100.01473056                             
+  harm_ev       BIGINT            0.0%  1                                         
+  harm_evname   VARCHAR           0.0%  Boulder                                   
+  man_coll      BIGINT            0.0%  0                                         
+  man_collname  VARCHAR           0.0%  Angle                                     
+  reljct1       BIGINT            0.0%  0                                         
+  reljct1name   VARCHAR           0.0%  No                                        
+  reljct2       BIGINT            0.0%  1                                         
+  reljct2name   VARCHAR           0.0%  Acceleration/Deceleration Lane            
+  typ_int       BIGINT            0.0%  1                                         
+  typ_intname   VARCHAR           0.0%  Five Point, or More                       
+  rel_road      BIGINT            0.0%  1                                         
+  rel_roadname  VARCHAR           0.0%  Continuous Left - Turn Lane               
+  wrk_zone      BIGINT            0.0%  0                                         
+  wrk_zonename  VARCHAR           0.0%  Construction                              
+  lgt_cond      BIGINT            0.0%  1                                         
+  lgt_condname  VARCHAR           0.0%  Dark - Lighted                            
+  weather       BIGINT            0.0%  1                                         
+  weathername   VARCHAR           0.0%  Blowing Sand, Soil, Dirt                  
+  sch_bus       BIGINT            0.0%  0                                         
+  sch_busname   VARCHAR           0.0%  No                                        
+  rail          VARCHAR           0.0%  0000000                                   
+  railname      VARCHAR           0.0%  004481J                                   
+  not_hour      BIGINT            0.0%  0                                         
+  not_hourname  VARCHAR           0.0%  0:00am-0:59am                             
+  not_min       BIGINT            0.0%  0                                         
+  not_minname   VARCHAR           0.0%  0                                         
+  arr_hour      BIGINT            0.0%  0                                         
+  arr_hourname  VARCHAR           0.0%  0:00am-0:59am                             
+  arr_min       BIGINT            0.0%  0                                         
+  arr_minname   VARCHAR           0.0%  0                                         
+  hosp_hr       BIGINT            0.0%  0                                         
+  hosp_hrname   VARCHAR           0.0%  0:00am-0:59am                             
+  hosp_mn       BIGINT            0.0%  0                                         
+  hosp_mnname   VARCHAR           0.0%  0                                         
+  fatals        BIGINT            0.0%  1                                         

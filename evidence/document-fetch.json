@@ -1,0 +1,65 @@
+[
+  {
+    "path": "docs/release-notes.txt",
+    "url": "https://static.nhtsa.gov/nhtsa/downloads/FARS/2024/FARS2024%20Release%20Notes.txt",
+    "retrieved_utc": "2026-10-18T14:32:11.033966+00:00",
+    "headers": {
+      "Content-Type": "text/plain",
+      "Content-Length": "851",
+      "Last-Modified": "Wed, 01 Apr 2026 19:46:55 GMT",
+      "ETag": "\"e44177d940bfb7e773f25991b4ca7f29\""
+    },
+    "bytes": 851,
+    "sha256": "766ce1146fd5d0b063ff7db6c16ec8bef30a92815b7c29183dd01197c8877c1d",
+    "status": "downloaded"
+  },
+  {
+    "path": "docs/manual-links.pdf",
+    "url": "https://static.nhtsa.gov/nhtsa/downloads/FARS/Links%20for%20FARS%20Manuals.pdf",
+    "retrieved_utc": "2026-10-18T14:32:11.372784+00:00",
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Content-Length": "55479",
+      "Last-Modified": "Wed, 01 Apr 2026 19:46:57 GMT",
+      "ETag": "\"fe1e38df8578d846f98f0ab3bd73a629\""
+    },
+    "bytes": 55479,
+    "sha256": "7eb8abb3db2548ea8e97589b2c721646223d2cff2c58e563563a49048037753b",
+    "status": "downloaded"
+  },
+  {
+    "path": "docs/alcohol-readme.pdf",
+    "url": "https://static.nhtsa.gov/nhtsa/downloads/FARS/README-BAC.pdf",
+    "retrieved_utc": "2026-10-18T14:32:11.557313+00:00",
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Content-Length": "55499",
+      "Last-Modified": "Wed, 04 Feb 2026 01:51:16 GMT",
+      "ETag": "\"f27d8409f9a1ebc1d68c082b1d942a96\""
+    },
+    "bytes": 55499,
+    "sha256": "d0484c8d363e36e5042246f279582a669b27b179ed6ee245223f4d886fbf9460",
+    "status": "downloaded"
+  },
+  {
+    "path": "docs/analytical-user-manual.pdf",
+    "url": "https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813794",
+    "retrieved_utc": "2026-10-18T14:32:11.691082+00:00",
+    "headers": {
+      "Content-Type": "application/pdf",
+      "Content-Length": "9477370",
+      "Last-Modified": null,
+      "ETag": null
+    },
+    "bytes": 9477370,
+    "sha256": "210bc33d0572147bf695a39d5261e75158d88b269221e18e460b23d0504cc574",
+    "status": "downloaded"
+  },
+  {
+    "path": "docs/ownership-policy.html",
+    "url": "https://www.nhtsa.gov/about-nhtsa/privacy-policy",
+    "retrieved_utc": "2026-10-18T14:32:34.187634+00:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

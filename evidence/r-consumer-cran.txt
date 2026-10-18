@@ -1,0 +1,29 @@
+R R version 4.5.3 (2026-03-11) duckdb 1.5.5 datapond 0.1.0 
+CRAN driver constructor bounded by test harness; datapond functions unchanged.
+  crashes fatalities vehicles people
+1   36297      39254    56011  88326
+# A tibble: 3 × 91
+  state statename st_case  peds pernotmvit ve_total ve_forms pvh_invl persons
+  <dbl> <chr>       <dbl> <dbl>      <dbl>    <dbl>    <dbl>    <dbl>   <dbl>
+1     1 Alabama     10001     0          0        1        1        0       1
+2     1 Alabama     10002     0          0        1        1        0       1
+3     1 Alabama     10003     1          1        1        1        0       2
+# ℹ 82 more variables: permvit <dbl>, county <dbl>, countyname <chr>,
+#   city <dbl>, cityname <chr>, month <dbl>, monthname <chr>, day <dbl>,
+#   dayname <chr>, day_week <dbl>, day_weekname <chr>, year <dbl>, hour <dbl>,
+#   hourname <chr>, minute <dbl>, minutename <chr>, tway_id <chr>,
+#   tway_id2 <chr>, route <dbl>, routename <chr>, rur_urb <dbl>,
+#   rur_urbname <chr>, func_sys <dbl>, func_sysname <chr>, rd_owner <dbl>,
+#   rd_ownername <chr>, nhs <dbl>, nhsname <chr>, sp_jur <dbl>, …
+R localhost HTTP consumer PASS
+duckdb is storing downloaded extensions and secrets under ~/.duckdb:
+ℹ /home/inason/.duckdb
+This persists across sessions and is shared with the DuckDB CLI and other clients.
+ℹ Run duckdb(shared_home = FALSE) to use a temporary directory instead.
+ℹ See ?duckdb_storage for details and alternatives.
+duckdb is storing downloaded extensions and secrets under ~/.duckdb:
+ℹ /home/inason/.duckdb
+This persists across sessions and is shared with the DuckDB CLI and other clients.
+ℹ Run duckdb(shared_home = FALSE) to use a temporary directory instead.
+ℹ See ?duckdb_storage for details and alternatives.
+Ran 4/4 deferred expressions

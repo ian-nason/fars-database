@@ -1,0 +1,2890 @@
+{
+  "accident": {
+    "source_file": "FARS2024NationalCSV/accident.csv",
+    "source_sha256": "aa365def189ca0c96de4702615f5ff61a8a5e0481282ffac3a4d6abcae005edb",
+    "rows": 36297,
+    "columns": [
+      {
+        "name": "state",
+        "source_header": "STATE",
+        "type": "BIGINT",
+        "description": "This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 34
+      },
+      {
+        "name": "statename",
+        "source_header": "STATENAME",
+        "type": "VARCHAR",
+        "description": "Source label for STATE. This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 34
+      },
+      {
+        "name": "st_case",
+        "source_header": "ST_CASE",
+        "type": "BIGINT",
+        "description": "This data element is the unique case number assigned to each crash. It appears on each data file and is used to merge information from the data files together.",
+        "manual_pdf_page": 36
+      },
+      {
+        "name": "peds",
+        "source_header": "PEDS",
+        "type": "BIGINT",
+        "description": "This data element is the number of Person Forms (Not a Motor Vehicle Occupant) that are applicable to this case (i.e., non-occupants).",
+        "manual_pdf_page": 42
+      },
+      {
+        "name": "pernotmvit",
+        "source_header": "PERNOTMVIT",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of non-motorists in the crash. A non-motorist is defined as a pedestrian, a cyclist, an occupant of a motor vehicle not in-transport, a person riding a horse, an occupant of an animal drawn conveyance, person associated with non-motorist conveyance (e.g., baby carriage, skateboard, wheelchair), or an other non-motorist (e.g., person outside a trafficway, person in a house).",
+        "manual_pdf_page": 43
+      },
+      {
+        "name": "ve_total",
+        "source_header": "VE_TOTAL",
+        "type": "BIGINT",
+        "description": "This data element is the number of contact motor vehicles that the officer reported on the police crash report as a unit involved in the crash.",
+        "manual_pdf_page": 44
+      },
+      {
+        "name": "ve_forms",
+        "source_header": "VE_FORMS",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of motor vehicles in-transport involved in the crash. Legally parked vehicles are not included.",
+        "manual_pdf_page": 45
+      },
+      {
+        "name": "pvh_invl",
+        "source_header": "PVH_INVL",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of parked and working vehicles involved in the crash.",
+        "manual_pdf_page": 46
+      },
+      {
+        "name": "persons",
+        "source_header": "PERSONS",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of Person Level (Motor Vehicle Occupant) Forms that are applicable to this case (i.e., occupants).",
+        "manual_pdf_page": 47
+      },
+      {
+        "name": "permvit",
+        "source_header": "PERMVIT",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of motorists in the crash. A motorist is a driver, passenger, or unknown occupant type of a motor vehicle in-transport.",
+        "manual_pdf_page": 48
+      },
+      {
+        "name": "county",
+        "source_header": "COUNTY",
+        "type": "BIGINT",
+        "description": "This data element records the location of the unstabilized event with regard to the County. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 49
+      },
+      {
+        "name": "countyname",
+        "source_header": "COUNTYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for COUNTY. This data element records the location of the unstabilized event with regard to the County. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 49
+      },
+      {
+        "name": "city",
+        "source_header": "CITY",
+        "type": "BIGINT",
+        "description": "This data element records the location of the unstabilized event with regard to the City. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 50
+      },
+      {
+        "name": "cityname",
+        "source_header": "CITYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for CITY. This data element records the location of the unstabilized event with regard to the City. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 50
+      },
+      {
+        "name": "month",
+        "source_header": "MONTH",
+        "type": "BIGINT",
+        "description": "This data element records the month in which the crash occurred.",
+        "manual_pdf_page": 51
+      },
+      {
+        "name": "monthname",
+        "source_header": "MONTHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MONTH. This data element records the month in which the crash occurred.",
+        "manual_pdf_page": 51
+      },
+      {
+        "name": "day",
+        "source_header": "DAY",
+        "type": "BIGINT",
+        "description": "This data element records the day of the month on which the crash occurred.",
+        "manual_pdf_page": 52
+      },
+      {
+        "name": "dayname",
+        "source_header": "DAYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DAY. This data element records the day of the month on which the crash occurred.",
+        "manual_pdf_page": 52
+      },
+      {
+        "name": "day_week",
+        "source_header": "DAY_WEEK",
+        "type": "BIGINT",
+        "description": "This data element records the day of the week on which the crash occurred.",
+        "manual_pdf_page": 53
+      },
+      {
+        "name": "day_weekname",
+        "source_header": "DAY_WEEKNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DAY_WEEK. This data element records the day of the week on which the crash occurred.",
+        "manual_pdf_page": 53
+      },
+      {
+        "name": "year",
+        "source_header": "YEAR",
+        "type": "BIGINT",
+        "description": "This data element records the year in which the crash occurred.",
+        "manual_pdf_page": 54
+      },
+      {
+        "name": "hour",
+        "source_header": "HOUR",
+        "type": "BIGINT",
+        "description": "This data element records the hour at which the crash occurred.",
+        "manual_pdf_page": 55
+      },
+      {
+        "name": "hourname",
+        "source_header": "HOURNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HOUR. This data element records the hour at which the crash occurred.",
+        "manual_pdf_page": 55
+      },
+      {
+        "name": "minute",
+        "source_header": "MINUTE",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour at which the crash occurred.",
+        "manual_pdf_page": 56
+      },
+      {
+        "name": "minutename",
+        "source_header": "MINUTENAME",
+        "type": "VARCHAR",
+        "description": "Source label for MINUTE. This data element records the minutes after the hour at which the crash occurred.",
+        "manual_pdf_page": 56
+      },
+      {
+        "name": "tway_id",
+        "source_header": "TWAY_ID",
+        "type": "VARCHAR",
+        "description": "This data element records the trafficway on which the crash occurred.",
+        "manual_pdf_page": 57
+      },
+      {
+        "name": "tway_id2",
+        "source_header": "TWAY_ID2",
+        "type": "VARCHAR",
+        "description": "This data element records the trafficway on which the crash occurred.",
+        "manual_pdf_page": 57
+      },
+      {
+        "name": "route",
+        "source_header": "ROUTE",
+        "type": "BIGINT",
+        "description": "This data element identifies the route signing designation of the trafficway on which the crash occurred.",
+        "manual_pdf_page": 58
+      },
+      {
+        "name": "routename",
+        "source_header": "ROUTENAME",
+        "type": "VARCHAR",
+        "description": "Source label for ROUTE. This data element identifies the route signing designation of the trafficway on which the crash occurred.",
+        "manual_pdf_page": 58
+      },
+      {
+        "name": "rur_urb",
+        "source_header": "RUR_URB",
+        "type": "BIGINT",
+        "description": "This data element identifies the classification of the segment of the trafficway on which the crash occurred based on FHWA-approved adjusted Census boundaries of small urban and urbanized areas.",
+        "manual_pdf_page": 60
+      },
+      {
+        "name": "rur_urbname",
+        "source_header": "RUR_URBNAME",
+        "type": "VARCHAR",
+        "description": "Source label for RUR_URB. This data element identifies the classification of the segment of the trafficway on which the crash occurred based on FHWA-approved adjusted Census boundaries of small urban and urbanized areas.",
+        "manual_pdf_page": 60
+      },
+      {
+        "name": "func_sys",
+        "source_header": "FUNC_SYS",
+        "type": "BIGINT",
+        "description": "This data element identifies the functional classification of the segment of the trafficway on which the crash occurred.",
+        "manual_pdf_page": 61
+      },
+      {
+        "name": "func_sysname",
+        "source_header": "FUNC_SYSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for FUNC_SYS. This data element identifies the functional classification of the segment of the trafficway on which the crash occurred.",
+        "manual_pdf_page": 61
+      },
+      {
+        "name": "rd_owner",
+        "source_header": "RD_OWNER",
+        "type": "BIGINT",
+        "description": "This data element identifies the entity that has legal ownership of the segment of the trafficway on which the crash occurred. The entity that maintains the trafficway may differ from the owner in some locations.",
+        "manual_pdf_page": 62
+      },
+      {
+        "name": "rd_ownername",
+        "source_header": "RD_OWNERNAME",
+        "type": "VARCHAR",
+        "description": "Source label for RD_OWNER. This data element identifies the entity that has legal ownership of the segment of the trafficway on which the crash occurred. The entity that maintains the trafficway may differ from the owner in some locations.",
+        "manual_pdf_page": 62
+      },
+      {
+        "name": "nhs",
+        "source_header": "NHS",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this crash occurred on a trafficway that is part of the National Highway System.",
+        "manual_pdf_page": 64
+      },
+      {
+        "name": "nhsname",
+        "source_header": "NHSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for NHS. This data element identifies whether this crash occurred on a trafficway that is part of the National Highway System.",
+        "manual_pdf_page": 64
+      },
+      {
+        "name": "sp_jur",
+        "source_header": "SP_JUR",
+        "type": "BIGINT",
+        "description": "This data element identifies if the location on the trafficway where the crash occurred qualifies as a Special Jurisdiction even though it may be patrolled by State, county or local police (e.g., all State highways running through Indian Reservations are under the jurisdiction of the Indian Reservation).",
+        "manual_pdf_page": 65
+      },
+      {
+        "name": "sp_jurname",
+        "source_header": "SP_JURNAME",
+        "type": "VARCHAR",
+        "description": "Source label for SP_JUR. This data element identifies if the location on the trafficway where the crash occurred qualifies as a Special Jurisdiction even though it may be patrolled by State, county or local police (e.g., all State highways running through Indian Reservations are under the jurisdiction of the Indian Reservation).",
+        "manual_pdf_page": 65
+      },
+      {
+        "name": "milept",
+        "source_header": "MILEPT",
+        "type": "BIGINT",
+        "description": "This data element records the milepoint nearest to the location where the crash occurred.",
+        "manual_pdf_page": 66
+      },
+      {
+        "name": "mileptname",
+        "source_header": "MILEPTNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MILEPT. This data element records the milepoint nearest to the location where the crash occurred.",
+        "manual_pdf_page": 66
+      },
+      {
+        "name": "latitude",
+        "source_header": "LATITUDE",
+        "type": "DECIMAL(18,12)",
+        "description": "This element identifies the location of the crash using Global Position coordinates. This is the position of latitude.",
+        "manual_pdf_page": 67
+      },
+      {
+        "name": "latitudename",
+        "source_header": "LATITUDENAME",
+        "type": "VARCHAR",
+        "description": "Source label for LATITUDE. This element identifies the location of the crash using Global Position coordinates. This is the position of latitude.",
+        "manual_pdf_page": 67
+      },
+      {
+        "name": "longitud",
+        "source_header": "LONGITUD",
+        "type": "DECIMAL(18,12)",
+        "description": "This element identifies the location of the crash using Global Position coordinates. This is the position of longitude.",
+        "manual_pdf_page": 68
+      },
+      {
+        "name": "longitudname",
+        "source_header": "LONGITUDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for LONGITUD. This element identifies the location of the crash using Global Position coordinates. This is the position of longitude.",
+        "manual_pdf_page": 68
+      },
+      {
+        "name": "harm_ev",
+        "source_header": "HARM_EV",
+        "type": "BIGINT",
+        "description": "This data element describes the first injury- or-damage producing event of the crash.",
+        "manual_pdf_page": 69
+      },
+      {
+        "name": "harm_evname",
+        "source_header": "HARM_EVNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HARM_EV. This data element describes the first injury- or-damage producing event of the crash.",
+        "manual_pdf_page": 69
+      },
+      {
+        "name": "man_coll",
+        "source_header": "MAN_COLL",
+        "type": "BIGINT",
+        "description": "This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+        "manual_pdf_page": 74
+      },
+      {
+        "name": "man_collname",
+        "source_header": "MAN_COLLNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAN_COLL. This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+        "manual_pdf_page": 74
+      },
+      {
+        "name": "reljct1",
+        "source_header": "RELJCT1",
+        "type": "BIGINT",
+        "description": "This data element identifies the crash\u2019s location with respect to presence in an interchange area. The coding of this data element is done in two sub-fields (see also C20B) and is based on the location of the \u201cFirst Harmful Event\u201d of the crash.",
+        "manual_pdf_page": 76
+      },
+      {
+        "name": "reljct1name",
+        "source_header": "RELJCT1NAME",
+        "type": "VARCHAR",
+        "description": "Source label for RELJCT1. This data element identifies the crash\u2019s location with respect to presence in an interchange area. The coding of this data element is done in two sub-fields (see also C20B) and is based on the location of the \u201cFirst Harmful Event\u201d of the crash.",
+        "manual_pdf_page": 76
+      },
+      {
+        "name": "reljct2",
+        "source_header": "RELJCT2",
+        "type": "BIGINT",
+        "description": "This data element identifies the crash\u2019s location with respect to presence in or proximity to components typically in junction or interchange areas. The coding of this data element is done in two sub-fields (see also C20A) and is based on the location of the \u201cFirst Harmful Event\u201d of the crash.",
+        "manual_pdf_page": 77
+      },
+      {
+        "name": "reljct2name",
+        "source_header": "RELJCT2NAME",
+        "type": "VARCHAR",
+        "description": "Source label for RELJCT2. This data element identifies the crash\u2019s location with respect to presence in or proximity to components typically in junction or interchange areas. The coding of this data element is done in two sub-fields (see also C20A) and is based on the location of the \u201cFirst Harmful Event\u201d of the crash.",
+        "manual_pdf_page": 77
+      },
+      {
+        "name": "typ_int",
+        "source_header": "TYP_INT",
+        "type": "BIGINT",
+        "description": "This data element identifies and allows separation of various intersection types.",
+        "manual_pdf_page": 79
+      },
+      {
+        "name": "typ_intname",
+        "source_header": "TYP_INTNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TYP_INT. This data element identifies and allows separation of various intersection types.",
+        "manual_pdf_page": 79
+      },
+      {
+        "name": "rel_road",
+        "source_header": "REL_ROAD",
+        "type": "BIGINT",
+        "description": "This data element identifies the location of the crash as it relates to its position within or outside the trafficway based on the \u201cFirst Harmful Event.\u201d",
+        "manual_pdf_page": 80
+      },
+      {
+        "name": "rel_roadname",
+        "source_header": "REL_ROADNAME",
+        "type": "VARCHAR",
+        "description": "Source label for REL_ROAD. This data element identifies the location of the crash as it relates to its position within or outside the trafficway based on the \u201cFirst Harmful Event.\u201d",
+        "manual_pdf_page": 80
+      },
+      {
+        "name": "wrk_zone",
+        "source_header": "WRK_ZONE",
+        "type": "BIGINT",
+        "description": "This data element identifies a motor vehicle traffic crash in which the first harmful event occurs within the boundaries of a work zone or on an approach to or exit from a work zone, resulting from an activity, behavior, or control related to the movement of the traffic units through the work zone.",
+        "manual_pdf_page": 82
+      },
+      {
+        "name": "wrk_zonename",
+        "source_header": "WRK_ZONENAME",
+        "type": "VARCHAR",
+        "description": "Source label for WRK_ZONE. This data element identifies a motor vehicle traffic crash in which the first harmful event occurs within the boundaries of a work zone or on an approach to or exit from a work zone, resulting from an activity, behavior, or control related to the movement of the traffic units through the work zone.",
+        "manual_pdf_page": 82
+      },
+      {
+        "name": "lgt_cond",
+        "source_header": "LGT_COND",
+        "type": "BIGINT",
+        "description": "This data element records the type/level of light that existed at the time of the crash as indicated in the case material.",
+        "manual_pdf_page": 83
+      },
+      {
+        "name": "lgt_condname",
+        "source_header": "LGT_CONDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for LGT_COND. This data element records the type/level of light that existed at the time of the crash as indicated in the case material.",
+        "manual_pdf_page": 83
+      },
+      {
+        "name": "weather",
+        "source_header": "WEATHER",
+        "type": "BIGINT",
+        "description": "This derived data element records the prevailing atmospheric conditions that existed at the time of the crash as indicated in the case material.",
+        "manual_pdf_page": 84
+      },
+      {
+        "name": "weathername",
+        "source_header": "WEATHERNAME",
+        "type": "VARCHAR",
+        "description": "Source label for WEATHER. This derived data element records the prevailing atmospheric conditions that existed at the time of the crash as indicated in the case material.",
+        "manual_pdf_page": 84
+      },
+      {
+        "name": "sch_bus",
+        "source_header": "SCH_BUS",
+        "type": "BIGINT",
+        "description": "This data element identifies if a school bus, or motor vehicle functioning as a school bus, is related to the crash.",
+        "manual_pdf_page": 86
+      },
+      {
+        "name": "sch_busname",
+        "source_header": "SCH_BUSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for SCH_BUS. This data element identifies if a school bus, or motor vehicle functioning as a school bus, is related to the crash.",
+        "manual_pdf_page": 86
+      },
+      {
+        "name": "rail",
+        "source_header": "RAIL",
+        "type": "VARCHAR",
+        "description": "This data element identifies if the crash occurred in or near a rail grade crossing.",
+        "manual_pdf_page": 87
+      },
+      {
+        "name": "railname",
+        "source_header": "RAILNAME",
+        "type": "VARCHAR",
+        "description": "Source label for RAIL. This data element identifies if the crash occurred in or near a rail grade crossing.",
+        "manual_pdf_page": 87
+      },
+      {
+        "name": "not_hour",
+        "source_header": "NOT_HOUR",
+        "type": "BIGINT",
+        "description": "This data element records the hour that emergency medical service was notified.",
+        "manual_pdf_page": 88
+      },
+      {
+        "name": "not_hourname",
+        "source_header": "NOT_HOURNAME",
+        "type": "VARCHAR",
+        "description": "Source label for NOT_HOUR. This data element records the hour that emergency medical service was notified.",
+        "manual_pdf_page": 88
+      },
+      {
+        "name": "not_min",
+        "source_header": "NOT_MIN",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour that emergency medical service was notified.",
+        "manual_pdf_page": 89
+      },
+      {
+        "name": "not_minname",
+        "source_header": "NOT_MINNAME",
+        "type": "VARCHAR",
+        "description": "Source label for NOT_MIN. This data element records the minutes after the hour that emergency medical service was notified.",
+        "manual_pdf_page": 89
+      },
+      {
+        "name": "arr_hour",
+        "source_header": "ARR_HOUR",
+        "type": "BIGINT",
+        "description": "This data element records the hour that emergency medical service arrived on the crash scene.",
+        "manual_pdf_page": 90
+      },
+      {
+        "name": "arr_hourname",
+        "source_header": "ARR_HOURNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ARR_HOUR. This data element records the hour that emergency medical service arrived on the crash scene.",
+        "manual_pdf_page": 90
+      },
+      {
+        "name": "arr_min",
+        "source_header": "ARR_MIN",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour that emergency medical service arrived on the crash scene.",
+        "manual_pdf_page": 91
+      },
+      {
+        "name": "arr_minname",
+        "source_header": "ARR_MINNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ARR_MIN. This data element records the minutes after the hour that emergency medical service arrived on the crash scene.",
+        "manual_pdf_page": 91
+      },
+      {
+        "name": "hosp_hr",
+        "source_header": "HOSP_HR",
+        "type": "BIGINT",
+        "description": "This data element records the hour that emergency medical service arrived at the treatment facility to which it was transporting victims of the crash.",
+        "manual_pdf_page": 92
+      },
+      {
+        "name": "hosp_hrname",
+        "source_header": "HOSP_HRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HOSP_HR. This data element records the hour that emergency medical service arrived at the treatment facility to which it was transporting victims of the crash.",
+        "manual_pdf_page": 92
+      },
+      {
+        "name": "hosp_mn",
+        "source_header": "HOSP_MN",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour that emergency medical service arrived at the treatment facility to which it was transporting victims of the crash.",
+        "manual_pdf_page": 93
+      },
+      {
+        "name": "hosp_mnname",
+        "source_header": "HOSP_MNNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HOSP_MN. This data element records the minutes after the hour that emergency medical service arrived at the treatment facility to which it was transporting victims of the crash.",
+        "manual_pdf_page": 93
+      },
+      {
+        "name": "fatals",
+        "source_header": "FATALS",
+        "type": "BIGINT",
+        "description": "This data element records the number of fatally injured people in the crash.",
+        "manual_pdf_page": 94
+      }
+    ],
+    "key": [
+      "state",
+      "st_case"
+    ],
+    "description": "One record per fatal crash in the 2024 national Annual Report File."
+  },
+  "vehicle": {
+    "source_file": "FARS2024NationalCSV/vehicle.csv",
+    "source_sha256": "326fa057bfb7c8d9bd87756f18b8627a9f80df8ba5d2e8b29f3134a9d4d7bd71",
+    "rows": 56011,
+    "columns": [
+      {
+        "name": "state",
+        "source_header": "STATE",
+        "type": "BIGINT",
+        "description": "This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 34
+      },
+      {
+        "name": "statename",
+        "source_header": "STATENAME",
+        "type": "VARCHAR",
+        "description": "Source label for STATE. This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 34
+      },
+      {
+        "name": "st_case",
+        "source_header": "ST_CASE",
+        "type": "BIGINT",
+        "description": "This data element is the unique case number assigned to each crash. It appears on each data file and is used to merge information from the data files together.",
+        "manual_pdf_page": 36
+      },
+      {
+        "name": "veh_no",
+        "source_header": "VEH_NO",
+        "type": "BIGINT",
+        "description": "This data element is the consecutive number assigned to each vehicle in the case. This data element appears on each vehicle level data file and is used in conjunction with the ST_CASE data element to merge information from vehicle level data files.",
+        "manual_pdf_page": 37
+      },
+      {
+        "name": "ve_forms",
+        "source_header": "VE_FORMS",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of motor vehicles in-transport involved in the crash. Legally parked vehicles are not included.",
+        "manual_pdf_page": 45
+      },
+      {
+        "name": "month",
+        "source_header": "MONTH",
+        "type": "BIGINT",
+        "description": "This data element records the month in which the crash occurred.",
+        "manual_pdf_page": 51
+      },
+      {
+        "name": "monthname",
+        "source_header": "MONTHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MONTH. This data element records the month in which the crash occurred.",
+        "manual_pdf_page": 51
+      },
+      {
+        "name": "day",
+        "source_header": "DAY",
+        "type": "BIGINT",
+        "description": "This data element records the day of the month on which the crash occurred.",
+        "manual_pdf_page": 52
+      },
+      {
+        "name": "dayname",
+        "source_header": "DAYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DAY. This data element records the day of the month on which the crash occurred.",
+        "manual_pdf_page": 52
+      },
+      {
+        "name": "hour",
+        "source_header": "HOUR",
+        "type": "BIGINT",
+        "description": "This data element records the hour at which the crash occurred.",
+        "manual_pdf_page": 55
+      },
+      {
+        "name": "hourname",
+        "source_header": "HOURNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HOUR. This data element records the hour at which the crash occurred.",
+        "manual_pdf_page": 55
+      },
+      {
+        "name": "minute",
+        "source_header": "MINUTE",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour at which the crash occurred.",
+        "manual_pdf_page": 56
+      },
+      {
+        "name": "minutename",
+        "source_header": "MINUTENAME",
+        "type": "VARCHAR",
+        "description": "Source label for MINUTE. This data element records the minutes after the hour at which the crash occurred.",
+        "manual_pdf_page": 56
+      },
+      {
+        "name": "harm_ev",
+        "source_header": "HARM_EV",
+        "type": "BIGINT",
+        "description": "This data element describes the first injury- or-damage producing event of the crash.",
+        "manual_pdf_page": 69
+      },
+      {
+        "name": "harm_evname",
+        "source_header": "HARM_EVNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HARM_EV. This data element describes the first injury- or-damage producing event of the crash.",
+        "manual_pdf_page": 69
+      },
+      {
+        "name": "man_coll",
+        "source_header": "MAN_COLL",
+        "type": "BIGINT",
+        "description": "This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+        "manual_pdf_page": 74
+      },
+      {
+        "name": "man_collname",
+        "source_header": "MAN_COLLNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAN_COLL. This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+        "manual_pdf_page": 74
+      },
+      {
+        "name": "numoccs",
+        "source_header": "NUMOCCS",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of occupants in this vehicle.",
+        "manual_pdf_page": 115
+      },
+      {
+        "name": "numoccsname",
+        "source_header": "NUMOCCSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for NUMOCCS. This data element is a count of the number of occupants in this vehicle.",
+        "manual_pdf_page": 115
+      },
+      {
+        "name": "unittype",
+        "source_header": "UNITTYPE",
+        "type": "BIGINT",
+        "description": "This data element identifies the type of unit that applies to this motor vehicle at the time it became an involved vehicle in the crash and was reported as a unit on the police crash report.",
+        "manual_pdf_page": 116
+      },
+      {
+        "name": "unittypename",
+        "source_header": "UNITTYPENAME",
+        "type": "VARCHAR",
+        "description": "Source label for UNITTYPE. This data element identifies the type of unit that applies to this motor vehicle at the time it became an involved vehicle in the crash and was reported as a unit on the police crash report.",
+        "manual_pdf_page": 116
+      },
+      {
+        "name": "hit_run",
+        "source_header": "HIT_RUN",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle was a contact vehicle in the crash that did not stop to render aid (this can include drivers who flee the scene on foot). Hit-and-run is coded when a motor vehicle in-transport or its driver departs from the scene; vehicles not in-transport are excluded. It does not matter whether the hit-and-run vehicle was striking or struck.",
+        "manual_pdf_page": 97
+      },
+      {
+        "name": "hit_runname",
+        "source_header": "HIT_RUNNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HIT_RUN. This data element identifies whether this vehicle was a contact vehicle in the crash that did not stop to render aid (this can include drivers who flee the scene on foot). Hit-and-run is coded when a motor vehicle in-transport or its driver departs from the scene; vehicles not in-transport are excluded. It does not matter whether the hit-and-run vehicle was striking or struck.",
+        "manual_pdf_page": 97
+      },
+      {
+        "name": "reg_stat",
+        "source_header": "REG_STAT",
+        "type": "BIGINT",
+        "description": "This element identifies the State in which this vehicle was registered.",
+        "manual_pdf_page": 119
+      },
+      {
+        "name": "reg_statname",
+        "source_header": "REG_STATNAME",
+        "type": "VARCHAR",
+        "description": "Source label for REG_STAT. This element identifies the State in which this vehicle was registered.",
+        "manual_pdf_page": 119
+      },
+      {
+        "name": "owner",
+        "source_header": "OWNER",
+        "type": "BIGINT",
+        "description": "This data element identifies the type of registered owner of the vehicle.",
+        "manual_pdf_page": 122
+      },
+      {
+        "name": "ownername",
+        "source_header": "OWNERNAME",
+        "type": "VARCHAR",
+        "description": "Source label for OWNER. This data element identifies the type of registered owner of the vehicle.",
+        "manual_pdf_page": 122
+      },
+      {
+        "name": "vin",
+        "source_header": "VIN",
+        "type": "VARCHAR",
+        "description": "This data element records the vehicle identification number (VIN) of this vehicle assigned by the vehicle manufacturer. The VIN contains information on the vehicle such as: manufacturer, model year, model, body type, restraint type, etc.",
+        "manual_pdf_page": 123
+      },
+      {
+        "name": "vinname",
+        "source_header": "VINNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VIN. This data element records the vehicle identification number (VIN) of this vehicle assigned by the vehicle manufacturer. The VIN contains information on the vehicle such as: manufacturer, model year, model, body type, restraint type, etc.",
+        "manual_pdf_page": 123
+      },
+      {
+        "name": "mod_year",
+        "source_header": "MOD_YEAR",
+        "type": "BIGINT",
+        "description": "This data element identifies the manufacturer\u2019s model year of this vehicle.",
+        "manual_pdf_page": 124
+      },
+      {
+        "name": "mod_yearname",
+        "source_header": "MOD_YEARNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MOD_YEAR. This data element identifies the manufacturer\u2019s model year of this vehicle.",
+        "manual_pdf_page": 124
+      },
+      {
+        "name": "vpicmake",
+        "source_header": "VPICMAKE",
+        "type": "BIGINT",
+        "description": "This element identifies the Make (manufacturer brand name) of this vehicle as per NHTSA vPIC submissions.",
+        "manual_pdf_page": 125
+      },
+      {
+        "name": "vpicmakename",
+        "source_header": "VPICMAKENAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPICMAKE. This element identifies the Make (manufacturer brand name) of this vehicle as per NHTSA vPIC submissions.",
+        "manual_pdf_page": 125
+      },
+      {
+        "name": "vpicmodel",
+        "source_header": "VPICMODEL",
+        "type": "BIGINT",
+        "description": "This element identifies the Model of this vehicle using NHTSA\u2019s VIN decoder application, vPIC.",
+        "manual_pdf_page": 126
+      },
+      {
+        "name": "vpicmodelname",
+        "source_header": "VPICMODELNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPICMODEL. This element identifies the Model of this vehicle using NHTSA\u2019s VIN decoder application, vPIC.",
+        "manual_pdf_page": 126
+      },
+      {
+        "name": "vpicbodyclass",
+        "source_header": "VPICBODYCLASS",
+        "type": "BIGINT",
+        "description": "This element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc., as defined by the manufacturer.",
+        "manual_pdf_page": 128
+      },
+      {
+        "name": "vpicbodyclassname",
+        "source_header": "VPICBODYCLASSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPICBODYCLASS. This element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc., as defined by the manufacturer.",
+        "manual_pdf_page": 128
+      },
+      {
+        "name": "make",
+        "source_header": "MAKE",
+        "type": "BIGINT",
+        "description": "This data element identifies the make (manufacturer) of this vehicle by NCSA historically.",
+        "manual_pdf_page": 131
+      },
+      {
+        "name": "makename",
+        "source_header": "MAKENAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAKE. This data element identifies the make (manufacturer) of this vehicle by NCSA historically.",
+        "manual_pdf_page": 131
+      },
+      {
+        "name": "model",
+        "source_header": "MODEL",
+        "type": "BIGINT",
+        "description": "This data element identifies the NCSA model of this vehicle within a given NCSA make.",
+        "manual_pdf_page": 137
+      },
+      {
+        "name": "body_typ",
+        "source_header": "BODY_TYP",
+        "type": "BIGINT",
+        "description": "This data element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc. as defined by NCSA.",
+        "manual_pdf_page": 138
+      },
+      {
+        "name": "body_typname",
+        "source_header": "BODY_TYPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for BODY_TYP. This data element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc. as defined by NCSA.",
+        "manual_pdf_page": 138
+      },
+      {
+        "name": "icfinalbody",
+        "source_header": "ICFINALBODY",
+        "type": "BIGINT",
+        "description": "This element captures the completed/finished body class for an incomplete vehicle. An incomplete vehicle is completed by a final stage manufacturer. The intent of this data element is to capture the body class for incomplete vehicles when they are finished for road use.",
+        "manual_pdf_page": 146
+      },
+      {
+        "name": "icfinalbodyname",
+        "source_header": "ICFINALBODYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ICFINALBODY. This element captures the completed/finished body class for an incomplete vehicle. An incomplete vehicle is completed by a final stage manufacturer. The intent of this data element is to capture the body class for incomplete vehicles when they are finished for road use.",
+        "manual_pdf_page": 146
+      },
+      {
+        "name": "gvwr_from",
+        "source_header": "GVWR_FROM",
+        "type": "BIGINT",
+        "description": "This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "gvwr_fromname",
+        "source_header": "GVWR_FROMNAME",
+        "type": "VARCHAR",
+        "description": "Source label for GVWR_FROM. This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "gvwr_to",
+        "source_header": "GVWR_TO",
+        "type": "BIGINT",
+        "description": "This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "gvwr_toname",
+        "source_header": "GVWR_TONAME",
+        "type": "VARCHAR",
+        "description": "Source label for GVWR_TO. This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "tow_veh",
+        "source_header": "TOW_VEH",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle had any attached trailing units or was towing another motor vehicle.",
+        "manual_pdf_page": 149
+      },
+      {
+        "name": "tow_vehname",
+        "source_header": "TOW_VEHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TOW_VEH. This data element identifies whether this vehicle had any attached trailing units or was towing another motor vehicle.",
+        "manual_pdf_page": 149
+      },
+      {
+        "name": "trlr1vin",
+        "source_header": "TRLR1VIN",
+        "type": "VARCHAR",
+        "description": "This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+        "manual_pdf_page": 151
+      },
+      {
+        "name": "trlr1vinname",
+        "source_header": "TRLR1VINNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRLR1VIN. This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+        "manual_pdf_page": 151
+      },
+      {
+        "name": "trlr2vin",
+        "source_header": "TRLR2VIN",
+        "type": "VARCHAR",
+        "description": "This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+        "manual_pdf_page": 151
+      },
+      {
+        "name": "trlr2vinname",
+        "source_header": "TRLR2VINNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRLR2VIN. This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+        "manual_pdf_page": 151
+      },
+      {
+        "name": "trlr3vin",
+        "source_header": "TRLR3VIN",
+        "type": "VARCHAR",
+        "description": "This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+        "manual_pdf_page": 151
+      },
+      {
+        "name": "trlr3vinname",
+        "source_header": "TRLR3VINNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRLR3VIN. This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+        "manual_pdf_page": 151
+      },
+      {
+        "name": "trlr1gvwr",
+        "source_header": "TRLR1GVWR",
+        "type": "BIGINT",
+        "description": "This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+        "manual_pdf_page": 152
+      },
+      {
+        "name": "trlr1gvwrname",
+        "source_header": "TRLR1GVWRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRLR1GVWR. This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+        "manual_pdf_page": 152
+      },
+      {
+        "name": "trlr2gvwr",
+        "source_header": "TRLR2GVWR",
+        "type": "BIGINT",
+        "description": "This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+        "manual_pdf_page": 152
+      },
+      {
+        "name": "trlr2gvwrname",
+        "source_header": "TRLR2GVWRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRLR2GVWR. This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+        "manual_pdf_page": 152
+      },
+      {
+        "name": "trlr3gvwr",
+        "source_header": "TRLR3GVWR",
+        "type": "BIGINT",
+        "description": "This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+        "manual_pdf_page": 152
+      },
+      {
+        "name": "trlr3gvwrname",
+        "source_header": "TRLR3GVWRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRLR3GVWR. This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+        "manual_pdf_page": 152
+      },
+      {
+        "name": "j_knife",
+        "source_header": "J_KNIFE",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle experienced a jackknife anytime during the unstabilized situation.",
+        "manual_pdf_page": 153
+      },
+      {
+        "name": "j_knifename",
+        "source_header": "J_KNIFENAME",
+        "type": "VARCHAR",
+        "description": "Source label for J_KNIFE. This data element identifies whether this vehicle experienced a jackknife anytime during the unstabilized situation.",
+        "manual_pdf_page": 153
+      },
+      {
+        "name": "mcarr_id",
+        "source_header": "MCARR_ID",
+        "type": "VARCHAR",
+        "description": "This data element records the issuing authority and motor carrier identification number (if applicable) to this vehicle.",
+        "manual_pdf_page": 154
+      },
+      {
+        "name": "mcarr_idname",
+        "source_header": "MCARR_IDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MCARR_ID. This data element records the issuing authority and motor carrier identification number (if applicable) to this vehicle.",
+        "manual_pdf_page": 154
+      },
+      {
+        "name": "mcarr_i1",
+        "source_header": "MCARR_I1",
+        "type": "BIGINT",
+        "description": "This data element records the issuing authority if applicable to this vehicle.",
+        "manual_pdf_page": 155
+      },
+      {
+        "name": "mcarr_i1name",
+        "source_header": "MCARR_I1NAME",
+        "type": "VARCHAR",
+        "description": "Source label for MCARR_I1. This data element records the issuing authority if applicable to this vehicle.",
+        "manual_pdf_page": 155
+      },
+      {
+        "name": "mcarr_i2",
+        "source_header": "MCARR_I2",
+        "type": "VARCHAR",
+        "description": "This data element records the motor carrier identification number if applicable to this vehicle.",
+        "manual_pdf_page": 156
+      },
+      {
+        "name": "mcarr_i2name",
+        "source_header": "MCARR_I2NAME",
+        "type": "VARCHAR",
+        "description": "Source label for MCARR_I2. This data element records the motor carrier identification number if applicable to this vehicle.",
+        "manual_pdf_page": 156
+      },
+      {
+        "name": "v_config",
+        "source_header": "V_CONFIG",
+        "type": "BIGINT",
+        "description": "This data element describes the general configuration of this vehicle if applicable.",
+        "manual_pdf_page": 157
+      },
+      {
+        "name": "v_configname",
+        "source_header": "V_CONFIGNAME",
+        "type": "VARCHAR",
+        "description": "Source label for V_CONFIG. This data element describes the general configuration of this vehicle if applicable.",
+        "manual_pdf_page": 157
+      },
+      {
+        "name": "cargo_bt",
+        "source_header": "CARGO_BT",
+        "type": "BIGINT",
+        "description": "This data element describes the primary cargo carrying capability of this vehicle if applicable.",
+        "manual_pdf_page": 159
+      },
+      {
+        "name": "cargo_btname",
+        "source_header": "CARGO_BTNAME",
+        "type": "VARCHAR",
+        "description": "Source label for CARGO_BT. This data element describes the primary cargo carrying capability of this vehicle if applicable.",
+        "manual_pdf_page": 159
+      },
+      {
+        "name": "haz_inv",
+        "source_header": "HAZ_INV",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle was carrying hazardous materials.",
+        "manual_pdf_page": 161
+      },
+      {
+        "name": "haz_invname",
+        "source_header": "HAZ_INVNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HAZ_INV. This data element identifies whether this vehicle was carrying hazardous materials.",
+        "manual_pdf_page": 161
+      },
+      {
+        "name": "haz_plac",
+        "source_header": "HAZ_PLAC",
+        "type": "BIGINT",
+        "description": "This data element identifies the presence of hazardous materials for this vehicle and whether this vehicle displayed a hazardous materials placard.",
+        "manual_pdf_page": 162
+      },
+      {
+        "name": "haz_placname",
+        "source_header": "HAZ_PLACNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HAZ_PLAC. This data element identifies the presence of hazardous materials for this vehicle and whether this vehicle displayed a hazardous materials placard.",
+        "manual_pdf_page": 162
+      },
+      {
+        "name": "haz_id",
+        "source_header": "HAZ_ID",
+        "type": "BIGINT",
+        "description": "This data element identifies the four-digit hazardous materials identification number for this vehicle.",
+        "manual_pdf_page": 163
+      },
+      {
+        "name": "haz_idname",
+        "source_header": "HAZ_IDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HAZ_ID. This data element identifies the four-digit hazardous materials identification number for this vehicle.",
+        "manual_pdf_page": 163
+      },
+      {
+        "name": "haz_cno",
+        "source_header": "HAZ_CNO",
+        "type": "BIGINT",
+        "description": "This data element identifies the single-digit hazardous materials class number for this vehicle.",
+        "manual_pdf_page": 164
+      },
+      {
+        "name": "haz_cnoname",
+        "source_header": "HAZ_CNONAME",
+        "type": "VARCHAR",
+        "description": "Source label for HAZ_CNO. This data element identifies the single-digit hazardous materials class number for this vehicle.",
+        "manual_pdf_page": 164
+      },
+      {
+        "name": "haz_rel",
+        "source_header": "HAZ_REL",
+        "type": "BIGINT",
+        "description": "UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "haz_relname",
+        "source_header": "HAZ_RELNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HAZ_REL. UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "bus_use",
+        "source_header": "BUS_USE",
+        "type": "BIGINT",
+        "description": "This data element describes the common type of bus service this vehicle was being used as at the time of the crash or the primary use for the bus if not in service at the time of the crash.",
+        "manual_pdf_page": 166
+      },
+      {
+        "name": "bus_usename",
+        "source_header": "BUS_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for BUS_USE. This data element describes the common type of bus service this vehicle was being used as at the time of the crash or the primary use for the bus if not in service at the time of the crash.",
+        "manual_pdf_page": 166
+      },
+      {
+        "name": "spec_use",
+        "source_header": "SPEC_USE",
+        "type": "BIGINT",
+        "description": "This data element identifies any special use associated with this vehicle at the time of the crash.",
+        "manual_pdf_page": 167
+      },
+      {
+        "name": "spec_usename",
+        "source_header": "SPEC_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for SPEC_USE. This data element identifies any special use associated with this vehicle at the time of the crash.",
+        "manual_pdf_page": 167
+      },
+      {
+        "name": "emer_use",
+        "source_header": "EMER_USE",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle was engaged in emergency use. Emergency Motor Vehicle Use indicates operation of any motor vehicle that is legally authorized by a government authority to respond to emergencies while actually engaged in such response. These vehicles can respond with or without the use of emergency warning equipment.",
+        "manual_pdf_page": 169
+      },
+      {
+        "name": "emer_usename",
+        "source_header": "EMER_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for EMER_USE. This data element identifies whether this vehicle was engaged in emergency use. Emergency Motor Vehicle Use indicates operation of any motor vehicle that is legally authorized by a government authority to respond to emergencies while actually engaged in such response. These vehicles can respond with or without the use of emergency warning equipment.",
+        "manual_pdf_page": 169
+      },
+      {
+        "name": "trav_sp",
+        "source_header": "TRAV_SP",
+        "type": "BIGINT",
+        "description": "This data element records the speed the vehicle was traveling prior to the occurrence of the crash as reported by the investigating officer.",
+        "manual_pdf_page": 170
+      },
+      {
+        "name": "trav_spname",
+        "source_header": "TRAV_SPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TRAV_SP. This data element records the speed the vehicle was traveling prior to the occurrence of the crash as reported by the investigating officer.",
+        "manual_pdf_page": 170
+      },
+      {
+        "name": "underoverride",
+        "source_header": "UNDEROVERRIDE",
+        "type": "BIGINT",
+        "description": "This element indicates whether this vehicle experienced an underride or override with another vehicle during the crash.",
+        "manual_pdf_page": 171
+      },
+      {
+        "name": "underoverridename",
+        "source_header": "UNDEROVERRIDENAME",
+        "type": "VARCHAR",
+        "description": "Source label for UNDEROVERRIDE. This element indicates whether this vehicle experienced an underride or override with another vehicle during the crash.",
+        "manual_pdf_page": 171
+      },
+      {
+        "name": "rollover",
+        "source_header": "ROLLOVER",
+        "type": "BIGINT",
+        "description": "This data element identifies this vehicle\u2019s involvement in a rollover or overturn during the crash. Rollover is defined as any vehicle rotation of 90\u00b0 or more about any true longitudinal or lateral axis. Rollover can occur at any time during the crash.",
+        "manual_pdf_page": 172
+      },
+      {
+        "name": "rollovername",
+        "source_header": "ROLLOVERNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ROLLOVER. This data element identifies this vehicle\u2019s involvement in a rollover or overturn during the crash. Rollover is defined as any vehicle rotation of 90\u00b0 or more about any true longitudinal or lateral axis. Rollover can occur at any time during the crash.",
+        "manual_pdf_page": 172
+      },
+      {
+        "name": "rolinloc",
+        "source_header": "ROLINLOC",
+        "type": "BIGINT",
+        "description": "This data element identifies the location of the trip point or start of this vehicle\u2019s roll.",
+        "manual_pdf_page": 173
+      },
+      {
+        "name": "rolinlocname",
+        "source_header": "ROLINLOCNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ROLINLOC. This data element identifies the location of the trip point or start of this vehicle\u2019s roll.",
+        "manual_pdf_page": 173
+      },
+      {
+        "name": "impact1",
+        "source_header": "IMPACT1",
+        "type": "BIGINT",
+        "description": "This data element identifies the area on this vehicle that produced the first instance of injury to non-motorists or occupants of this vehicle, or that resulted in the first instance of damage to other property or to this vehicle.",
+        "manual_pdf_page": 174
+      },
+      {
+        "name": "impact1name",
+        "source_header": "IMPACT1NAME",
+        "type": "VARCHAR",
+        "description": "Source label for IMPACT1. This data element identifies the area on this vehicle that produced the first instance of injury to non-motorists or occupants of this vehicle, or that resulted in the first instance of damage to other property or to this vehicle.",
+        "manual_pdf_page": 174
+      },
+      {
+        "name": "deformed",
+        "source_header": "DEFORMED",
+        "type": "BIGINT",
+        "description": "This data element records the amount of damage sustained by this vehicle as indicated in the case material based on an operational damage scale.",
+        "manual_pdf_page": 176
+      },
+      {
+        "name": "deformedname",
+        "source_header": "DEFORMEDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEFORMED. This data element records the amount of damage sustained by this vehicle as indicated in the case material based on an operational damage scale.",
+        "manual_pdf_page": 176
+      },
+      {
+        "name": "towed",
+        "source_header": "TOWED",
+        "type": "BIGINT",
+        "description": "This data element identifies whether the vehicle was towed from the scene of the crash.",
+        "manual_pdf_page": 177
+      },
+      {
+        "name": "towedname",
+        "source_header": "TOWEDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TOWED. This data element identifies whether the vehicle was towed from the scene of the crash.",
+        "manual_pdf_page": 177
+      },
+      {
+        "name": "m_harm",
+        "source_header": "M_HARM",
+        "type": "BIGINT",
+        "description": "This data element describes the event that resulted in the most severe injury or, if no injury, the greatest property damage involving this vehicle.",
+        "manual_pdf_page": 178
+      },
+      {
+        "name": "m_harmname",
+        "source_header": "M_HARMNAME",
+        "type": "VARCHAR",
+        "description": "Source label for M_HARM. This data element describes the event that resulted in the most severe injury or, if no injury, the greatest property damage involving this vehicle.",
+        "manual_pdf_page": 178
+      },
+      {
+        "name": "fire_exp",
+        "source_header": "FIRE_EXP",
+        "type": "BIGINT",
+        "description": "This data element identifies whether a fire in any way related to the crash occurred in this vehicle.",
+        "manual_pdf_page": 183
+      },
+      {
+        "name": "fire_expname",
+        "source_header": "FIRE_EXPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for FIRE_EXP. This data element identifies whether a fire in any way related to the crash occurred in this vehicle.",
+        "manual_pdf_page": 183
+      },
+      {
+        "name": "mak_mod",
+        "source_header": "MAK_MOD",
+        "type": "BIGINT",
+        "description": "This derived data element represents the five-digit combination of two data elements, the two- digit \u201cNCSA Make\u201d code (MAKE) followed by the three-digit \u201cNCSA Model\u201d code (MODEL).",
+        "manual_pdf_page": 187
+      },
+      {
+        "name": "mak_modname",
+        "source_header": "MAK_MODNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAK_MOD. This derived data element represents the five-digit combination of two data elements, the two- digit \u201cNCSA Make\u201d code (MAKE) followed by the three-digit \u201cNCSA Model\u201d code (MODEL).",
+        "manual_pdf_page": 187
+      },
+      {
+        "name": "vin_1",
+        "source_header": "VIN_1",
+        "type": "VARCHAR",
+        "description": "This data element represents the first character in the VIN string for this vehicle.",
+        "manual_pdf_page": 188
+      },
+      {
+        "name": "vin_2",
+        "source_header": "VIN_2",
+        "type": "VARCHAR",
+        "description": "This data element represents the second character in the VIN string for this vehicle.",
+        "manual_pdf_page": 189
+      },
+      {
+        "name": "vin_3",
+        "source_header": "VIN_3",
+        "type": "VARCHAR",
+        "description": "This data element represents the third character in the VIN string for this vehicle.",
+        "manual_pdf_page": 190
+      },
+      {
+        "name": "vin_4",
+        "source_header": "VIN_4",
+        "type": "VARCHAR",
+        "description": "This data element represents the fourth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 191
+      },
+      {
+        "name": "vin_5",
+        "source_header": "VIN_5",
+        "type": "VARCHAR",
+        "description": "This data element represents the fifth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 192
+      },
+      {
+        "name": "vin_6",
+        "source_header": "VIN_6",
+        "type": "VARCHAR",
+        "description": "This data element represents the sixth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 193
+      },
+      {
+        "name": "vin_7",
+        "source_header": "VIN_7",
+        "type": "VARCHAR",
+        "description": "This data element represents the seventh character in the VIN string for this vehicle.",
+        "manual_pdf_page": 194
+      },
+      {
+        "name": "vin_8",
+        "source_header": "VIN_8",
+        "type": "VARCHAR",
+        "description": "This data element represents the eighth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 195
+      },
+      {
+        "name": "vin_9",
+        "source_header": "VIN_9",
+        "type": "VARCHAR",
+        "description": "This data element represents the ninth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 196
+      },
+      {
+        "name": "vin_10",
+        "source_header": "VIN_10",
+        "type": "VARCHAR",
+        "description": "This data element represents the tenth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 197
+      },
+      {
+        "name": "vin_11",
+        "source_header": "VIN_11",
+        "type": "VARCHAR",
+        "description": "This data element represents the eleventh character in the VIN string for this vehicle.",
+        "manual_pdf_page": 198
+      },
+      {
+        "name": "vin_12",
+        "source_header": "VIN_12",
+        "type": "VARCHAR",
+        "description": "This data element represents the twelfth character in the VIN string for this vehicle.",
+        "manual_pdf_page": 199
+      },
+      {
+        "name": "deaths",
+        "source_header": "DEATHS",
+        "type": "BIGINT",
+        "description": "This data element records the number of fatalities that occurred in this vehicle.",
+        "manual_pdf_page": 200
+      },
+      {
+        "name": "dr_drink",
+        "source_header": "DR_DRINK",
+        "type": "BIGINT",
+        "description": "This data element records whether the driver was drinking.",
+        "manual_pdf_page": 201
+      },
+      {
+        "name": "dr_drinkname",
+        "source_header": "DR_DRINKNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DR_DRINK. This data element records whether the driver was drinking.",
+        "manual_pdf_page": 201
+      },
+      {
+        "name": "dr_pres",
+        "source_header": "DR_PRES",
+        "type": "BIGINT",
+        "description": "This data element identifies whether a driver was present in this vehicle at the onset of the unstabilized situation.",
+        "manual_pdf_page": 202
+      },
+      {
+        "name": "dr_presname",
+        "source_header": "DR_PRESNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DR_PRES. This data element identifies whether a driver was present in this vehicle at the onset of the unstabilized situation.",
+        "manual_pdf_page": 202
+      },
+      {
+        "name": "l_state",
+        "source_header": "L_STATE",
+        "type": "BIGINT",
+        "description": "This element identifies the State of issue for the license held by this driver.",
+        "manual_pdf_page": 203
+      },
+      {
+        "name": "l_statename",
+        "source_header": "L_STATENAME",
+        "type": "VARCHAR",
+        "description": "Source label for L_STATE. This element identifies the State of issue for the license held by this driver.",
+        "manual_pdf_page": 203
+      },
+      {
+        "name": "dr_zip",
+        "source_header": "DR_ZIP",
+        "type": "VARCHAR",
+        "description": "This data element records the ZIP Code of the driver\u2019s address as listed in the case material.",
+        "manual_pdf_page": 206
+      },
+      {
+        "name": "dr_zipname",
+        "source_header": "DR_ZIPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DR_ZIP. This data element records the ZIP Code of the driver\u2019s address as listed in the case material.",
+        "manual_pdf_page": 206
+      },
+      {
+        "name": "l_type",
+        "source_header": "L_TYPE",
+        "type": "BIGINT",
+        "description": "This data element identifies the type of license held by this driver at the time of the crash.",
+        "manual_pdf_page": 207
+      },
+      {
+        "name": "l_typename",
+        "source_header": "L_TYPENAME",
+        "type": "VARCHAR",
+        "description": "Source label for L_TYPE. This data element identifies the type of license held by this driver at the time of the crash.",
+        "manual_pdf_page": 207
+      },
+      {
+        "name": "l_status",
+        "source_header": "L_STATUS",
+        "type": "BIGINT",
+        "description": "This data element identifies the status of the driver\u2019s license at the time of the crash.",
+        "manual_pdf_page": 208
+      },
+      {
+        "name": "l_statusname",
+        "source_header": "L_STATUSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for L_STATUS. This data element identifies the status of the driver\u2019s license at the time of the crash.",
+        "manual_pdf_page": 208
+      },
+      {
+        "name": "cdl_stat",
+        "source_header": "CDL_STAT",
+        "type": "BIGINT",
+        "description": "This data element indicates the status of the driver\u2019s commercial driver\u2019s license (CDL) if applicable.",
+        "manual_pdf_page": 210
+      },
+      {
+        "name": "cdl_statname",
+        "source_header": "CDL_STATNAME",
+        "type": "VARCHAR",
+        "description": "Source label for CDL_STAT. This data element indicates the status of the driver\u2019s commercial driver\u2019s license (CDL) if applicable.",
+        "manual_pdf_page": 210
+      },
+      {
+        "name": "l_endors",
+        "source_header": "L_ENDORS",
+        "type": "BIGINT",
+        "description": "This data element identifies whether the vehicle driven at the time of the crash required endorsements on a commercial driver\u2019s license (CDL) and whether this driver was complying with the CDL endorsements.",
+        "manual_pdf_page": 211
+      },
+      {
+        "name": "l_endorsname",
+        "source_header": "L_ENDORSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for L_ENDORS. This data element identifies whether the vehicle driven at the time of the crash required endorsements on a commercial driver\u2019s license (CDL) and whether this driver was complying with the CDL endorsements.",
+        "manual_pdf_page": 211
+      },
+      {
+        "name": "l_compl",
+        "source_header": "L_COMPL",
+        "type": "BIGINT",
+        "description": "This data element identifies the type of license possessed or not possessed by this driver for the class of vehicle being driven at the time of the crash.",
+        "manual_pdf_page": 212
+      },
+      {
+        "name": "l_complname",
+        "source_header": "L_COMPLNAME",
+        "type": "VARCHAR",
+        "description": "Source label for L_COMPL. This data element identifies the type of license possessed or not possessed by this driver for the class of vehicle being driven at the time of the crash.",
+        "manual_pdf_page": 212
+      },
+      {
+        "name": "l_restri",
+        "source_header": "L_RESTRI",
+        "type": "BIGINT",
+        "description": "This data element indicates whether this driver was compliant with restrictions on their license.",
+        "manual_pdf_page": 213
+      },
+      {
+        "name": "l_restriname",
+        "source_header": "L_RESTRINAME",
+        "type": "VARCHAR",
+        "description": "Source label for L_RESTRI. This data element indicates whether this driver was compliant with restrictions on their license.",
+        "manual_pdf_page": 213
+      },
+      {
+        "name": "dr_hgt",
+        "source_header": "DR_HGT",
+        "type": "BIGINT",
+        "description": "This data element identifies this driver\u2019s height (in inches).",
+        "manual_pdf_page": 214
+      },
+      {
+        "name": "dr_hgtname",
+        "source_header": "DR_HGTNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DR_HGT. This data element identifies this driver\u2019s height (in inches).",
+        "manual_pdf_page": 214
+      },
+      {
+        "name": "dr_wgt",
+        "source_header": "DR_WGT",
+        "type": "BIGINT",
+        "description": "This data element identifies this driver\u2019s weight (in pounds).",
+        "manual_pdf_page": 215
+      },
+      {
+        "name": "dr_wgtname",
+        "source_header": "DR_WGTNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DR_WGT. This data element identifies this driver\u2019s weight (in pounds).",
+        "manual_pdf_page": 215
+      },
+      {
+        "name": "prev_acc",
+        "source_header": "PREV_ACC",
+        "type": "BIGINT",
+        "description": "This data element records any previous crashes for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 216
+      },
+      {
+        "name": "prev_accname",
+        "source_header": "PREV_ACCNAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_ACC. This data element records any previous crashes for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 216
+      },
+      {
+        "name": "prev_sus1",
+        "source_header": "PREV_SUS1",
+        "type": "BIGINT",
+        "description": "UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "prev_sus1name",
+        "source_header": "PREV_SUS1NAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_SUS1. UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "prev_sus2",
+        "source_header": "PREV_SUS2",
+        "type": "BIGINT",
+        "description": "This data element records the count of previous pre-conviction administratively imposed suspensions, revocations, or withdrawals within the 5 years prior to the crash date for driving with a BAC above a specified limit or refusing to submit to chemical testing. This element is only for administrative actions associated with alcohol. These are NOT BAC convictions.",
+        "manual_pdf_page": 218
+      },
+      {
+        "name": "prev_sus2name",
+        "source_header": "PREV_SUS2NAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_SUS2. This data element records the count of previous pre-conviction administratively imposed suspensions, revocations, or withdrawals within the 5 years prior to the crash date for driving with a BAC above a specified limit or refusing to submit to chemical testing. This element is only for administrative actions associated with alcohol. These are NOT BAC convictions.",
+        "manual_pdf_page": 218
+      },
+      {
+        "name": "prev_sus3",
+        "source_header": "PREV_SUS3",
+        "type": "BIGINT",
+        "description": "This data element records any previous license suspensions, revocations, or withdrawals for this driver other than Administrative action for BAC violations within 5 years from the crash date. This element would include administrative actions associated with drugged driving.",
+        "manual_pdf_page": 219
+      },
+      {
+        "name": "prev_sus3name",
+        "source_header": "PREV_SUS3NAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_SUS3. This data element records any previous license suspensions, revocations, or withdrawals for this driver other than Administrative action for BAC violations within 5 years from the crash date. This element would include administrative actions associated with drugged driving.",
+        "manual_pdf_page": 219
+      },
+      {
+        "name": "prev_dwi",
+        "source_header": "PREV_DWI",
+        "type": "BIGINT",
+        "description": "This data element records any previous DWI convictions for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 220
+      },
+      {
+        "name": "prev_dwiname",
+        "source_header": "PREV_DWINAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_DWI. This data element records any previous DWI convictions for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 220
+      },
+      {
+        "name": "prev_spd",
+        "source_header": "PREV_SPD",
+        "type": "BIGINT",
+        "description": "This data element records any previous speeding convictions for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 221
+      },
+      {
+        "name": "prev_spdname",
+        "source_header": "PREV_SPDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_SPD. This data element records any previous speeding convictions for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 221
+      },
+      {
+        "name": "prev_oth",
+        "source_header": "PREV_OTH",
+        "type": "BIGINT",
+        "description": "This data element records any other previous moving violations or convictions for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 222
+      },
+      {
+        "name": "prev_othname",
+        "source_header": "PREV_OTHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for PREV_OTH. This data element records any other previous moving violations or convictions for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 222
+      },
+      {
+        "name": "first_mo",
+        "source_header": "FIRST_MO",
+        "type": "BIGINT",
+        "description": "This data element records the month of the first crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 223
+      },
+      {
+        "name": "first_moname",
+        "source_header": "FIRST_MONAME",
+        "type": "VARCHAR",
+        "description": "Source label for FIRST_MO. This data element records the month of the first crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 223
+      },
+      {
+        "name": "first_yr",
+        "source_header": "FIRST_YR",
+        "type": "BIGINT",
+        "description": "This data element records the year of the first crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 224
+      },
+      {
+        "name": "first_yrname",
+        "source_header": "FIRST_YRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for FIRST_YR. This data element records the year of the first crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 224
+      },
+      {
+        "name": "last_mo",
+        "source_header": "LAST_MO",
+        "type": "BIGINT",
+        "description": "This data element records the month of the last crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 225
+      },
+      {
+        "name": "last_moname",
+        "source_header": "LAST_MONAME",
+        "type": "VARCHAR",
+        "description": "Source label for LAST_MO. This data element records the month of the last crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+        "manual_pdf_page": 225
+      },
+      {
+        "name": "last_yr",
+        "source_header": "LAST_YR",
+        "type": "BIGINT",
+        "description": "UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "last_yrname",
+        "source_header": "LAST_YRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for LAST_YR. UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "speedrel",
+        "source_header": "SPEEDREL",
+        "type": "BIGINT",
+        "description": "This data element identifies if the driver was speeding, and it was related to the crash as identified by law enforcement.",
+        "manual_pdf_page": 227
+      },
+      {
+        "name": "speedrelname",
+        "source_header": "SPEEDRELNAME",
+        "type": "VARCHAR",
+        "description": "Source label for SPEEDREL. This data element identifies if the driver was speeding, and it was related to the crash as identified by law enforcement.",
+        "manual_pdf_page": 227
+      },
+      {
+        "name": "vtrafway",
+        "source_header": "VTRAFWAY",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the trafficway flow just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 228
+      },
+      {
+        "name": "vtrafwayname",
+        "source_header": "VTRAFWAYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VTRAFWAY. This data element identifies the attribute that best describes the trafficway flow just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 228
+      },
+      {
+        "name": "vnum_lan",
+        "source_header": "VNUM_LAN",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the number of travel lanes just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 229
+      },
+      {
+        "name": "vnum_lanname",
+        "source_header": "VNUM_LANNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VNUM_LAN. This data element identifies the attribute that best describes the number of travel lanes just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 229
+      },
+      {
+        "name": "vspd_lim",
+        "source_header": "VSPD_LIM",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best represents the speed limit just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 230
+      },
+      {
+        "name": "vspd_limname",
+        "source_header": "VSPD_LIMNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VSPD_LIM. This data element identifies the attribute that best represents the speed limit just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 230
+      },
+      {
+        "name": "valign",
+        "source_header": "VALIGN",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best represents the roadway alignment prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 231
+      },
+      {
+        "name": "valignname",
+        "source_header": "VALIGNNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VALIGN. This data element identifies the attribute that best represents the roadway alignment prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 231
+      },
+      {
+        "name": "vprofile",
+        "source_header": "VPROFILE",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best represents the roadway grade prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 232
+      },
+      {
+        "name": "vprofilename",
+        "source_header": "VPROFILENAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPROFILE. This data element identifies the attribute that best represents the roadway grade prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 232
+      },
+      {
+        "name": "vpavetyp",
+        "source_header": "VPAVETYP",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best represents the roadway surface type prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 233
+      },
+      {
+        "name": "vpavetypname",
+        "source_header": "VPAVETYPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPAVETYP. This data element identifies the attribute that best represents the roadway surface type prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 233
+      },
+      {
+        "name": "vsurcond",
+        "source_header": "VSURCOND",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best represents the roadway surface condition prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 234
+      },
+      {
+        "name": "vsurcondname",
+        "source_header": "VSURCONDNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VSURCOND. This data element identifies the attribute that best represents the roadway surface condition prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 234
+      },
+      {
+        "name": "vtrafcon",
+        "source_header": "VTRAFCON",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the traffic controls in the vehicle\u2019s environment just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 235
+      },
+      {
+        "name": "vtrafconname",
+        "source_header": "VTRAFCONNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VTRAFCON. This data element identifies the attribute that best describes the traffic controls in the vehicle\u2019s environment just prior to this vehicle\u2019s critical precrash event.",
+        "manual_pdf_page": 235
+      },
+      {
+        "name": "vtcont_f",
+        "source_header": "VTCONT_F",
+        "type": "BIGINT",
+        "description": "This data element identifies the functionality of the traffic control device recorded for this vehicle in the data element \u201cTraffic Control Device.\u201d",
+        "manual_pdf_page": 237
+      },
+      {
+        "name": "vtcont_fname",
+        "source_header": "VTCONT_FNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VTCONT_F. This data element identifies the functionality of the traffic control device recorded for this vehicle in the data element \u201cTraffic Control Device.\u201d",
+        "manual_pdf_page": 237
+      },
+      {
+        "name": "p_crash1",
+        "source_header": "P_CRASH1",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes this vehicle\u2019s activity prior to the driver\u2019s realization of an impending critical event or just prior to impact if the driver took no action or had no time to attempt any evasive maneuvers.",
+        "manual_pdf_page": 238
+      },
+      {
+        "name": "p_crash1name",
+        "source_header": "P_CRASH1NAME",
+        "type": "VARCHAR",
+        "description": "Source label for P_CRASH1. This data element identifies the attribute that best describes this vehicle\u2019s activity prior to the driver\u2019s realization of an impending critical event or just prior to impact if the driver took no action or had no time to attempt any evasive maneuvers.",
+        "manual_pdf_page": 238
+      },
+      {
+        "name": "p_crash2",
+        "source_header": "P_CRASH2",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the critical event that made this crash imminent (i.e., something occurred that made the collision possible).",
+        "manual_pdf_page": 240
+      },
+      {
+        "name": "p_crash2name",
+        "source_header": "P_CRASH2NAME",
+        "type": "VARCHAR",
+        "description": "Source label for P_CRASH2. This data element identifies the attribute that best describes the critical event that made this crash imminent (i.e., something occurred that made the collision possible).",
+        "manual_pdf_page": 240
+      },
+      {
+        "name": "p_crash3",
+        "source_header": "P_CRASH3",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the movements/actions taken by this driver, within a critical crash envelope, in response to the \u201cCritical Precrash Event.\u201d",
+        "manual_pdf_page": 244
+      },
+      {
+        "name": "p_crash3name",
+        "source_header": "P_CRASH3NAME",
+        "type": "VARCHAR",
+        "description": "Source label for P_CRASH3. This data element identifies the attribute that best describes the movements/actions taken by this driver, within a critical crash envelope, in response to the \u201cCritical Precrash Event.\u201d",
+        "manual_pdf_page": 244
+      },
+      {
+        "name": "pcrash4",
+        "source_header": "PCRASH4",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the stability of this vehicle after the \u201cCritical Precrash Event,\u201d but before the impact.",
+        "manual_pdf_page": 245
+      },
+      {
+        "name": "pcrash4name",
+        "source_header": "PCRASH4NAME",
+        "type": "VARCHAR",
+        "description": "Source label for PCRASH4. This data element identifies the attribute that best describes the stability of this vehicle after the \u201cCritical Precrash Event,\u201d but before the impact.",
+        "manual_pdf_page": 245
+      },
+      {
+        "name": "pcrash5",
+        "source_header": "PCRASH5",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the location of this vehicle after the \u201cCritical Precrash Event,\u201d but before the impact.",
+        "manual_pdf_page": 246
+      },
+      {
+        "name": "pcrash5name",
+        "source_header": "PCRASH5NAME",
+        "type": "VARCHAR",
+        "description": "Source label for PCRASH5. This data element identifies the attribute that best describes the location of this vehicle after the \u201cCritical Precrash Event,\u201d but before the impact.",
+        "manual_pdf_page": 246
+      },
+      {
+        "name": "acc_type",
+        "source_header": "ACC_TYPE",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the type of crash this vehicle was involved in based on the \u201cFirst Harmful Event\u201d and the precrash circumstances.",
+        "manual_pdf_page": 247
+      },
+      {
+        "name": "acc_typename",
+        "source_header": "ACC_TYPENAME",
+        "type": "VARCHAR",
+        "description": "Source label for ACC_TYPE. This data element identifies the attribute that best describes the type of crash this vehicle was involved in based on the \u201cFirst Harmful Event\u201d and the precrash circumstances.",
+        "manual_pdf_page": 247
+      }
+    ],
+    "key": [
+      "state",
+      "st_case",
+      "veh_no"
+    ],
+    "description": "One record per motor vehicle in transport; parked/working vehicles are in omitted Parkwork."
+  },
+  "person": {
+    "source_file": "FARS2024NationalCSV/person.csv",
+    "source_sha256": "fe153039be3c1592903f4df1f246eae930101f679ddd33825a4494f3f7c27a32",
+    "rows": 88326,
+    "columns": [
+      {
+        "name": "state",
+        "source_header": "STATE",
+        "type": "BIGINT",
+        "description": "This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 34
+      },
+      {
+        "name": "statename",
+        "source_header": "STATENAME",
+        "type": "VARCHAR",
+        "description": "Source label for STATE. This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 34
+      },
+      {
+        "name": "st_case",
+        "source_header": "ST_CASE",
+        "type": "BIGINT",
+        "description": "This data element is the unique case number assigned to each crash. It appears on each data file and is used to merge information from the data files together.",
+        "manual_pdf_page": 36
+      },
+      {
+        "name": "veh_no",
+        "source_header": "VEH_NO",
+        "type": "BIGINT",
+        "description": "This data element is the consecutive number assigned to each vehicle in the case. This data element appears on each vehicle level data file and is used in conjunction with the ST_CASE data element to merge information from vehicle level data files.",
+        "manual_pdf_page": 37
+      },
+      {
+        "name": "per_no",
+        "source_header": "PER_NO",
+        "type": "BIGINT",
+        "description": "This data element is the consecutive number assigned to each person in the case (i.e., each occupant, pedestrian, or non-motorists involved in the crash). This data element appears on each person level data file and is used in conjunction with the ST_CASE data element (and sometimes the VEH_NO data element) to merge information from person level data files.",
+        "manual_pdf_page": 38
+      },
+      {
+        "name": "ve_forms",
+        "source_header": "VE_FORMS",
+        "type": "BIGINT",
+        "description": "This data element is a count of the number of motor vehicles in-transport involved in the crash. Legally parked vehicles are not included.",
+        "manual_pdf_page": 45
+      },
+      {
+        "name": "county",
+        "source_header": "COUNTY",
+        "type": "BIGINT",
+        "description": "This data element records the location of the unstabilized event with regard to the County. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+        "manual_pdf_page": 49
+      },
+      {
+        "name": "month",
+        "source_header": "MONTH",
+        "type": "BIGINT",
+        "description": "This data element records the month in which the crash occurred.",
+        "manual_pdf_page": 51
+      },
+      {
+        "name": "monthname",
+        "source_header": "MONTHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MONTH. This data element records the month in which the crash occurred.",
+        "manual_pdf_page": 51
+      },
+      {
+        "name": "day",
+        "source_header": "DAY",
+        "type": "BIGINT",
+        "description": "This data element records the day of the month on which the crash occurred.",
+        "manual_pdf_page": 52
+      },
+      {
+        "name": "dayname",
+        "source_header": "DAYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DAY. This data element records the day of the month on which the crash occurred.",
+        "manual_pdf_page": 52
+      },
+      {
+        "name": "hour",
+        "source_header": "HOUR",
+        "type": "BIGINT",
+        "description": "This data element records the hour at which the crash occurred.",
+        "manual_pdf_page": 55
+      },
+      {
+        "name": "hourname",
+        "source_header": "HOURNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HOUR. This data element records the hour at which the crash occurred.",
+        "manual_pdf_page": 55
+      },
+      {
+        "name": "minute",
+        "source_header": "MINUTE",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour at which the crash occurred.",
+        "manual_pdf_page": 56
+      },
+      {
+        "name": "minutename",
+        "source_header": "MINUTENAME",
+        "type": "VARCHAR",
+        "description": "Source label for MINUTE. This data element records the minutes after the hour at which the crash occurred.",
+        "manual_pdf_page": 56
+      },
+      {
+        "name": "harm_ev",
+        "source_header": "HARM_EV",
+        "type": "BIGINT",
+        "description": "This data element describes the first injury- or-damage producing event of the crash.",
+        "manual_pdf_page": 69
+      },
+      {
+        "name": "harm_evname",
+        "source_header": "HARM_EVNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HARM_EV. This data element describes the first injury- or-damage producing event of the crash.",
+        "manual_pdf_page": 69
+      },
+      {
+        "name": "man_coll",
+        "source_header": "MAN_COLL",
+        "type": "BIGINT",
+        "description": "This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+        "manual_pdf_page": 74
+      },
+      {
+        "name": "man_collname",
+        "source_header": "MAN_COLLNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAN_COLL. This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+        "manual_pdf_page": 74
+      },
+      {
+        "name": "sch_bus",
+        "source_header": "SCH_BUS",
+        "type": "BIGINT",
+        "description": "This data element identifies if a school bus, or motor vehicle functioning as a school bus, is related to the crash.",
+        "manual_pdf_page": 86
+      },
+      {
+        "name": "sch_busname",
+        "source_header": "SCH_BUSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for SCH_BUS. This data element identifies if a school bus, or motor vehicle functioning as a school bus, is related to the crash.",
+        "manual_pdf_page": 86
+      },
+      {
+        "name": "rur_urb",
+        "source_header": "RUR_URB",
+        "type": "BIGINT",
+        "description": "This data element identifies the classification of the segment of the trafficway on which the crash occurred based on FHWA-approved adjusted Census boundaries of small urban and urbanized areas.",
+        "manual_pdf_page": 60
+      },
+      {
+        "name": "rur_urbname",
+        "source_header": "RUR_URBNAME",
+        "type": "VARCHAR",
+        "description": "Source label for RUR_URB. This data element identifies the classification of the segment of the trafficway on which the crash occurred based on FHWA-approved adjusted Census boundaries of small urban and urbanized areas.",
+        "manual_pdf_page": 60
+      },
+      {
+        "name": "func_sys",
+        "source_header": "FUNC_SYS",
+        "type": "BIGINT",
+        "description": "This data element identifies the functional classification of the segment of the trafficway on which the crash occurred.",
+        "manual_pdf_page": 61
+      },
+      {
+        "name": "func_sysname",
+        "source_header": "FUNC_SYSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for FUNC_SYS. This data element identifies the functional classification of the segment of the trafficway on which the crash occurred.",
+        "manual_pdf_page": 61
+      },
+      {
+        "name": "mod_year",
+        "source_header": "MOD_YEAR",
+        "type": "BIGINT",
+        "description": "This data element identifies the manufacturer\u2019s model year of this vehicle.",
+        "manual_pdf_page": 124
+      },
+      {
+        "name": "mod_yearname",
+        "source_header": "MOD_YEARNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MOD_YEAR. This data element identifies the manufacturer\u2019s model year of this vehicle.",
+        "manual_pdf_page": 124
+      },
+      {
+        "name": "vpicmake",
+        "source_header": "VPICMAKE",
+        "type": "BIGINT",
+        "description": "This element identifies the Make (manufacturer brand name) of this vehicle as per NHTSA vPIC submissions.",
+        "manual_pdf_page": 125
+      },
+      {
+        "name": "vpicmakename",
+        "source_header": "VPICMAKENAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPICMAKE. This element identifies the Make (manufacturer brand name) of this vehicle as per NHTSA vPIC submissions.",
+        "manual_pdf_page": 125
+      },
+      {
+        "name": "vpicmodel",
+        "source_header": "VPICMODEL",
+        "type": "BIGINT",
+        "description": "This element identifies the Model of this vehicle using NHTSA\u2019s VIN decoder application, vPIC.",
+        "manual_pdf_page": 126
+      },
+      {
+        "name": "vpicmodelname",
+        "source_header": "VPICMODELNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPICMODEL. This element identifies the Model of this vehicle using NHTSA\u2019s VIN decoder application, vPIC.",
+        "manual_pdf_page": 126
+      },
+      {
+        "name": "vpicbodyclass",
+        "source_header": "VPICBODYCLASS",
+        "type": "BIGINT",
+        "description": "This element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc., as defined by the manufacturer.",
+        "manual_pdf_page": 128
+      },
+      {
+        "name": "vpicbodyclassname",
+        "source_header": "VPICBODYCLASSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for VPICBODYCLASS. This element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc., as defined by the manufacturer.",
+        "manual_pdf_page": 128
+      },
+      {
+        "name": "make",
+        "source_header": "MAKE",
+        "type": "BIGINT",
+        "description": "This data element identifies the make (manufacturer) of this vehicle by NCSA historically.",
+        "manual_pdf_page": 131
+      },
+      {
+        "name": "makename",
+        "source_header": "MAKENAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAKE. This data element identifies the make (manufacturer) of this vehicle by NCSA historically.",
+        "manual_pdf_page": 131
+      },
+      {
+        "name": "body_typ",
+        "source_header": "BODY_TYP",
+        "type": "BIGINT",
+        "description": "This data element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc. as defined by NCSA.",
+        "manual_pdf_page": 138
+      },
+      {
+        "name": "body_typname",
+        "source_header": "BODY_TYPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for BODY_TYP. This data element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc. as defined by NCSA.",
+        "manual_pdf_page": 138
+      },
+      {
+        "name": "icfinalbody",
+        "source_header": "ICFINALBODY",
+        "type": "BIGINT",
+        "description": "This element captures the completed/finished body class for an incomplete vehicle. An incomplete vehicle is completed by a final stage manufacturer. The intent of this data element is to capture the body class for incomplete vehicles when they are finished for road use.",
+        "manual_pdf_page": 146
+      },
+      {
+        "name": "icfinalbodyname",
+        "source_header": "ICFINALBODYNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ICFINALBODY. This element captures the completed/finished body class for an incomplete vehicle. An incomplete vehicle is completed by a final stage manufacturer. The intent of this data element is to capture the body class for incomplete vehicles when they are finished for road use.",
+        "manual_pdf_page": 146
+      },
+      {
+        "name": "gvwr_from",
+        "source_header": "GVWR_FROM",
+        "type": "BIGINT",
+        "description": "This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "gvwr_fromname",
+        "source_header": "GVWR_FROMNAME",
+        "type": "VARCHAR",
+        "description": "Source label for GVWR_FROM. This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "gvwr_to",
+        "source_header": "GVWR_TO",
+        "type": "BIGINT",
+        "description": "This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "gvwr_toname",
+        "source_header": "GVWR_TONAME",
+        "type": "VARCHAR",
+        "description": "Source label for GVWR_TO. This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+        "manual_pdf_page": 148
+      },
+      {
+        "name": "tow_veh",
+        "source_header": "TOW_VEH",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle had any attached trailing units or was towing another motor vehicle.",
+        "manual_pdf_page": 149
+      },
+      {
+        "name": "tow_vehname",
+        "source_header": "TOW_VEHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for TOW_VEH. This data element identifies whether this vehicle had any attached trailing units or was towing another motor vehicle.",
+        "manual_pdf_page": 149
+      },
+      {
+        "name": "spec_use",
+        "source_header": "SPEC_USE",
+        "type": "BIGINT",
+        "description": "This data element identifies any special use associated with this vehicle at the time of the crash.",
+        "manual_pdf_page": 167
+      },
+      {
+        "name": "spec_usename",
+        "source_header": "SPEC_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for SPEC_USE. This data element identifies any special use associated with this vehicle at the time of the crash.",
+        "manual_pdf_page": 167
+      },
+      {
+        "name": "emer_use",
+        "source_header": "EMER_USE",
+        "type": "BIGINT",
+        "description": "This data element identifies whether this vehicle was engaged in emergency use. Emergency Motor Vehicle Use indicates operation of any motor vehicle that is legally authorized by a government authority to respond to emergencies while actually engaged in such response. These vehicles can respond with or without the use of emergency warning equipment.",
+        "manual_pdf_page": 169
+      },
+      {
+        "name": "emer_usename",
+        "source_header": "EMER_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for EMER_USE. This data element identifies whether this vehicle was engaged in emergency use. Emergency Motor Vehicle Use indicates operation of any motor vehicle that is legally authorized by a government authority to respond to emergencies while actually engaged in such response. These vehicles can respond with or without the use of emergency warning equipment.",
+        "manual_pdf_page": 169
+      },
+      {
+        "name": "rollover",
+        "source_header": "ROLLOVER",
+        "type": "BIGINT",
+        "description": "This data element identifies this vehicle\u2019s involvement in a rollover or overturn during the crash. Rollover is defined as any vehicle rotation of 90\u00b0 or more about any true longitudinal or lateral axis. Rollover can occur at any time during the crash.",
+        "manual_pdf_page": 172
+      },
+      {
+        "name": "rollovername",
+        "source_header": "ROLLOVERNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ROLLOVER. This data element identifies this vehicle\u2019s involvement in a rollover or overturn during the crash. Rollover is defined as any vehicle rotation of 90\u00b0 or more about any true longitudinal or lateral axis. Rollover can occur at any time during the crash.",
+        "manual_pdf_page": 172
+      },
+      {
+        "name": "impact1",
+        "source_header": "IMPACT1",
+        "type": "BIGINT",
+        "description": "This data element identifies the area on this vehicle that produced the first instance of injury to non-motorists or occupants of this vehicle, or that resulted in the first instance of damage to other property or to this vehicle.",
+        "manual_pdf_page": 174
+      },
+      {
+        "name": "impact1name",
+        "source_header": "IMPACT1NAME",
+        "type": "VARCHAR",
+        "description": "Source label for IMPACT1. This data element identifies the area on this vehicle that produced the first instance of injury to non-motorists or occupants of this vehicle, or that resulted in the first instance of damage to other property or to this vehicle.",
+        "manual_pdf_page": 174
+      },
+      {
+        "name": "fire_exp",
+        "source_header": "FIRE_EXP",
+        "type": "BIGINT",
+        "description": "This data element identifies whether a fire in any way related to the crash occurred in this vehicle.",
+        "manual_pdf_page": 183
+      },
+      {
+        "name": "fire_expname",
+        "source_header": "FIRE_EXPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for FIRE_EXP. This data element identifies whether a fire in any way related to the crash occurred in this vehicle.",
+        "manual_pdf_page": 183
+      },
+      {
+        "name": "mak_mod",
+        "source_header": "MAK_MOD",
+        "type": "BIGINT",
+        "description": "This derived data element represents the five-digit combination of two data elements, the two- digit \u201cNCSA Make\u201d code (MAKE) followed by the three-digit \u201cNCSA Model\u201d code (MODEL).",
+        "manual_pdf_page": 187
+      },
+      {
+        "name": "mak_modname",
+        "source_header": "MAK_MODNAME",
+        "type": "VARCHAR",
+        "description": "Source label for MAK_MOD. This derived data element represents the five-digit combination of two data elements, the two- digit \u201cNCSA Make\u201d code (MAKE) followed by the three-digit \u201cNCSA Model\u201d code (MODEL).",
+        "manual_pdf_page": 187
+      },
+      {
+        "name": "age",
+        "source_header": "AGE",
+        "type": "BIGINT",
+        "description": "This data element identifies the person\u2019s age in years on the date of the crash.",
+        "manual_pdf_page": 301
+      },
+      {
+        "name": "agename",
+        "source_header": "AGENAME",
+        "type": "VARCHAR",
+        "description": "Source label for AGE. This data element identifies the person\u2019s age in years on the date of the crash.",
+        "manual_pdf_page": 301
+      },
+      {
+        "name": "sex",
+        "source_header": "SEX",
+        "type": "BIGINT",
+        "description": "This data element identifies the sex of this person involved in the crash.",
+        "manual_pdf_page": 302
+      },
+      {
+        "name": "sexname",
+        "source_header": "SEXNAME",
+        "type": "VARCHAR",
+        "description": "Source label for SEX. This data element identifies the sex of this person involved in the crash.",
+        "manual_pdf_page": 302
+      },
+      {
+        "name": "per_typ",
+        "source_header": "PER_TYP",
+        "type": "BIGINT",
+        "description": "This data element describes the role of this person or non-motorist at the time they became involved in the crash.",
+        "manual_pdf_page": 303
+      },
+      {
+        "name": "per_typname",
+        "source_header": "PER_TYPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for PER_TYP. This data element describes the role of this person or non-motorist at the time they became involved in the crash.",
+        "manual_pdf_page": 303
+      },
+      {
+        "name": "inj_sev",
+        "source_header": "INJ_SEV",
+        "type": "BIGINT",
+        "description": "This data element describes the severity of the injury to this person in the crash using the KABCO scale.",
+        "manual_pdf_page": 305
+      },
+      {
+        "name": "inj_sevname",
+        "source_header": "INJ_SEVNAME",
+        "type": "VARCHAR",
+        "description": "Source label for INJ_SEV. This data element describes the severity of the injury to this person in the crash using the KABCO scale.",
+        "manual_pdf_page": 305
+      },
+      {
+        "name": "seat_pos",
+        "source_header": "SEAT_POS",
+        "type": "BIGINT",
+        "description": "This data element identifies the location of this person in or on the vehicle.",
+        "manual_pdf_page": 306
+      },
+      {
+        "name": "seat_posname",
+        "source_header": "SEAT_POSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for SEAT_POS. This data element identifies the location of this person in or on the vehicle.",
+        "manual_pdf_page": 306
+      },
+      {
+        "name": "rest_use",
+        "source_header": "REST_USE",
+        "type": "BIGINT",
+        "description": "This data element records the restraint equipment in use by this occupant at the time of the crash.",
+        "manual_pdf_page": 308
+      },
+      {
+        "name": "rest_usename",
+        "source_header": "REST_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for REST_USE. This data element records the restraint equipment in use by this occupant at the time of the crash.",
+        "manual_pdf_page": 308
+      },
+      {
+        "name": "rest_mis",
+        "source_header": "REST_MIS",
+        "type": "BIGINT",
+        "description": "This data element identifies any misuse of the available restraint system used by this person.",
+        "manual_pdf_page": 310
+      },
+      {
+        "name": "rest_misname",
+        "source_header": "REST_MISNAME",
+        "type": "VARCHAR",
+        "description": "Source label for REST_MIS. This data element identifies any misuse of the available restraint system used by this person.",
+        "manual_pdf_page": 310
+      },
+      {
+        "name": "helm_use",
+        "source_header": "HELM_USE",
+        "type": "BIGINT",
+        "description": "This data element records the helmet use by this occupant at the time of the crash.",
+        "manual_pdf_page": 311
+      },
+      {
+        "name": "helm_usename",
+        "source_header": "HELM_USENAME",
+        "type": "VARCHAR",
+        "description": "Source label for HELM_USE. This data element records the helmet use by this occupant at the time of the crash.",
+        "manual_pdf_page": 311
+      },
+      {
+        "name": "helm_mis",
+        "source_header": "HELM_MIS",
+        "type": "BIGINT",
+        "description": "This data element identifies any misuse of the helmet used by this person.",
+        "manual_pdf_page": 312
+      },
+      {
+        "name": "helm_misname",
+        "source_header": "HELM_MISNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HELM_MIS. This data element identifies any misuse of the helmet used by this person.",
+        "manual_pdf_page": 312
+      },
+      {
+        "name": "air_bag",
+        "source_header": "AIR_BAG",
+        "type": "BIGINT",
+        "description": "This data element records air bag availability and deployment for this person as reported in the case material.",
+        "manual_pdf_page": 313
+      },
+      {
+        "name": "air_bagname",
+        "source_header": "AIR_BAGNAME",
+        "type": "VARCHAR",
+        "description": "Source label for AIR_BAG. This data element records air bag availability and deployment for this person as reported in the case material.",
+        "manual_pdf_page": 313
+      },
+      {
+        "name": "ejection",
+        "source_header": "EJECTION",
+        "type": "BIGINT",
+        "description": "This data element describes the ejection status and degree of ejection for this person, excluding motorcycle occupants.",
+        "manual_pdf_page": 315
+      },
+      {
+        "name": "ejectionname",
+        "source_header": "EJECTIONNAME",
+        "type": "VARCHAR",
+        "description": "Source label for EJECTION. This data element describes the ejection status and degree of ejection for this person, excluding motorcycle occupants.",
+        "manual_pdf_page": 315
+      },
+      {
+        "name": "ej_path",
+        "source_header": "EJ_PATH",
+        "type": "BIGINT",
+        "description": "This data element identifies the path by which this person was ejected from the vehicle.",
+        "manual_pdf_page": 316
+      },
+      {
+        "name": "ej_pathname",
+        "source_header": "EJ_PATHNAME",
+        "type": "VARCHAR",
+        "description": "Source label for EJ_PATH. This data element identifies the path by which this person was ejected from the vehicle.",
+        "manual_pdf_page": 316
+      },
+      {
+        "name": "extricat",
+        "source_header": "EXTRICAT",
+        "type": "BIGINT",
+        "description": "This data element identifies if equipment was used to remove this person from the vehicle.",
+        "manual_pdf_page": 317
+      },
+      {
+        "name": "extricatname",
+        "source_header": "EXTRICATNAME",
+        "type": "VARCHAR",
+        "description": "Source label for EXTRICAT. This data element identifies if equipment was used to remove this person from the vehicle.",
+        "manual_pdf_page": 317
+      },
+      {
+        "name": "drinking",
+        "source_header": "DRINKING",
+        "type": "BIGINT",
+        "description": "This data element records whether alcohol was involved for this person and reflects the judgment of law enforcement.",
+        "manual_pdf_page": 318
+      },
+      {
+        "name": "drinkingname",
+        "source_header": "DRINKINGNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DRINKING. This data element records whether alcohol was involved for this person and reflects the judgment of law enforcement.",
+        "manual_pdf_page": 318
+      },
+      {
+        "name": "alc_status",
+        "source_header": "ALC_STATUS",
+        "type": "BIGINT",
+        "description": "This data element identifies whether an alcohol test was given to this person.",
+        "manual_pdf_page": 319
+      },
+      {
+        "name": "alc_statusname",
+        "source_header": "ALC_STATUSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ALC_STATUS. This data element identifies whether an alcohol test was given to this person.",
+        "manual_pdf_page": 319
+      },
+      {
+        "name": "atst_typ",
+        "source_header": "ATST_TYP",
+        "type": "BIGINT",
+        "description": "This data element identifies the type of alcohol test that was given to this person.",
+        "manual_pdf_page": 320
+      },
+      {
+        "name": "atst_typname",
+        "source_header": "ATST_TYPNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ATST_TYP. This data element identifies the type of alcohol test that was given to this person.",
+        "manual_pdf_page": 320
+      },
+      {
+        "name": "alc_res",
+        "source_header": "ALC_RES",
+        "type": "BIGINT",
+        "description": "This data element identifies the alcohol test result for this person.",
+        "manual_pdf_page": 322
+      },
+      {
+        "name": "alc_resname",
+        "source_header": "ALC_RESNAME",
+        "type": "VARCHAR",
+        "description": "Source label for ALC_RES. This data element identifies the alcohol test result for this person.",
+        "manual_pdf_page": 322
+      },
+      {
+        "name": "drugs",
+        "source_header": "DRUGS",
+        "type": "BIGINT",
+        "description": "This data element records whether drugs were involved for this person and reflects the judgment of law enforcement.",
+        "manual_pdf_page": 324
+      },
+      {
+        "name": "drugsname",
+        "source_header": "DRUGSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DRUGS. This data element records whether drugs were involved for this person and reflects the judgment of law enforcement.",
+        "manual_pdf_page": 324
+      },
+      {
+        "name": "dstatus",
+        "source_header": "DSTATUS",
+        "type": "BIGINT",
+        "description": "This data element identifies whether a drug test was given to this person.",
+        "manual_pdf_page": 325
+      },
+      {
+        "name": "dstatusname",
+        "source_header": "DSTATUSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DSTATUS. This data element identifies whether a drug test was given to this person.",
+        "manual_pdf_page": 325
+      },
+      {
+        "name": "hospital",
+        "source_header": "HOSPITAL",
+        "type": "BIGINT",
+        "description": "This data element identifies the mode of transportation to a hospital or medical facility provided for this person.",
+        "manual_pdf_page": 326
+      },
+      {
+        "name": "hospitalname",
+        "source_header": "HOSPITALNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HOSPITAL. This data element identifies the mode of transportation to a hospital or medical facility provided for this person.",
+        "manual_pdf_page": 326
+      },
+      {
+        "name": "doa",
+        "source_header": "DOA",
+        "type": "BIGINT",
+        "description": "This data element identifies if this person died at the scene of the crash or en route to a hospital/medical facility.",
+        "manual_pdf_page": 327
+      },
+      {
+        "name": "doaname",
+        "source_header": "DOANAME",
+        "type": "VARCHAR",
+        "description": "Source label for DOA. This data element identifies if this person died at the scene of the crash or en route to a hospital/medical facility.",
+        "manual_pdf_page": 327
+      },
+      {
+        "name": "death_mo",
+        "source_header": "DEATH_MO",
+        "type": "BIGINT",
+        "description": "This data element records the month of this person\u2019s death.",
+        "manual_pdf_page": 328
+      },
+      {
+        "name": "death_moname",
+        "source_header": "DEATH_MONAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEATH_MO. This data element records the month of this person\u2019s death.",
+        "manual_pdf_page": 328
+      },
+      {
+        "name": "death_da",
+        "source_header": "DEATH_DA",
+        "type": "BIGINT",
+        "description": "This data element records the day of the month of this person\u2019s death.",
+        "manual_pdf_page": 329
+      },
+      {
+        "name": "death_daname",
+        "source_header": "DEATH_DANAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEATH_DA. This data element records the day of the month of this person\u2019s death.",
+        "manual_pdf_page": 329
+      },
+      {
+        "name": "death_yr",
+        "source_header": "DEATH_YR",
+        "type": "BIGINT",
+        "description": "This data element records the year of this person\u2019s death.",
+        "manual_pdf_page": 330
+      },
+      {
+        "name": "death_yrname",
+        "source_header": "DEATH_YRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEATH_YR. This data element records the year of this person\u2019s death.",
+        "manual_pdf_page": 330
+      },
+      {
+        "name": "death_tm",
+        "source_header": "DEATH_TM",
+        "type": "BIGINT",
+        "description": "This data element records the hour and minute of this person\u2019s death utilizing the 24-hour clock format.",
+        "manual_pdf_page": 331
+      },
+      {
+        "name": "death_tmname",
+        "source_header": "DEATH_TMNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEATH_TM. This data element records the hour and minute of this person\u2019s death utilizing the 24-hour clock format.",
+        "manual_pdf_page": 331
+      },
+      {
+        "name": "death_hr",
+        "source_header": "DEATH_HR",
+        "type": "BIGINT",
+        "description": "This data element records the hour of this person\u2019s death utilizing the 24-hour clock format.",
+        "manual_pdf_page": 332
+      },
+      {
+        "name": "death_hrname",
+        "source_header": "DEATH_HRNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEATH_HR. This data element records the hour of this person\u2019s death utilizing the 24-hour clock format.",
+        "manual_pdf_page": 332
+      },
+      {
+        "name": "death_mn",
+        "source_header": "DEATH_MN",
+        "type": "BIGINT",
+        "description": "This data element records the minutes after the hour of this person\u2019s death.",
+        "manual_pdf_page": 333
+      },
+      {
+        "name": "death_mnname",
+        "source_header": "DEATH_MNNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEATH_MN. This data element records the minutes after the hour of this person\u2019s death.",
+        "manual_pdf_page": 333
+      },
+      {
+        "name": "lag_hrs",
+        "source_header": "LAG_HRS",
+        "type": "BIGINT",
+        "description": "This data element records the hours between the time of the crash and this person\u2019s time of death.",
+        "manual_pdf_page": 334
+      },
+      {
+        "name": "lag_hrsname",
+        "source_header": "LAG_HRSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for LAG_HRS. This data element records the hours between the time of the crash and this person\u2019s time of death.",
+        "manual_pdf_page": 334
+      },
+      {
+        "name": "lag_mins",
+        "source_header": "LAG_MINS",
+        "type": "BIGINT",
+        "description": "This data element records the minutes, in addition to hours (\u201cLag Hours\u201d), between the time of the crash and this person\u2019s time of death.",
+        "manual_pdf_page": 335
+      },
+      {
+        "name": "lag_minsname",
+        "source_header": "LAG_MINSNAME",
+        "type": "VARCHAR",
+        "description": "Source label for LAG_MINS. This data element records the minutes, in addition to hours (\u201cLag Hours\u201d), between the time of the crash and this person\u2019s time of death.",
+        "manual_pdf_page": 335
+      },
+      {
+        "name": "str_veh",
+        "source_header": "STR_VEH",
+        "type": "BIGINT",
+        "description": "This data element identifies the \u201cVehicle Number\u201d (VEH_NO) of the motor vehicle in-transport that made contact with this non-motorist.",
+        "manual_pdf_page": 336
+      },
+      {
+        "name": "devtype",
+        "source_header": "DEVTYPE",
+        "type": "BIGINT",
+        "description": "UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "devtypename",
+        "source_header": "DEVTYPENAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEVTYPE. UNRESOLVED",
+        "manual_pdf_page": null
+      },
+      {
+        "name": "devmotor",
+        "source_header": "DEVMOTOR",
+        "type": "BIGINT",
+        "description": "This element describes the motorization of the device operated by the non-motorist.",
+        "manual_pdf_page": 338
+      },
+      {
+        "name": "devmotorname",
+        "source_header": "DEVMOTORNAME",
+        "type": "VARCHAR",
+        "description": "Source label for DEVMOTOR. This element describes the motorization of the device operated by the non-motorist.",
+        "manual_pdf_page": 338
+      },
+      {
+        "name": "location",
+        "source_header": "LOCATION",
+        "type": "BIGINT",
+        "description": "This data element identifies the attribute that best describes the location of this non-motorist with respect to the roadway at the time of the crash.",
+        "manual_pdf_page": 339
+      },
+      {
+        "name": "locationname",
+        "source_header": "LOCATIONNAME",
+        "type": "VARCHAR",
+        "description": "Source label for LOCATION. This data element identifies the attribute that best describes the location of this non-motorist with respect to the roadway at the time of the crash.",
+        "manual_pdf_page": 339
+      },
+      {
+        "name": "work_inj",
+        "source_header": "WORK_INJ",
+        "type": "BIGINT",
+        "description": "This data element records whether the death certificate indicated this person was \"at work\" at the time of the crash.",
+        "manual_pdf_page": 342
+      },
+      {
+        "name": "work_injname",
+        "source_header": "WORK_INJNAME",
+        "type": "VARCHAR",
+        "description": "Source label for WORK_INJ. This data element records whether the death certificate indicated this person was \"at work\" at the time of the crash.",
+        "manual_pdf_page": 342
+      },
+      {
+        "name": "hispanic",
+        "source_header": "HISPANIC",
+        "type": "BIGINT",
+        "description": "This data element records the Hispanic origin of this person from the death certificate.",
+        "manual_pdf_page": 343
+      },
+      {
+        "name": "hispanicname",
+        "source_header": "HISPANICNAME",
+        "type": "VARCHAR",
+        "description": "Source label for HISPANIC. This data element records the Hispanic origin of this person from the death certificate.",
+        "manual_pdf_page": 343
+      }
+    ],
+    "key": [
+      "state",
+      "st_case",
+      "veh_no",
+      "per_no"
+    ],
+    "description": "One record per involved person, including nonoccupants and occupants of vehicles not in transport."
+  }
+}

@@ -1,0 +1,29 @@
+Audit of the supplied FARS 2024 ARF materials, text review only.
+
+**Verdict: no local blocker remains for the destination-approval decision.** Two code-side corrections are recommended before publication, and three documentation items should be tidied. None affects the artifact's data content. Everything below distinguishes what I cross-checked in the supplied text from what the supplied evidence files claim.
+
+## Findings
+
+| Severity | Location | Issue | Minimal correction |
+|---|---|---|---|
+| Medium | `fars.py:102` | The per-crash reconciliation uses `<>` against aggregates from LEFT JOINs. A crash with no vehicle rows or no person rows yields NULL aggregates, and `NULL <> fatals` is not counted as a violation. The "each crash reconciles" claim in `CODEX-REVIEW.md:7` and `README.md:20` is therefore stronger than the check enforces. For this data the person side is implied anyway (sum of fatals equals the count of fatal person records, and every populated crash reconciles exactly), but the vehicle side is not established. | Replace each `<>` in that query with `IS DISTINCT FROM`, and add a zero check for accidents with no matching vehicle row. Add a fixture that deletes all vehicle rows and expects the reconciliation to fail. |
+| Low | `pyproject.toml:5` | `requires-python = ">=3.10"` is inaccurate. `hashlib.file_digest` used at `fars.py:13` and `profile_fars.py:6` exists only from Python 3.11. The evidence environment is 3.12, so nothing failed, but a 3.10 reproduction would. | Change to `">=3.11"`. |
+| Low | `README.md:51` | States the 9,020 numeric NULLs sit on the 9,020 nonoccupant records. The audit verifies the two counts separately, not that they are the same rows. Plausible, but unchecked. | Add a zero check in `audit_release.py` that `(mod_year IS NULL) <> (veh_no = 0)` has no rows, or soften the sentence. |
+| Low | `README.md:98` | "DOT HS 813 794, April 2026" for the manual date is not evidenced in supplied text. The pinned PDF has no Last-Modified or ETag, and the extracted pages give only the 1975-2024 title. | Cite the manual by number and SHA-256 only, or add the date's source. |
+| Low | `HF-README.md:12,23,29`; `LICENSE.md:5` | Public-facing text has dropped spaces ("April 1,2026", "covers50 states", "size:26,488,832", "veh_no=0;426", "Alcohol995–999", "HTTP403"). | Insert the spaces. |
+| Note | `HF-README.md:33`, `registry-entry.proposed.json:10-13` | Links point at the proposed GitHub and HF names that do not yet exist. Correct as a draft, but the card must not go live before those destinations are approved and populated, including `DICTIONARY.md` in the HF repo. | None now. |
+
+## What I confirmed from the supplied text
+
+- **Types and missingness.** Column typing, the all-VARCHAR CSV read with blank-to-NULL only for numeric columns, and the per-column pinned blank counts are internally consistent. Blank counts in `schema.json` match `build-report.json` null counts and the 10.2 percent dictionary figures. The `typed` parser rejects dots, NaN, fractional integers and over-precision, with fixtures for each.
+- **Keys and relationships.** Keys match the manual's unique identifiers. Person type 3 is excluded from the in-transport vehicle join and checked for non-collision with transport vehicle numbers. Nonoccupants and parked-vehicle occupants are retained by LEFT JOINs. The crash view partitions people correctly given the vehicle-number semantics check at `fars.py:92`.
+- **Field handling.** Age, coordinate, injury and BAC code domains match the manual pages supplied, including the 940 top-code flag, 995-999 nonmeasurement codes, and the 2018-later coordinate codes. The exact-decimal BAC scaling is fixture-tested.
+- **Counts.** Column totals (80+201+126+6=413), row totals (190,798), record totals (180,634), 30 label fields, six example queries and 39 fixtures (17+19+3) all reconcile across README, DICTIONARY, build report, test output and the HF card. Peak RSS and elapsed time in the Codex review match `evidence/release-build/resources.json`.
+- **Provenance and license.** Release notes confirm the first 2024 release on 2026-04-01. The license basis is NHTSA's own ownership statement, honestly recorded with the 403 on direct fetch. Archive and member hashes are consistent between `source-lock.json` and `sources-2024.json`, and build input hashes match between the build report, the test input manifest and the snapshot.
+- **Resource bounds and fresh checkout.** Output and download paths are confined to the repository, partials are never accepted, and the supervisor limits match the README. The fresh-checkout directory fix has a fixture.
+
+## Scope limits
+
+I executed nothing and recomputed no hashes. I did not inspect the artifact bytes, the `datapond_build` helper source, the manual PDF beyond the extracted pages, or the alcohol README. Statements about test passes, cell-level equality and consumer results rest on the supplied evidence files, which I checked for internal consistency only. The medium finding is a validation gap, not an observed data defect.
+
+If the reconciliation fix is applied, `fars.py` changes, so the build input hashes in `build-report.json` and `sources-2024.json` will no longer match. Either rebuild and re-audit (the evidence shows about 40 seconds) or defer the fix to the next cycle with a note. That choice, and the pending public destination approval, remain with Ian.

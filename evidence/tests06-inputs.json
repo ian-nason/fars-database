@@ -1,0 +1,13 @@
+{
+  "timing": "Captured immediately before guarded tests06.",
+  "files": {
+    "fars.py": "8e984863de78f1e6742c5608a9364c8cfc37ca683b8657835f7a9a67a0dc5ebd",
+    "test_fars.py": "6962d93522da014fe1f66962910115a656bf004a93bfb17703c6848d3f246258",
+    "test_guard.py": "8909004d21092cec0d99863c734d34985cb2555ff82d054135b7bdfa74bd3370",
+    "run_guarded.py": "f27a2795c873ab19f6154656f29c049a9c733b323cbf1ce7cd74167149148493",
+    "schema.json": "ed97194dddeee3ada32141287e1ac6623c92e91a022ec36cd6529e4a756c733f",
+    "source-lock.json": "b8f40287e1a71bd481efe5dbbfe6079de1636f29195dd1dd7c8a5ce718b8bef2",
+    "audit_release.py": "c9f115e4f6a2ff39567b18a71644f2f952a3cfc973d757f335c21e7c312234a2",
+    "pyproject.toml": "1d16ea42b6dff9ea9594ad5019306185c496df77231a98c7669c0d844b1ec8bb"
+  }
+}

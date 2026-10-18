@@ -1,0 +1,70 @@
+accident 36297
+vehicle 56011
+person 88326
+  accident: 80 columns
+  vehicle: 201 columns
+  person: 126 columns
+  code_labels: 6 columns
+  Exported releases/2024-release-final/DICTIONARY.md
+{
+  "status": "validated_local_not_published",
+  "release": "2024 Annual Report File (first annual release, 2026-04-01); national 50 states and DC, not final file",
+  "built_at_utc": "2026-10-18T15:23:18.585715+00:00",
+  "duckdb": "1.5.5",
+  "database_sha256": "3f7f79d071b7179d7bb68f7c6d17e8cd53c7e4b59941bc85ae6242517fe78bbc",
+  "database_bytes": 26488832,
+  "rows": 190798,
+  "data_tables": 4,
+  "dictionary_columns": 413,
+  "table_counts": {
+    "accident": 36297,
+    "vehicle": 56011,
+    "person": 88326,
+    "code_labels": 10164
+  },
+  "label_fields": {
+    "accident": [
+      "state",
+      "county",
+      "city",
+      "month",
+      "day_week",
+      "rur_urb",
+      "func_sys",
+      "lgt_cond",
+      "weather",
+      "man_coll",
+      "harm_ev",
+      "rel_road"
+    ],
+    "vehicle": [
+      "make",
+      "mak_mod",
+      "body_typ",
+      "hit_run",
+      "dr_pres",
+      "dr_drink",
+      "speedrel",
+      "rollover"
+    ],
+    "person": [
+      "per_typ",
+      "inj_sev",
+      "sex",
+      "age",
+      "alc_status",
+      "atst_typ",
+      "alc_res",
+      "drinking",
+      "drugs",
+      "dstatus"
+    ]
+  },
+  "all_cells_reverified_after_read_only_reopen": true,
+  "build_input_sha256": {
+    "fars.py": "5ca11f79bf81b0bc79fc78f5fb01ba521320e57636bdfbe3c0adcd2cf09268fb",
+    "schema.json": "ed97194dddeee3ada32141287e1ac6623c92e91a022ec36cd6529e4a756c733f",
+    "source-lock.json": "b8f40287e1a71bd481efe5dbbfe6079de1636f29195dd1dd7c8a5ce718b8bef2",
+    "pyproject.toml": "b65ce1a7e89bcb91c04afed2aca26ba6c8a00560739c10c91c354babb7a8a98c"
+  }
+}

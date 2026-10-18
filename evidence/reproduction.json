@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "release_artifact_sha256": "2bc31f9e9fdd973ddf728cc4e1e0811a7bacf9450dd80c7671c36fa6a1fc7442",
+  "earlier_candidate_sha256": "3f7f79d071b7179d7bb68f7c6d17e8cd53c7e4b59941bc85ae6242517fe78bbc",
+  "all_typed_rows_null_counts_samples_and_dictionary_bytes_identical": true,
+  "all_previous_validation_results_unchanged": true,
+  "additional_checks": [
+    "crash missing vehicle records",
+    "crash missing person records"
+  ],
+  "changes": "NULL-safe reconciliation and explicit missing-child checks; Python minimum 3.11. No data transformations changed.",
+  "physical_bytes": "Physical DuckDB byte identity is not promised."
+}

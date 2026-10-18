@@ -1,0 +1,159 @@
+{
+  "status": "passed",
+  "artifact_sha256": "d4afd1d07bd1b56423066ab7f7d3d591206713dcaac5b4a124a3a1a9390aeac8",
+  "checks": {
+    "consistent copied crash fields in vehicle": 0,
+    "consistent copied crash fields in person": 0,
+    "all age NULL mappings": 0,
+    "all BAC mappings": 0,
+    "all coordinate NULL mappings": 0,
+    "ambiguous codes excluded from unique view": 0,
+    "unique lookup key": 0
+  },
+  "schema_metadata_dictionary_verified": true,
+  "diagnostics": {
+    "national_totals": [
+      36297,
+      39254,
+      56011,
+      88326
+    ],
+    "city_label_conflicts": [
+      [
+        "accident",
+        "city",
+        "state",
+        4,
+        428,
+        [
+          "SEDONA",
+          "Sedona"
+        ]
+      ],
+      [
+        "accident",
+        "city",
+        "state",
+        13,
+        2190,
+        [
+          "FORSYTH",
+          "STONECREST"
+        ]
+      ],
+      [
+        "accident",
+        "city",
+        "state",
+        36,
+        4170,
+        [
+          "MIDDLE VILLAGE",
+          "NEW YORK",
+          "NEW YORK CITY"
+        ]
+      ],
+      [
+        "accident",
+        "city",
+        "state",
+        42,
+        3950,
+        [
+          "JEFFERSON",
+          "JEFFERSON HILLS"
+        ]
+      ]
+    ],
+    "numeric_missing_person_fields": [
+      [
+        "body_typ",
+        10.2
+      ],
+      [
+        "emer_use",
+        10.2
+      ],
+      [
+        "fire_exp",
+        10.2
+      ],
+      [
+        "gvwr_from",
+        10.2
+      ],
+      [
+        "gvwr_to",
+        10.2
+      ],
+      [
+        "icfinalbody",
+        10.2
+      ],
+      [
+        "impact1",
+        10.2
+      ],
+      [
+        "mak_mod",
+        10.2
+      ],
+      [
+        "make",
+        10.2
+      ],
+      [
+        "mod_year",
+        10.2
+      ],
+      [
+        "rollover",
+        10.2
+      ],
+      [
+        "spec_use",
+        10.2
+      ],
+      [
+        "tow_veh",
+        10.2
+      ],
+      [
+        "vpicbodyclass",
+        10.2
+      ],
+      [
+        "vpicmake",
+        10.2
+      ],
+      [
+        "vpicmodel",
+        10.2
+      ]
+    ],
+    "alcohol_test_categories": [
+      [
+        0,
+        "Test Not Given",
+        44074
+      ],
+      [
+        2,
+        "Test Given",
+        27510
+      ],
+      [
+        8,
+        "Not Reported",
+        16407
+      ],
+      [
+        9,
+        "Reported as Unknown if Tested",
+        335
+      ]
+    ],
+    "source_labels_compared": 10164,
+    "coordinate_missing": 170
+  }
+}

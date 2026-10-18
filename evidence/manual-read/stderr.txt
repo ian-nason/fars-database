@@ -1,0 +1,3 @@
+invalid pdf header: b'-----'
+incorrect startxref pointer(3)
+parsing for Object Streams

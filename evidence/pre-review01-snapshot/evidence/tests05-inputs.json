@@ -1,0 +1,12 @@
+{
+  "timing": "Captured after passing run; files unchanged since staging before that run.",
+  "files": {
+    "fars.py": "5ca11f79bf81b0bc79fc78f5fb01ba521320e57636bdfbe3c0adcd2cf09268fb",
+    "test_fars.py": "0a8bf4fe63a6f276415811ff0d4fe5be680ae9980760350094d0546829e696d1",
+    "test_guard.py": "8909004d21092cec0d99863c734d34985cb2555ff82d054135b7bdfa74bd3370",
+    "run_guarded.py": "f27a2795c873ab19f6154656f29c049a9c733b323cbf1ce7cd74167149148493",
+    "schema.json": "ed97194dddeee3ada32141287e1ac6623c92e91a022ec36cd6529e4a756c733f",
+    "source-lock.json": "b8f40287e1a71bd481efe5dbbfe6079de1636f29195dd1dd7c8a5ce718b8bef2",
+    "audit_release.py": "64fb24d59a7cc25b90c6c553417f5e79293cf2f08fb98ebfeeecddde781f4690"
+  }
+}

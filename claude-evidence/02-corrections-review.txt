@@ -1,0 +1,19 @@
+All five earlier findings are resolved in the supplied text. No local blocker remains before destination approval.
+
+**Reconciliation against AUDIT-DISPOSITION.md**
+
+- **Medium, NULL-blind reconciliation.** Resolved. Every comparison at `fars.py:103` now uses IS DISTINCT FROM, and `fars.py:91` adds NOT EXISTS checks for accidents lacking vehicle or person rows. The three new fixtures (no vehicles, no people, NULL vehicle fatality aggregate) are present in test_fars.py and pass in tests06. The real build reports zero violations for both new checks.
+- **Low, Python minimum.** Resolved. `pyproject.toml:5` now requires 3.11 or later. The changed hash is carried consistently through build-report.json, tests06-inputs.json and sources-2024.json.
+- **Low, NULL rows not tied to nonoccupants.** Resolved. The new row-level check in `audit_release.py:5-12` covers all 16 numeric fields with source blanks, release-audit.json shows zero for each, and two fixtures cover correct alignment and the equal-count-wrong-rows case.
+- **Low, unevidenced manual date.** Resolved. README line 98 now cites the manual number and checksum only.
+- **Low, public-text spacing.** Resolved in the HF card and LICENSE at the lines I flagged.
+
+**Cross-checks on the corrected evidence.** Fixture count (2+17+22+3) matches the 44 in tests06 and all documents. The 407.7 MiB peak and 37.10 second build match release-build02. Artifact hash, examples, release audit, consumer report, reproduction record, README query path and HF card all reference the new artifact. Reproduction states typed fingerprints and dictionary bytes are unchanged, and the three per-table fingerprints in build-report.json are identical to the prior build.
+
+**Residual notes, none blocking.**
+
+- CODEX-REVIEW.md still has dropped spaces at lines 7, 11 and 13. It is internal, and it was not in my original findings.
+- README line 114 does not list the new missing-child and NULL-aggregate fixtures or the nonoccupant row-alignment check. Incomplete rather than inaccurate.
+- The disposition says original reviewed files are retained in a pre-review snapshot. That directory was not supplied, so I cannot confirm it.
+
+**Scope limits.** Text review only. I executed nothing, recomputed no hashes, and did not inspect the artifact, the helper library, or the full manual PDF. The destination approval, public upload, and immutable public-host checks remain external gates as the disposition states.

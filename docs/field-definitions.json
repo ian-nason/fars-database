@@ -1,0 +1,730 @@
+{
+  "STATE": {
+    "description": "This data element identifies the State in which the crash occurred. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+    "manual_pdf_page": 34
+  },
+  "ST_CASE": {
+    "description": "This data element is the unique case number assigned to each crash. It appears on each data file and is used to merge information from the data files together.",
+    "manual_pdf_page": 36
+  },
+  "VEH_NO": {
+    "description": "This data element is the consecutive number assigned to each vehicle in the case. This data element appears on each vehicle level data file and is used in conjunction with the ST_CASE data element to merge information from vehicle level data files.",
+    "manual_pdf_page": 37
+  },
+  "PER_NO": {
+    "description": "This data element is the consecutive number assigned to each person in the case (i.e., each occupant, pedestrian, or non-motorists involved in the crash). This data element appears on each person level data file and is used in conjunction with the ST_CASE data element (and sometimes the VEH_NO data element) to merge information from person level data files.",
+    "manual_pdf_page": 38
+  },
+  "PEDS": {
+    "description": "This data element is the number of Person Forms (Not a Motor Vehicle Occupant) that are applicable to this case (i.e., non-occupants).",
+    "manual_pdf_page": 42
+  },
+  "PERNOTMVIT": {
+    "description": "This data element is a count of the number of non-motorists in the crash. A non-motorist is defined as a pedestrian, a cyclist, an occupant of a motor vehicle not in-transport, a person riding a horse, an occupant of an animal drawn conveyance, person associated with non-motorist conveyance (e.g., baby carriage, skateboard, wheelchair), or an other non-motorist (e.g., person outside a trafficway, person in a house).",
+    "manual_pdf_page": 43
+  },
+  "VE_TOTAL": {
+    "description": "This data element is the number of contact motor vehicles that the officer reported on the police crash report as a unit involved in the crash.",
+    "manual_pdf_page": 44
+  },
+  "VE_FORMS": {
+    "description": "This data element is a count of the number of motor vehicles in-transport involved in the crash. Legally parked vehicles are not included.",
+    "manual_pdf_page": 45
+  },
+  "PVH_INVL": {
+    "description": "This data element is a count of the number of parked and working vehicles involved in the crash.",
+    "manual_pdf_page": 46
+  },
+  "PERSONS": {
+    "description": "This data element is a count of the number of Person Level (Motor Vehicle Occupant) Forms that are applicable to this case (i.e., occupants).",
+    "manual_pdf_page": 47
+  },
+  "PERMVIT": {
+    "description": "This data element is a count of the number of motorists in the crash. A motorist is a driver, passenger, or unknown occupant type of a motor vehicle in-transport.",
+    "manual_pdf_page": 48
+  },
+  "COUNTY": {
+    "description": "This data element records the location of the unstabilized event with regard to the County. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+    "manual_pdf_page": 49
+  },
+  "CITY": {
+    "description": "This data element records the location of the unstabilized event with regard to the City. The codes are from the General Services Administration\u2019s (GSA) publication of worldwide Geographic Location Codes (GLC).",
+    "manual_pdf_page": 50
+  },
+  "MONTH": {
+    "description": "This data element records the month in which the crash occurred.",
+    "manual_pdf_page": 51
+  },
+  "DAY": {
+    "description": "This data element records the day of the month on which the crash occurred.",
+    "manual_pdf_page": 52
+  },
+  "DAY_WEEK": {
+    "description": "This data element records the day of the week on which the crash occurred.",
+    "manual_pdf_page": 53
+  },
+  "YEAR": {
+    "description": "This data element records the year in which the crash occurred.",
+    "manual_pdf_page": 54
+  },
+  "HOUR": {
+    "description": "This data element records the hour at which the crash occurred.",
+    "manual_pdf_page": 55
+  },
+  "MINUTE": {
+    "description": "This data element records the minutes after the hour at which the crash occurred.",
+    "manual_pdf_page": 56
+  },
+  "TWAY_ID": {
+    "description": "This data element records the trafficway on which the crash occurred.",
+    "manual_pdf_page": 57
+  },
+  "TWAY_ID2": {
+    "description": "This data element records the trafficway on which the crash occurred.",
+    "manual_pdf_page": 57
+  },
+  "ROUTE": {
+    "description": "This data element identifies the route signing designation of the trafficway on which the crash occurred.",
+    "manual_pdf_page": 58
+  },
+  "RUR_URB": {
+    "description": "This data element identifies the classification of the segment of the trafficway on which the crash occurred based on FHWA-approved adjusted Census boundaries of small urban and urbanized areas.",
+    "manual_pdf_page": 60
+  },
+  "FUNC_SYS": {
+    "description": "This data element identifies the functional classification of the segment of the trafficway on which the crash occurred.",
+    "manual_pdf_page": 61
+  },
+  "RD_OWNER": {
+    "description": "This data element identifies the entity that has legal ownership of the segment of the trafficway on which the crash occurred. The entity that maintains the trafficway may differ from the owner in some locations.",
+    "manual_pdf_page": 62
+  },
+  "NHS": {
+    "description": "This data element identifies whether this crash occurred on a trafficway that is part of the National Highway System.",
+    "manual_pdf_page": 64
+  },
+  "SP_JUR": {
+    "description": "This data element identifies if the location on the trafficway where the crash occurred qualifies as a Special Jurisdiction even though it may be patrolled by State, county or local police (e.g., all State highways running through Indian Reservations are under the jurisdiction of the Indian Reservation).",
+    "manual_pdf_page": 65
+  },
+  "MILEPT": {
+    "description": "This data element records the milepoint nearest to the location where the crash occurred.",
+    "manual_pdf_page": 66
+  },
+  "LATITUDE": {
+    "description": "This element identifies the location of the crash using Global Position coordinates. This is the position of latitude.",
+    "manual_pdf_page": 67
+  },
+  "LONGITUD": {
+    "description": "This element identifies the location of the crash using Global Position coordinates. This is the position of longitude.",
+    "manual_pdf_page": 68
+  },
+  "HARM_EV": {
+    "description": "This data element describes the first injury- or-damage producing event of the crash.",
+    "manual_pdf_page": 69
+  },
+  "MAN_COLL": {
+    "description": "This data element describes the orientation of two motor vehicles in-transport when they are involved in the \u201cFirst Harmful Event\u201d of a collision crash. If the \u201cFirst Harmful Event\u201d is not a collision between two motor vehicles in-transport, it is classified as such.",
+    "manual_pdf_page": 74
+  },
+  "RELJCT1": {
+    "description": "This data element identifies the crash\u2019s location with respect to presence in an interchange area. The coding of this data element is done in two sub-fields (see also C20B) and is based on the location of the \u201cFirst Harmful Event\u201d of the crash.",
+    "manual_pdf_page": 76
+  },
+  "RELJCT2": {
+    "description": "This data element identifies the crash\u2019s location with respect to presence in or proximity to components typically in junction or interchange areas. The coding of this data element is done in two sub-fields (see also C20A) and is based on the location of the \u201cFirst Harmful Event\u201d of the crash.",
+    "manual_pdf_page": 77
+  },
+  "TYP_INT": {
+    "description": "This data element identifies and allows separation of various intersection types.",
+    "manual_pdf_page": 79
+  },
+  "REL_ROAD": {
+    "description": "This data element identifies the location of the crash as it relates to its position within or outside the trafficway based on the \u201cFirst Harmful Event.\u201d",
+    "manual_pdf_page": 80
+  },
+  "WRK_ZONE": {
+    "description": "This data element identifies a motor vehicle traffic crash in which the first harmful event occurs within the boundaries of a work zone or on an approach to or exit from a work zone, resulting from an activity, behavior, or control related to the movement of the traffic units through the work zone.",
+    "manual_pdf_page": 82
+  },
+  "LGT_COND": {
+    "description": "This data element records the type/level of light that existed at the time of the crash as indicated in the case material.",
+    "manual_pdf_page": 83
+  },
+  "WEATHER": {
+    "description": "This derived data element records the prevailing atmospheric conditions that existed at the time of the crash as indicated in the case material.",
+    "manual_pdf_page": 84
+  },
+  "SCH_BUS": {
+    "description": "This data element identifies if a school bus, or motor vehicle functioning as a school bus, is related to the crash.",
+    "manual_pdf_page": 86
+  },
+  "RAIL": {
+    "description": "This data element identifies if the crash occurred in or near a rail grade crossing.",
+    "manual_pdf_page": 87
+  },
+  "NOT_HOUR": {
+    "description": "This data element records the hour that emergency medical service was notified.",
+    "manual_pdf_page": 88
+  },
+  "NOT_MIN": {
+    "description": "This data element records the minutes after the hour that emergency medical service was notified.",
+    "manual_pdf_page": 89
+  },
+  "ARR_HOUR": {
+    "description": "This data element records the hour that emergency medical service arrived on the crash scene.",
+    "manual_pdf_page": 90
+  },
+  "ARR_MIN": {
+    "description": "This data element records the minutes after the hour that emergency medical service arrived on the crash scene.",
+    "manual_pdf_page": 91
+  },
+  "HOSP_HR": {
+    "description": "This data element records the hour that emergency medical service arrived at the treatment facility to which it was transporting victims of the crash.",
+    "manual_pdf_page": 92
+  },
+  "HOSP_MN": {
+    "description": "This data element records the minutes after the hour that emergency medical service arrived at the treatment facility to which it was transporting victims of the crash.",
+    "manual_pdf_page": 93
+  },
+  "FATALS": {
+    "description": "This data element records the number of fatally injured people in the crash.",
+    "manual_pdf_page": 94
+  },
+  "HIT_RUN": {
+    "description": "This data element identifies whether this vehicle was a contact vehicle in the crash that did not stop to render aid (this can include drivers who flee the scene on foot). Hit-and-run is coded when a motor vehicle in-transport or its driver departs from the scene; vehicles not in-transport are excluded. It does not matter whether the hit-and-run vehicle was striking or struck.",
+    "manual_pdf_page": 97
+  },
+  "NUMOCCS": {
+    "description": "This data element is a count of the number of occupants in this vehicle.",
+    "manual_pdf_page": 115
+  },
+  "UNITTYPE": {
+    "description": "This data element identifies the type of unit that applies to this motor vehicle at the time it became an involved vehicle in the crash and was reported as a unit on the police crash report.",
+    "manual_pdf_page": 116
+  },
+  "REG_STAT": {
+    "description": "This element identifies the State in which this vehicle was registered.",
+    "manual_pdf_page": 119
+  },
+  "OWNER": {
+    "description": "This data element identifies the type of registered owner of the vehicle.",
+    "manual_pdf_page": 122
+  },
+  "VIN": {
+    "description": "This data element records the vehicle identification number (VIN) of this vehicle assigned by the vehicle manufacturer. The VIN contains information on the vehicle such as: manufacturer, model year, model, body type, restraint type, etc.",
+    "manual_pdf_page": 123
+  },
+  "MOD_YEAR": {
+    "description": "This data element identifies the manufacturer\u2019s model year of this vehicle.",
+    "manual_pdf_page": 124
+  },
+  "VPICMAKE": {
+    "description": "This element identifies the Make (manufacturer brand name) of this vehicle as per NHTSA vPIC submissions.",
+    "manual_pdf_page": 125
+  },
+  "VPICMODEL": {
+    "description": "This element identifies the Model of this vehicle using NHTSA\u2019s VIN decoder application, vPIC.",
+    "manual_pdf_page": 126
+  },
+  "VPICBODYCLASS": {
+    "description": "This element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc., as defined by the manufacturer.",
+    "manual_pdf_page": 128
+  },
+  "MAKE": {
+    "description": "This data element identifies the make (manufacturer) of this vehicle by NCSA historically.",
+    "manual_pdf_page": 131
+  },
+  "MODEL": {
+    "description": "This data element identifies the NCSA model of this vehicle within a given NCSA make.",
+    "manual_pdf_page": 137
+  },
+  "BODY_TYP": {
+    "description": "This data element identifies a classification of this vehicle based on its general body configuration, size, shape, doors, etc. as defined by NCSA.",
+    "manual_pdf_page": 138
+  },
+  "ICFINALBODY": {
+    "description": "This element captures the completed/finished body class for an incomplete vehicle. An incomplete vehicle is completed by a final stage manufacturer. The intent of this data element is to capture the body class for incomplete vehicles when they are finished for road use.",
+    "manual_pdf_page": 146
+  },
+  "GVWR_FROM": {
+    "description": "This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+    "manual_pdf_page": 148
+  },
+  "GVWR_TO": {
+    "description": "This element identifies the range of gross vehicle weight rating of the power unit as identified by the manufacturer through the vehicle\u2019s VIN submission. GVWR_FROM defines the lowest value and GVWR_TO defines the highest value for the range of the GVWR specified by the manufacturer as the recommended loaded weight for a vehicle.",
+    "manual_pdf_page": 148
+  },
+  "TOW_VEH": {
+    "description": "This data element identifies whether this vehicle had any attached trailing units or was towing another motor vehicle.",
+    "manual_pdf_page": 149
+  },
+  "TRLR1VIN": {
+    "description": "This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+    "manual_pdf_page": 151
+  },
+  "TRLR2VIN": {
+    "description": "This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+    "manual_pdf_page": 151
+  },
+  "TRLR3VIN": {
+    "description": "This data element records the vehicle identification number (VIN) of any trailing units of a combination vehicle.",
+    "manual_pdf_page": 151
+  },
+  "TRLR1GVWR": {
+    "description": "This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+    "manual_pdf_page": 152
+  },
+  "TRLR2GVWR": {
+    "description": "This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+    "manual_pdf_page": 152
+  },
+  "TRLR3GVWR": {
+    "description": "This element identifies the gross vehicle weight rating of any trailing units as identified by the manufacturer in the vehicle\u2019s VIN.",
+    "manual_pdf_page": 152
+  },
+  "J_KNIFE": {
+    "description": "This data element identifies whether this vehicle experienced a jackknife anytime during the unstabilized situation.",
+    "manual_pdf_page": 153
+  },
+  "MCARR_ID": {
+    "description": "This data element records the issuing authority and motor carrier identification number (if applicable) to this vehicle.",
+    "manual_pdf_page": 154
+  },
+  "MCARR_I1": {
+    "description": "This data element records the issuing authority if applicable to this vehicle.",
+    "manual_pdf_page": 155
+  },
+  "MCARR_I2": {
+    "description": "This data element records the motor carrier identification number if applicable to this vehicle.",
+    "manual_pdf_page": 156
+  },
+  "V_CONFIG": {
+    "description": "This data element describes the general configuration of this vehicle if applicable.",
+    "manual_pdf_page": 157
+  },
+  "CARGO_BT": {
+    "description": "This data element describes the primary cargo carrying capability of this vehicle if applicable.",
+    "manual_pdf_page": 159
+  },
+  "HAZ_INV": {
+    "description": "This data element identifies whether this vehicle was carrying hazardous materials.",
+    "manual_pdf_page": 161
+  },
+  "HAZ_PLAC": {
+    "description": "This data element identifies the presence of hazardous materials for this vehicle and whether this vehicle displayed a hazardous materials placard.",
+    "manual_pdf_page": 162
+  },
+  "HAZ_ID": {
+    "description": "This data element identifies the four-digit hazardous materials identification number for this vehicle.",
+    "manual_pdf_page": 163
+  },
+  "HAZ_CNO": {
+    "description": "This data element identifies the single-digit hazardous materials class number for this vehicle.",
+    "manual_pdf_page": 164
+  },
+  "HAZ_REL": {
+    "description": "This data element identifies whether any hazardous cargo was released from the cargo tank or compartment of this vehicle.",
+    "manual_pdf_page": 165
+  },
+  "BUS_USE": {
+    "description": "This data element describes the common type of bus service this vehicle was being used as at the time of the crash or the primary use for the bus if not in service at the time of the crash.",
+    "manual_pdf_page": 166
+  },
+  "SPEC_USE": {
+    "description": "This data element identifies any special use associated with this vehicle at the time of the crash.",
+    "manual_pdf_page": 167
+  },
+  "EMER_USE": {
+    "description": "This data element identifies whether this vehicle was engaged in emergency use. Emergency Motor Vehicle Use indicates operation of any motor vehicle that is legally authorized by a government authority to respond to emergencies while actually engaged in such response. These vehicles can respond with or without the use of emergency warning equipment.",
+    "manual_pdf_page": 169
+  },
+  "TRAV_SP": {
+    "description": "This data element records the speed the vehicle was traveling prior to the occurrence of the crash as reported by the investigating officer.",
+    "manual_pdf_page": 170
+  },
+  "UNDEROVERRIDE": {
+    "description": "This element indicates whether this vehicle experienced an underride or override with another vehicle during the crash.",
+    "manual_pdf_page": 171
+  },
+  "ROLLOVER": {
+    "description": "This data element identifies this vehicle\u2019s involvement in a rollover or overturn during the crash. Rollover is defined as any vehicle rotation of 90\u00b0 or more about any true longitudinal or lateral axis. Rollover can occur at any time during the crash.",
+    "manual_pdf_page": 172
+  },
+  "ROLINLOC": {
+    "description": "This data element identifies the location of the trip point or start of this vehicle\u2019s roll.",
+    "manual_pdf_page": 173
+  },
+  "IMPACT1": {
+    "description": "This data element identifies the area on this vehicle that produced the first instance of injury to non-motorists or occupants of this vehicle, or that resulted in the first instance of damage to other property or to this vehicle.",
+    "manual_pdf_page": 174
+  },
+  "DEFORMED": {
+    "description": "This data element records the amount of damage sustained by this vehicle as indicated in the case material based on an operational damage scale.",
+    "manual_pdf_page": 176
+  },
+  "TOWED": {
+    "description": "This data element identifies whether the vehicle was towed from the scene of the crash.",
+    "manual_pdf_page": 177
+  },
+  "M_HARM": {
+    "description": "This data element describes the event that resulted in the most severe injury or, if no injury, the greatest property damage involving this vehicle.",
+    "manual_pdf_page": 178
+  },
+  "FIRE_EXP": {
+    "description": "This data element identifies whether a fire in any way related to the crash occurred in this vehicle.",
+    "manual_pdf_page": 183
+  },
+  "MAK_MOD": {
+    "description": "This derived data element represents the five-digit combination of two data elements, the two- digit \u201cNCSA Make\u201d code (MAKE) followed by the three-digit \u201cNCSA Model\u201d code (MODEL).",
+    "manual_pdf_page": 187
+  },
+  "VIN_1": {
+    "description": "This data element represents the first character in the VIN string for this vehicle.",
+    "manual_pdf_page": 188
+  },
+  "VIN_2": {
+    "description": "This data element represents the second character in the VIN string for this vehicle.",
+    "manual_pdf_page": 189
+  },
+  "VIN_3": {
+    "description": "This data element represents the third character in the VIN string for this vehicle.",
+    "manual_pdf_page": 190
+  },
+  "VIN_4": {
+    "description": "This data element represents the fourth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 191
+  },
+  "VIN_5": {
+    "description": "This data element represents the fifth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 192
+  },
+  "VIN_6": {
+    "description": "This data element represents the sixth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 193
+  },
+  "VIN_7": {
+    "description": "This data element represents the seventh character in the VIN string for this vehicle.",
+    "manual_pdf_page": 194
+  },
+  "VIN_8": {
+    "description": "This data element represents the eighth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 195
+  },
+  "VIN_9": {
+    "description": "This data element represents the ninth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 196
+  },
+  "VIN_10": {
+    "description": "This data element represents the tenth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 197
+  },
+  "VIN_11": {
+    "description": "This data element represents the eleventh character in the VIN string for this vehicle.",
+    "manual_pdf_page": 198
+  },
+  "VIN_12": {
+    "description": "This data element represents the twelfth character in the VIN string for this vehicle.",
+    "manual_pdf_page": 199
+  },
+  "DEATHS": {
+    "description": "This data element records the number of fatalities that occurred in this vehicle.",
+    "manual_pdf_page": 200
+  },
+  "DR_DRINK": {
+    "description": "This data element records whether the driver was drinking.",
+    "manual_pdf_page": 201
+  },
+  "DR_PRES": {
+    "description": "This data element identifies whether a driver was present in this vehicle at the onset of the unstabilized situation.",
+    "manual_pdf_page": 202
+  },
+  "L_STATE": {
+    "description": "This element identifies the State of issue for the license held by this driver.",
+    "manual_pdf_page": 203
+  },
+  "DR_ZIP": {
+    "description": "This data element records the ZIP Code of the driver\u2019s address as listed in the case material.",
+    "manual_pdf_page": 206
+  },
+  "L_TYPE": {
+    "description": "This data element identifies the type of license held by this driver at the time of the crash.",
+    "manual_pdf_page": 207
+  },
+  "L_STATUS": {
+    "description": "This data element identifies the status of the driver\u2019s license at the time of the crash.",
+    "manual_pdf_page": 208
+  },
+  "CDL_STAT": {
+    "description": "This data element indicates the status of the driver\u2019s commercial driver\u2019s license (CDL) if applicable.",
+    "manual_pdf_page": 210
+  },
+  "L_ENDORS": {
+    "description": "This data element identifies whether the vehicle driven at the time of the crash required endorsements on a commercial driver\u2019s license (CDL) and whether this driver was complying with the CDL endorsements.",
+    "manual_pdf_page": 211
+  },
+  "L_COMPL": {
+    "description": "This data element identifies the type of license possessed or not possessed by this driver for the class of vehicle being driven at the time of the crash.",
+    "manual_pdf_page": 212
+  },
+  "L_RESTRI": {
+    "description": "This data element indicates whether this driver was compliant with restrictions on their license.",
+    "manual_pdf_page": 213
+  },
+  "DR_HGT": {
+    "description": "This data element identifies this driver\u2019s height (in inches).",
+    "manual_pdf_page": 214
+  },
+  "DR_WGT": {
+    "description": "This data element identifies this driver\u2019s weight (in pounds).",
+    "manual_pdf_page": 215
+  },
+  "PREV_ACC": {
+    "description": "This data element records any previous crashes for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 216
+  },
+  "PREV_SUS1": {
+    "description": "This data element records any underage pre-conviction administrative license suspension, revocation, or withdrawal in the 5 years prior to the crash date including those for zero-tolerance alcohol violations while driving or refusing to submit to chemical testing. This element is only for administrative actions associated with alcohol. These are NOT BAC convictions.",
+    "manual_pdf_page": 217
+  },
+  "PREV_SUS2": {
+    "description": "This data element records the count of previous pre-conviction administratively imposed suspensions, revocations, or withdrawals within the 5 years prior to the crash date for driving with a BAC above a specified limit or refusing to submit to chemical testing. This element is only for administrative actions associated with alcohol. These are NOT BAC convictions.",
+    "manual_pdf_page": 218
+  },
+  "PREV_SUS3": {
+    "description": "This data element records any previous license suspensions, revocations, or withdrawals for this driver other than Administrative action for BAC violations within 5 years from the crash date. This element would include administrative actions associated with drugged driving.",
+    "manual_pdf_page": 219
+  },
+  "PREV_DWI": {
+    "description": "This data element records any previous DWI convictions for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 220
+  },
+  "PREV_SPD": {
+    "description": "This data element records any previous speeding convictions for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 221
+  },
+  "PREV_OTH": {
+    "description": "This data element records any other previous moving violations or convictions for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 222
+  },
+  "FIRST_MO": {
+    "description": "This data element records the month of the first crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 223
+  },
+  "FIRST_YR": {
+    "description": "This data element records the year of the first crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 224
+  },
+  "LAST_MO": {
+    "description": "This data element records the month of the last crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 225
+  },
+  "LAST_YR": {
+    "description": "This data element records the year of the last crash, suspension, or conviction for this driver that occurred within 5 years of the crash date.",
+    "manual_pdf_page": 226
+  },
+  "SPEEDREL": {
+    "description": "This data element identifies if the driver was speeding, and it was related to the crash as identified by law enforcement.",
+    "manual_pdf_page": 227
+  },
+  "VTRAFWAY": {
+    "description": "This data element identifies the attribute that best describes the trafficway flow just prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 228
+  },
+  "VNUM_LAN": {
+    "description": "This data element identifies the attribute that best describes the number of travel lanes just prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 229
+  },
+  "VSPD_LIM": {
+    "description": "This data element identifies the attribute that best represents the speed limit just prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 230
+  },
+  "VALIGN": {
+    "description": "This data element identifies the attribute that best represents the roadway alignment prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 231
+  },
+  "VPROFILE": {
+    "description": "This data element identifies the attribute that best represents the roadway grade prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 232
+  },
+  "VPAVETYP": {
+    "description": "This data element identifies the attribute that best represents the roadway surface type prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 233
+  },
+  "VSURCOND": {
+    "description": "This data element identifies the attribute that best represents the roadway surface condition prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 234
+  },
+  "VTRAFCON": {
+    "description": "This data element identifies the attribute that best describes the traffic controls in the vehicle\u2019s environment just prior to this vehicle\u2019s critical precrash event.",
+    "manual_pdf_page": 235
+  },
+  "VTCONT_F": {
+    "description": "This data element identifies the functionality of the traffic control device recorded for this vehicle in the data element \u201cTraffic Control Device.\u201d",
+    "manual_pdf_page": 237
+  },
+  "P_CRASH1": {
+    "description": "This data element identifies the attribute that best describes this vehicle\u2019s activity prior to the driver\u2019s realization of an impending critical event or just prior to impact if the driver took no action or had no time to attempt any evasive maneuvers.",
+    "manual_pdf_page": 238
+  },
+  "P_CRASH2": {
+    "description": "This data element identifies the attribute that best describes the critical event that made this crash imminent (i.e., something occurred that made the collision possible).",
+    "manual_pdf_page": 240
+  },
+  "P_CRASH3": {
+    "description": "This data element identifies the attribute that best describes the movements/actions taken by this driver, within a critical crash envelope, in response to the \u201cCritical Precrash Event.\u201d",
+    "manual_pdf_page": 244
+  },
+  "PCRASH4": {
+    "description": "This data element identifies the attribute that best describes the stability of this vehicle after the \u201cCritical Precrash Event,\u201d but before the impact.",
+    "manual_pdf_page": 245
+  },
+  "PCRASH5": {
+    "description": "This data element identifies the attribute that best describes the location of this vehicle after the \u201cCritical Precrash Event,\u201d but before the impact.",
+    "manual_pdf_page": 246
+  },
+  "ACC_TYPE": {
+    "description": "This data element identifies the attribute that best describes the type of crash this vehicle was involved in based on the \u201cFirst Harmful Event\u201d and the precrash circumstances.",
+    "manual_pdf_page": 247
+  },
+  "AGE": {
+    "description": "This data element identifies the person\u2019s age in years on the date of the crash.",
+    "manual_pdf_page": 301
+  },
+  "SEX": {
+    "description": "This data element identifies the sex of this person involved in the crash.",
+    "manual_pdf_page": 302
+  },
+  "PER_TYP": {
+    "description": "This data element describes the role of this person or non-motorist at the time they became involved in the crash.",
+    "manual_pdf_page": 303
+  },
+  "INJ_SEV": {
+    "description": "This data element describes the severity of the injury to this person in the crash using the KABCO scale.",
+    "manual_pdf_page": 305
+  },
+  "SEAT_POS": {
+    "description": "This data element identifies the location of this person in or on the vehicle.",
+    "manual_pdf_page": 306
+  },
+  "REST_USE": {
+    "description": "This data element records the restraint equipment in use by this occupant at the time of the crash.",
+    "manual_pdf_page": 308
+  },
+  "REST_MIS": {
+    "description": "This data element identifies any misuse of the available restraint system used by this person.",
+    "manual_pdf_page": 310
+  },
+  "HELM_USE": {
+    "description": "This data element records the helmet use by this occupant at the time of the crash.",
+    "manual_pdf_page": 311
+  },
+  "HELM_MIS": {
+    "description": "This data element identifies any misuse of the helmet used by this person.",
+    "manual_pdf_page": 312
+  },
+  "AIR_BAG": {
+    "description": "This data element records air bag availability and deployment for this person as reported in the case material.",
+    "manual_pdf_page": 313
+  },
+  "EJECTION": {
+    "description": "This data element describes the ejection status and degree of ejection for this person, excluding motorcycle occupants.",
+    "manual_pdf_page": 315
+  },
+  "EJ_PATH": {
+    "description": "This data element identifies the path by which this person was ejected from the vehicle.",
+    "manual_pdf_page": 316
+  },
+  "EXTRICAT": {
+    "description": "This data element identifies if equipment was used to remove this person from the vehicle.",
+    "manual_pdf_page": 317
+  },
+  "DRINKING": {
+    "description": "This data element records whether alcohol was involved for this person and reflects the judgment of law enforcement.",
+    "manual_pdf_page": 318
+  },
+  "ALC_STATUS": {
+    "description": "This data element identifies whether an alcohol test was given to this person.",
+    "manual_pdf_page": 319
+  },
+  "ATST_TYP": {
+    "description": "This data element identifies the type of alcohol test that was given to this person.",
+    "manual_pdf_page": 320
+  },
+  "ALC_RES": {
+    "description": "This data element identifies the alcohol test result for this person.",
+    "manual_pdf_page": 322
+  },
+  "DRUGS": {
+    "description": "This data element records whether drugs were involved for this person and reflects the judgment of law enforcement.",
+    "manual_pdf_page": 324
+  },
+  "DSTATUS": {
+    "description": "This data element identifies whether a drug test was given to this person.",
+    "manual_pdf_page": 325
+  },
+  "HOSPITAL": {
+    "description": "This data element identifies the mode of transportation to a hospital or medical facility provided for this person.",
+    "manual_pdf_page": 326
+  },
+  "DOA": {
+    "description": "This data element identifies if this person died at the scene of the crash or en route to a hospital/medical facility.",
+    "manual_pdf_page": 327
+  },
+  "DEATH_MO": {
+    "description": "This data element records the month of this person\u2019s death.",
+    "manual_pdf_page": 328
+  },
+  "DEATH_DA": {
+    "description": "This data element records the day of the month of this person\u2019s death.",
+    "manual_pdf_page": 329
+  },
+  "DEATH_YR": {
+    "description": "This data element records the year of this person\u2019s death.",
+    "manual_pdf_page": 330
+  },
+  "DEATH_TM": {
+    "description": "This data element records the hour and minute of this person\u2019s death utilizing the 24-hour clock format.",
+    "manual_pdf_page": 331
+  },
+  "DEATH_HR": {
+    "description": "This data element records the hour of this person\u2019s death utilizing the 24-hour clock format.",
+    "manual_pdf_page": 332
+  },
+  "DEATH_MN": {
+    "description": "This data element records the minutes after the hour of this person\u2019s death.",
+    "manual_pdf_page": 333
+  },
+  "LAG_HRS": {
+    "description": "This data element records the hours between the time of the crash and this person\u2019s time of death.",
+    "manual_pdf_page": 334
+  },
+  "LAG_MINS": {
+    "description": "This data element records the minutes, in addition to hours (\u201cLag Hours\u201d), between the time of the crash and this person\u2019s time of death.",
+    "manual_pdf_page": 335
+  },
+  "STR_VEH": {
+    "description": "This data element identifies the \u201cVehicle Number\u201d (VEH_NO) of the motor vehicle in-transport that made contact with this non-motorist.",
+    "manual_pdf_page": 336
+  },
+  "DEVTYPE": {
+    "description": "This element describes the type of transport device operated by the non-motorist.",
+    "manual_pdf_page": 337
+  },
+  "DEVMOTOR": {
+    "description": "This element describes the motorization of the device operated by the non-motorist.",
+    "manual_pdf_page": 338
+  },
+  "LOCATION": {
+    "description": "This data element identifies the attribute that best describes the location of this non-motorist with respect to the roadway at the time of the crash.",
+    "manual_pdf_page": 339
+  },
+  "WORK_INJ": {
+    "description": "This data element records whether the death certificate indicated this person was \"at work\" at the time of the crash.",
+    "manual_pdf_page": 342
+  },
+  "HISPANIC": {
+    "description": "This data element records the Hispanic origin of this person from the death certificate.",
+    "manual_pdf_page": 343
+  }
+}

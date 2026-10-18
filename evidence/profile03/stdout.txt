@@ -1,0 +1,4 @@
+accident 36297 columns 80 unmapped [] omitted_labels ['LATITUDE', 'LONGITUD', 'CITY', 'COUNTY', 'MILEPT']
+vehicle 56011 columns 201 unmapped [] omitted_labels ['VIN', 'DR_ZIP', 'MCARR_ID', 'MCARR_I2', 'VPICMODEL']
+person 88326 columns 126 unmapped [] omitted_labels ['VPICMODEL']
+Profile complete 2026-10-18T14:43:06.661914+00:00

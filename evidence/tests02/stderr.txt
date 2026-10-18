@@ -1,0 +1,39 @@
+test_bad_archive_rejected (test_fars.Parsing.test_bad_archive_rejected) ... ok
+test_coordinate_precision (test_fars.Parsing.test_coordinate_precision) ... ok
+test_dot_not_silently_null (test_fars.Parsing.test_dot_not_silently_null) ... ok
+test_existing_output_refused (test_fars.Parsing.test_existing_output_refused) ... ok
+test_fractional_integer_rejected (test_fars.Parsing.test_fractional_integer_rejected) ... ok
+test_missing_sentinel_is_preserved (test_fars.Parsing.test_missing_sentinel_is_preserved) ... ok
+test_nan_rejected (test_fars.Parsing.test_nan_rejected) ... ok
+test_numeric_nonoccupant_blank_is_null (test_fars.Parsing.test_numeric_nonoccupant_blank_is_null) ... ok
+test_output_escape_rejected (test_fars.Parsing.test_output_escape_rejected) ... ok
+test_overprecision_rejected (test_fars.Parsing.test_overprecision_rejected) ... ok
+test_source_character_blanks_preserved (test_fars.Parsing.test_source_character_blanks_preserved) ... ok
+test_unexpected_numeric_blank_rejected (test_fars.Parsing.test_unexpected_numeric_blank_rejected) ... ok
+test_zip_leading_zeros_preserved (test_fars.Parsing.test_zip_leading_zeros_preserved) ... ok
+test_bad_alcohol_code_rejected (test_fars.Semantics.test_bad_alcohol_code_rejected) ... ok
+test_crash_view_prevents_many_to_many_inflation (test_fars.Semantics.test_crash_view_prevents_many_to_many_inflation) ... ok
+test_duplicate_crash_rejected (test_fars.Semantics.test_duplicate_crash_rejected) ... ok
+test_fatality_reconciliation_fails (test_fars.Semantics.test_fatality_reconciliation_fails) ... ok
+test_label_context_collision_rejected (test_fars.Semantics.test_label_context_collision_rejected) ... ok
+test_measured_bac_scale (test_fars.Semantics.test_measured_bac_scale) ... ok
+test_missing_transport_vehicle_rejected (test_fars.Semantics.test_missing_transport_vehicle_rejected) ... ok
+test_nonoccupant_retained_without_vehicle (test_fars.Semantics.test_nonoccupant_retained_without_vehicle) ... ok
+test_nonoccupant_with_vehicle_number_rejected (test_fars.Semantics.test_nonoccupant_with_vehicle_number_rejected) ... ok
+test_orphan_person_rejected (test_fars.Semantics.test_orphan_person_rejected) ... ok
+test_parked_occupant_retained_without_transport_vehicle (test_fars.Semantics.test_parked_occupant_retained_without_transport_vehicle) ... ok
+test_parked_transport_collision_rejected (test_fars.Semantics.test_parked_transport_collision_rejected) ... ok
+test_topcoded_bac_not_exact (test_fars.Semantics.test_topcoded_bac_not_exact) ... ok
+test_unknown_age_not_years (test_fars.Semantics.test_unknown_age_not_years) ... ok
+test_unknown_bac_not_zero (test_fars.Semantics.test_unknown_bac_not_zero) ... ok
+test_unknown_coordinate_not_map_point (test_fars.Semantics.test_unknown_coordinate_not_map_point) ... ok
+test_valid_fixture (test_fars.Semantics.test_valid_fixture) ... ok
+test_wrong_year_rejected (test_fars.Semantics.test_wrong_year_rejected) ... ok
+test_sampler_failure_stops_worker (test_guard.Guard.test_sampler_failure_stops_worker) ... ok
+test_worker_exits_before_kill (test_guard.Guard.test_worker_exits_before_kill) ... ok
+test_worker_exits_before_term (test_guard.Guard.test_worker_exits_before_term) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.092s
+
+OK

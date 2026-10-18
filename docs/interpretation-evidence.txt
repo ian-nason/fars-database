@@ -1,0 +1,586 @@
+Official analytical manual DOT HS 813794; source PDF hash in source-lock.json. Below are unchanged extracted PDF pages, not instructions.
+
+=== PDF PAGE 10 ===
+FARS Operation 
+5 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+FARS Operations 
+FARS became operational in 1975 and contains data on a census of fatal traffic crashes in the 50 
+States, the District of Columbia, and Puerto Rico. To be included in FARS, a crash must involve 
+a motor vehicle traveling on a trafficway customarily open to the public and must result in the 
+death of an occupant of a vehicle or a non-occupant within 30 days (720 hours) of the crash.  
+FARS is directed by the National Center for Statistics and Analysis (NCSA), a component of 
+NHTSA. NHTSA has a cooperative agreement with an agency in each State’s government to 
+provide information on all qualifying fatal crashes in the State. These agreements are managed 
+by NCSA’s FARS program staff. Trained State employees, called “FARS analysts,” are 
+responsible for gathering, translating, and transmitting their State’s data to NCSA in a standard 
+format. The number of analysts varies by State. 
+FARS data are obtained from various States’ documents, such as the following.  
+• Police Crash Reports 
+• Death Certificates  
+• State Vehicle Registration Files  
+• Coroner/Medical Examiner Reports  
+• State Driver Licensing Files  
+• State Highway Department Data  
+• Emergency Medical Service Reports  
+• Vital Statistics and Other State Records  
+From these documents, the analysts code more than 140 FARS data elements. The specific data 
+elements may be modified slightly each year to conform to changing user needs, vehicle 
+characteristics, and highway safety emphasis areas. The data collected within FARS do not 
+include any personal identifying information such as names, addresses, or social security 
+numbers. Thus, any data kept in FARS data files and made available to the public fully conform 
+to the Privacy Act.  
+Each analyst interprets and codes data directly onto an electronic data file. The data are 
+automatically checked when entered for acceptable range values and for consistency, enabling 
+the analyst to make corrections immediately. Several programs continually monitor and improve 
+the completeness and accuracy of the data.  
+Each analyst uses a coding manual that provides a set of written instructions on how to transfer 
+the information from a police crash report to the FARS data. To augment the coding manual, 
+classes are held each year to train the coders, and a system-wide FARS meeting is held to 
+reinforce uniform coding practices.  
+After the data file is created, quality checks are performed on the data. When these are 
+completed, the electronic data are made available to the public. In a given crash year, FARS 
+releases two versions of annual data files. The first set of files, known as the Annual Report File 
+(ARF), is released following the crash year. The ARF is replaced about a year later with a final 
+file, which contains additional cases or updates to cases that had become available after the ARF 
+was released. The FARS data are also used to respond to requests from the international and 
+national highway safety communities, State and local governments, the Congress, Federal 
+agencies, research organizations, industry, the media, and the public. 
+
+
+=== PDF PAGE 33 ===
+Data Element Definitions and Codes 
+28 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+Data Element Definitions and Codes 
+This section represents the majority of the manual. It provides information on each data element, 
+including definitions, SAS names, attribute codes, and attribute labels. Over the years, changes 
+have been made to the data collected. Some data elements have been dropped, new ones added, 
+and attribute codes of individual data elements have changed. Element changes and the years for 
+which individual attributes are available are shown for each data element.  
+For a detailed description of each data element including coding instructions and attribute 
+definitions, see the FARS/CRSS Coding and Validation Manual. The Coding Manual is 
+published for each year of data collection. Years 2001 to current are available at:  
+NCSA Publications — Manuals and Documentation — FARS. 
+Additionally, a SAS program (format[YY].sas) and SAS catalog (formats.sas7bcat) are provided 
+with the data files each year for applying the labels and formats described in this section to the 
+current year’s attributes. 
+The data elements in this section are listed under the data file in which they are stored. Some 
+data elements are provided in more than one data file to facilitate analyses. For example, Month 
+of Crash (MONTH) is a crash level data element but for convenience it is also provided in the 
+Vehicle, Parkwork, and Person files. For such elements, they are listed under the primary data 
+file only. 
+All data elements are numeric except the following that are character. 
+• C10 Trafficway Identifier (TWAY_ID, TWAY_ID2) [30 characters]  
+• C28 Rail Grade Crossing Identifier (RAIL) [7 characters] 
+• V9 Vehicle Identification Number (VIN, PVIN) [12 characters]  
+• V20 Trailer Vehicle Identification Number (TRLR1VIN [12 characters], TRLR2VIN [12 
+characters], TRLR3VIN [12 characters] 
+• V23 and V23B Motor Carrier ID (MCARR_ID) [11 characters], (MCARR_I2) 
+[9 characters] 
+• V101-V112 VIN Characters 1-12 (VIN_1, VIN_2, VIN_3, VIN_4, VIN_5, VIN_6, 
+VIN_7, VIN_8, VIN_9, VIN_10, VIN_11, VIN_12, PVIN_1, PVIN_2, PVIN_3, 
+PVIN_4, PVIN_5, PVIN_6, PVIN_7, PVIN_8, PVIN_9, PVIN_10, PVIN_11, PVIN_12) 
+[1 character] 
+• D6 Driver’s ZIP Code (DR_ZIP) [5 characters] 
+• NM11-PB37 Pedestrian Scenario (PEDSNR) [10 characters] 
+ 
+
+
+=== PDF PAGE 36 ===
+Data Element Definitions and Codes Key Data Elements 
+31 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+Consecutive Number  
+Definition 
+This data element is the unique case number assigned to each crash. It appears on each data file 
+and is used to merge information from the data files together. 
+Additional Information 
+This data element is a combination of the GSA State code and an assigned consecutive number. 
+It is assigned by the data entry system to each crash and is the unique identifier for the crash 
+within the year. It is used as the key when any two of these files from the same year are merged. 
+This data element is stored as a numeric data element of six characters; the first two characters 
+are the State code, and the next four characters are case number with leading zeros if necessary. 
+SAS Name 
+ST_CASE 
+Attribute Codes  
+1975-Later  
+xxxxxx Two Characters for State Code followed by Four Characters for Case Number 
+
+
+=== PDF PAGE 37 ===
+Data Element Definitions and Codes Key Data Elements 
+32 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+All of the vehicle level data files contain the preceding accident level data elements as well as 
+VEH_NO. 
+Vehicle Number 
+Definition 
+This data element is the consecutive number assigned to each vehicle in the case. This data 
+element appears on each vehicle level data file and is used in conjunction with the ST_CASE 
+data element to merge information from vehicle level data files. 
+Additional Information 
+All vehicles will have a positive integer value. The value 0 is only used for non-motorists 
+(pedestrians, cyclists, etc.) in the Person File. There are no corresponding Vehicle records for 
+non-motorists. ST_CASE and VEH_NO may be used to merge the complete Person File to the 
+Accident File, but including the Vehicle File in the merge will eliminate non-motorists from the 
+merged data.  
+Non-Occupants have VEH_NO = 0, in this case see STR_VEH (N_MOT_NO prior to 2011) 
+under Non-Motorist Striking Vehicle Number in the Person data file. 
+SAS Name 
+VEH_NO 
+Attribute Codes 
+1975-2008 2009-Later  
+0-99 0-999 Assigned Number of Motor Vehicle  
+
+
+=== PDF PAGE 38 ===
+Data Element Definitions and Codes Key Data Elements 
+33 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+All of the person level data files contain the preceding accident level and vehicle level data 
+elements as well as PER_NO. 
+Person Number 
+Definition 
+This data element is the consecutive number assigned to each person in the case (i.e., each 
+occupant, pedestrian, or non-motorists involved in the crash). This data element appears on each 
+person level data file and is used in conjunction with the ST_CASE data element (and sometimes 
+the VEH_NO data element) to merge information from person level data files. 
+Additional Information 
+Each occupant of the vehicle is numbered, and each non-occupant is numbered; in the case of a 
+non-occupant the vehicle number is zero. The numbers for occupants are consecutive for each 
+vehicle beginning with 1. Numbers are never skipped. Drivers do not have to be coded 1. Non-
+Occupants are identified by vehicle number 0 and are numbered consecutively starting with 1 for 
+each non-motorist. To get drivers see data element PER_TYP under Person Type. 
+PER_NO can be used in merges, e.g., when merging the FARS person data file with the multiple 
+cause of death file. 
+SAS Name 
+PER_NO 
+Attribute Codes 
+1975-2008 2009-Later  
+1-99 1-999 Assigned Person Number 
+
+
+=== PDF PAGE 45 ===
+Data Element Definitions and Codes The ACCIDENT Data File 
+40 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+C4A. Number of Motor Vehicles In-Transport (MVIT) 
+Definition 
+This data element is a count of the number of motor vehicles in-transport involved in the crash. 
+Legally parked vehicles are not included. 
+Additional Information 
+This data element is derived as the count of all vehicles in the crash where “Unit Type” = 1. It is 
+the number of records in the Vehicle data file. 
+It is unlikely that the number of vehicles involved in the crash is greater than the Number of 
+Vehicle Forms plus two. 
+1975-1981: In the event of a hit-and-run crash, if the vehicle information was not known, then no 
+vehicle form was filled out. Likewise, if no information was known on the person level, usually 
+the driver of the unknown vehicle, then a Person Level form was not filled out. The result is that 
+the number of unknowns is much smaller for this time period than 1982 and later. 
+Example: From 1975 to 1980 there were 30 to 40 drivers coded with unknown sex—
+approximately 0.05 percent of all drivers involved in fatal crashes. In 1981 the number of drivers 
+with unknown sex rose to over 300—approximately 0.5 percent of all drivers involved in fatal 
+crashes. 
+1982-Later: In the case of a hit-and-run crash, a Vehicle-Driver form and a Person Level form 
+for the driver are filled out. When the information about the vehicle driver or person is not 
+known—which is often the case with hit-and-runs—the values are coded as unknown. 
+Example: Between 1982 and 1994 the number of drivers coded with unknown sex fluctuated 
+between 700 and 1,000—approximately 1.5 percent of all drivers involved in fatal crashes. Of 
+the 768 people in the 1994 Annual Report file, all were drivers, and 90 percent of them were 
+involved in hit-and-run crashes. 
+This data element also appears in the Vehicle and Person data files and in the Parkwork data file 
+as PVE_FORMS. 
+SAS Name 
+VE_FORMS 
+Attribute Codes 
+1976-1981 1982-2008 2009-Later  
+0-99 1-99 1-999 Number of Vehicle Forms 
+ 
+
+
+=== PDF PAGE 46 ===
+Data Element Definitions and Codes The ACCIDENT Data File 
+41 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+C4B. Number of Parked/Working Vehicles 
+Definition 
+This data element is a count of the number of parked and working vehicles involved in the crash.  
+Additional Information 
+This data element is calculated as the count of all vehicles in the crash where “Unit Type” is in 
+(2, 3, or 4). It is the number of records in the Parkwork data file.  
+SAS Name 
+PVH_INVL 
+Attribute Codes  
+2011-Later  
+0-999 Number of Parked/Working Vehicles in the Crash 
+ 
+
+
+=== PDF PAGE 47 ===
+Data Element Definitions and Codes The ACCIDENT Data File 
+42 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+C5. Number of Person Forms Submitted 
+Definition 
+This data element is a count of the number of Person Level (Motor Vehicle Occupant) Forms 
+that are applicable to this case (i.e., occupants). 
+Additional Information 
+This represents the number of forms created for people in motor vehicles. It is the count of all 
+people where “Person Type” is in (1, 2, 3, or 9).  
+Before 2003 the policy was not to submit a Person Level form for occupants of van-based buses. 
+Since 2003 a person level form has been submitted for all occupants of van-based vehicles, 
+including van-based buses. 
+1975-1981: In the event of a hit-and-run crash, if the vehicle information was not known, then no 
+vehicle form was filled out. Likewise, if no information was known on the person level, usually 
+the driver of the unknown vehicle, then a Person Level form was not filled out. The result is that 
+the number of unknowns is much smaller for this time period than 1982 and later. 
+Example: From 1975 to 1980 there were 30 to 40 drivers coded with unknown sex, 
+approximately 0.05 percent of all drivers involved in fatal crashes. In 1981 the number of drivers 
+with unknown sex rose to over 300—approximately 0.5 percent of all drivers involved in fatal 
+crashes. 
+1982-Later: In the case of a hit-and-run crash, a Vehicle Driver form and a Person Level form 
+for the driver are filled out. When the information about the vehicle-driver or person is not 
+known—which is often the case with hit-and-runs—the values are coded as unknown. 
+Example: Between 1982 and 1994 the number of drivers coded with unknown sex fluctuated 
+between 700 and 1,000—approximately 1.5 percent of all drivers involved in fatal crashes. Of 
+the 768 people in the 1994 Annual Report file, all were drivers, and 90 percent of them were 
+involved in hit-and-run crashes. 
+SAS Name 
+PERSONS 
+Attribute Codes  
+1975-2008 2009-Later  
+0-99 0-999 Number of Person Forms 
+ 
+
+
+=== PDF PAGE 48 ===
+Data Element Definitions and Codes The ACCIDENT Data File 
+43 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+C5A. Number of Persons in Motor Vehicles In-Transport (MVIT)  
+Definition 
+This data element is a count of the number of motorists in the crash. A motorist is a driver, 
+passenger, or unknown occupant type of a motor vehicle in-transport. 
+Additional Information 
+This data element is derived as the count of all people in the crash where “Person Type” is in (1, 
+2, or 9).  
+Note: People where “Person Type” = 3 (Occupant of a Motor Vehicle Not In-Transport) are not 
+included in this data element but are counted in C5 above. 
+This data element does not include uninjured bus occupants. Please see Appendix G: Analysis of 
+Uninjured Bus Occupants for additional information. 
+SAS Name 
+PERMVIT 
+Attribute Codes  
+2011-Later  
+0-999 Number of Persons in Motor Vehicles In-Transport 
+ 
+
+
+=== PDF PAGE 67 ===
+Data Element Definitions and Codes The ACCIDENT Data File 
+62 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+C17. Global Position 
+C17A. Latitude 
+Definition 
+This element identifies the location of the crash using Global Position coordinates. This is the 
+position of latitude.  
+Additional Information 
+Prior to 2015 the Data Element ID was C15A. 
+SAS Name 
+LATITUDE 
+Attribute Codes  
+DDMMSSSS (DD MM SS.SS – Degrees/Minutes/Seconds) 
+1999-2009  
+17-71 DD – Actual Degrees 
+88 Not Available (if State Exempt) 
+99 Unknown 
+  
+0-59 MM – Actual Minutes 
+88 Not Available (if State Exempt) 
+99 Unknown 
+  
+0.0-59.99 SS.SS – Actual Seconds 
+88.88 Not Available (if State Exempt) 
+99.99 Unknown 
+ 
+2010-2017 2018-Later  
+DD.DDDDDDD DD.DDDDDDD Actual Decimal Degrees 
+77.7777000 77.7777000 Not Reported 
+88.8888000 88.8888000 Not Available (if State Exempt) 
+99.9999000 -- Unknown 
+-- 99.9999000 Reported as Unknown 
+
+
+=== PDF PAGE 68 ===
+Data Element Definitions and Codes The ACCIDENT Data File 
+63 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+C17B. Longitude 
+Definition 
+This element identifies the location of the crash using Global Position coordinates. This is the 
+position of longitude.  
+Additional Information 
+Prior to 2015 the Data Element ID was C15B. 
+SAS Name 
+LONGITUD 
+Attribute Codes  
+DDDMMSSSS (DDD MM SS.SS – Degrees/Minutes/Seconds) 
+1999-2009  
+65-178 DDD – Actual Degrees 
+-- Not Reported 
+888 Not Available (if State Exempt) 
+999 Unknown 
+  
+0-59 MM – Actual Minutes 
+-- Not Reported 
+88 Not Available (if State Exempt) 
+99 Unknown 
+  
+0.0-59.99 SS.SS – Actual Seconds 
+-- Not Reported 
+88.88 Not Available (if State Exempt) 
+99.99 Unknown 
+ 
+2010-2017 2018-Later  
+-DDD.DDDDDDD -DDD.DDDDDDD Actual Decimal Degrees 
+777.7777000 777.7777000 Not Reported 
+888.8888000 888.8888000 Not Available (if State Exempt) 
+999.9999000 -- Unknown 
+-- 999.9999000 Reported as Unknown 
+ 
+
+
+=== PDF PAGE 300 ===
+Data Element Definitions and Codes The PERSON Data File 
+295 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+The PERSON Data File 
+The Person data file includes motorist and non-motorist data. It contains the data elements 
+ST_CASE, STATE, VEH_NO, and PER_NO, which are described in the Key Data Elements at 
+the beginning of the Data Element Definitions and Codes section. The Person data file also 
+contains the data elements on the following pages. 
+ST_CASE, VEH_NO, and PER_NO are the unique identifiers for each record. ST_CASE should 
+be used to merge the Person data file with the Accident data file for a set of all motorists and 
+non-motorists. ST_CASE and VEH_NO should be used to merge the Person data file with the 
+Vehicle and Parkwork data files for a set of all motor vehicle occupants. ST_CASE and 
+PER_NO should be used to merge the Person data file with non-motorist person level data files.  
+In the Person data file, motor vehicle occupants are PER_TYPE = 1, 2, 3, 9. Motor vehicle 
+occupants have assigned vehicle numbers starting with 1. When PER_TYPE = 3, the occupied 
+vehicle will be found in the PARKWORK data file. Non-motor vehicle occupants are 
+PER_TYPE = 4, 5, 6, 7, 8, 10, 11, 12, 13, or 19. VEH_NO = 0 for non-motor vehicle occupants.   
+
+
+=== PDF PAGE 301 ===
+Data Element Definitions and Codes The PERSON Data File 
+296 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+P5/NM5. Age 
+Definition 
+This data element identifies the person’s age in years on the date of the crash.  
+Additional Information 
+SAS Name 
+AGE 
+Attribute Codes 
+1975-2008  
+0 Up to One Year 
+1-96 Age in Years 
+97 97 Years Old or Older 
+99 Unknown 
+ 
+2009 2010-2017 2018-Later  
+0 0 0 Less Than One Year 
+1-120 1-120 1-120 Age in Years 
+-- 998 998 Not Reported 
+999 999 -- Unknown 
+-- -- 999 Reported as Unknown 
+ 
+
+
+=== PDF PAGE 303 ===
+Data Element Definitions and Codes The PERSON Data File 
+298 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+P7/NM7. Person Type 
+Definition 
+This data element describes the role of this person or non-motorist at the time they became 
+involved in the crash. 
+Additional Information 
+SAS Name 
+PER_TYP 
+Attribute Codes 
+1975-1981  
+1 Driver 
+2 Passenger 
+3 Non-Motorist: Pedestrian 
+4 Non-Motorist: Pedalcyclist 
+5 Non-Motorist: Occupant of Non-Traffic-Unit Vehicle  
+8 Non-Motorist: Other or Unknown 
+9 Occupant: Unknown Type 
+ 
+1982-1993  
+1 Driver of a Motor Vehicle In-Transport 
+2 Passenger of a Motor Vehicle In-Transport 
+3 Occupant of a Motor Vehicle Not In-Transport 
+4 Occupant of a Non-Motor Vehicle Transport Device (e.g., Horse and Buggy) 
+5 Non-Occupant Pedestrian 
+6 Non-Occupant Bicyclist 
+7 Non-Occupant Other Cyclist 
+8 Non-Occupant Other or Unknown 
+9 Unknown Occupant Type in a Motor Vehicle In-Transport 
+ 
+1994-
+2009 
+2010 2011-
+2019 
+2020-
+2021 
+2022-
+Later 
+ 
+1 1 1 1 1 Driver of a Motor Vehicle In-Transport 
+2 2 2 2 2 Passenger of a Motor Vehicle In-Transport 
+3 3 3 3 3 Occupant of a Motor Vehicle Not In-
+Transport 
+
+
+=== PDF PAGE 304 ===
+Data Element Definitions and Codes The PERSON Data File 
+299 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+1994-
+2009 
+2010 2011-
+2019 
+2020-
+2021 
+2022-
+Later 
+ 
+4 4 4 4 4 Occupant of a Non-Motor Vehicle Transport 
+Device 
+5 5 5 5 5 Pedestrian 
+6 6 6 6 6 Bicyclist 
+7 7 7 7 -- Other Cyclist 
+-- -- -- -- 7 Other Pedalcyclist 
+8 -- -- -- -- Other Pedestrian (Includes Persons on 
+Personal Conveyances, 1994-2006) 
+8 8 8 -- -- Person on Personal Conveyances (Since 
+2007) 
+-- -- -- -- 8 Person on Personal Conveyance 
+9 9 9 9 9 Unknown Occupant Type in a Motor Vehicle 
+In-Transport 
+10 10 10 10 -- Persons in/on Buildings (Since 2007) 
+-- -- -- -- 10 Person In/On a Building 
+-- -- -- 11 -- Person on Motorized Personal Conveyance 
+-- -- -- 12 -- Person on Non-Motorized Personal 
+Conveyance 
+-- -- -- 13 -- Person on Personal Conveyance, Unknown if 
+Motorized or Non-Motorized 
+19 19 19 19 19 Unknown Type of Non-Motorist 
+-- 88 -- -- -- Not Reported 
+99 -- -- -- -- Unknown 
+ 
+More information on Person Type. 
+
+
+=== PDF PAGE 305 ===
+Data Element Definitions and Codes The PERSON Data File 
+300 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+P8/NM10. Injury Severity 
+Definition 
+This data element describes the severity of the injury to this person in the crash using the 
+KABCO scale. 
+Additional Information 
+It is important to realize that some States do not always collect data on people who were in a 
+crash but were not injured. If the analysis being performed depends on non-injured occupants—
+for example some paired comparisons—check the data at the State level. 
+Prior to 2022 the Data Element ID was P8/NM8. 
+SAS Name 
+INJ_SEV 
+Attribute Codes 
+1975-2012 2013-2015 2016-Later  
+0 -- -- No Injury (O) 
+-- 0 0 No Apparent Injury (O) 
+1 1 1 Possible Injury (C) 
+2 -- -- Non-Incapacitating Evident Injury (B) 
+-- 2 2 Suspected Minor Injury (B) 
+3 -- -- Incapacitating Injury (A) 
+-- 3 3 Suspected Serious Injury (A) 
+4 4 4 Fatal Injury (K) 
+5 5 5 Injured, Severity Unknown (U) (Since 1978) 
+6 6 6 Died Prior to Crash 
+8 -- -- Not Reported (2010 Only) 
+9 9 -- Unknown 
+-- -- 9 Unknown/Not Reported 
+ 
+
+
+=== PDF PAGE 322 ===
+Data Element Definitions and Codes The PERSON Data File 
+317 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+P17C/NM19C. Alcohol Test Result 
+Definition 
+This data element identifies the alcohol test result for this person. 
+Additional Information 
+In 2015 this data element changed from a two-digit field to a three-digit field. Prior to 2015 the 
+third digit was truncated—not rounded. A BAC of .10 is coded as 10 prior to 2015 and as 100 in 
+2015 and later. The decimal is implied. The BAC is expressed in grams per deciliter (g/dL) or a 
+clinical evaluation of the same. 
+Prior to 2019 the Data Element ID was P18C/NM17C. From 2019-2021 the Data Element ID 
+was P18C/NM18C. 
+SAS Name 
+TEST_RES 1975-1990 
+ALC_RES 1991-Later 
+Attribute Codes 
+1975-1990  
+0-94 Actual Value of BAC Test 
+95 Test Refused 
+96 None Given 
+97 AC Test Performed, Results Unknown 
+99 Unknown 
+ 
+1991-
+2009 
+2010-
+2014 
+2015-
+2017 
+2018-
+Later 
+ 
+0-93 0-93 0-939 0-939 Actual Value of BAC Test 
+94 94 940 940 0.94 or Greater (the Value Should Be Interpreted as 
+0.94 or Greater, Since 1995) 
+95 -- -- -- Test Refused (1991-2008) 
+-- 95 995 995 Not Reported 
+96 96 996 996 None Given 
+97 97 997 997 AC Test Performed, Results Unknown 
+98 -- -- -- PBT Positive Reading With No Actual Value (2004-
+2005) 
+-- 98 998 998 Positive Reading With No Actual Value (Since 2006) 
+99 -- -- -- Unknown if Tested/Not Reported 
+-- 99 999 -- Unknown if Tested 
+
+
+=== PDF PAGE 323 ===
+Data Element Definitions and Codes The PERSON Data File 
+318 
+Fatality Analysis Reporting System Analytical User’s Manual, 1975-2024 
+1991-
+2009 
+2010-
+2014 
+2015-
+2017 
+2018-
+Later 
+ 
+-- -- -- 999 Reported as Unknown if Tested 
+ 
+More information on Alcohol Test Result. 
+ 
+

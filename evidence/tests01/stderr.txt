@@ -1,0 +1,309 @@
+test_bad_archive_rejected (test_fars.Parsing.test_bad_archive_rejected) ... ok
+test_coordinate_precision (test_fars.Parsing.test_coordinate_precision) ... ok
+test_dot_not_silently_null (test_fars.Parsing.test_dot_not_silently_null) ... ok
+test_existing_output_refused (test_fars.Parsing.test_existing_output_refused) ... ok
+test_fractional_integer_rejected (test_fars.Parsing.test_fractional_integer_rejected) ... ok
+test_missing_sentinel_is_preserved (test_fars.Parsing.test_missing_sentinel_is_preserved) ... ok
+test_nan_rejected (test_fars.Parsing.test_nan_rejected) ... ok
+test_numeric_nonoccupant_blank_is_null (test_fars.Parsing.test_numeric_nonoccupant_blank_is_null) ... ok
+test_output_escape_rejected (test_fars.Parsing.test_output_escape_rejected) ... ok
+test_overprecision_rejected (test_fars.Parsing.test_overprecision_rejected) ... ok
+test_source_character_blanks_preserved (test_fars.Parsing.test_source_character_blanks_preserved) ... ok
+test_unexpected_numeric_blank_rejected (test_fars.Parsing.test_unexpected_numeric_blank_rejected) ... ok
+test_zip_leading_zeros_preserved (test_fars.Parsing.test_zip_leading_zeros_preserved) ... ok
+test_bad_alcohol_code_rejected (test_fars.Semantics.test_bad_alcohol_code_rejected) ... ERROR
+test_crash_view_prevents_many_to_many_inflation (test_fars.Semantics.test_crash_view_prevents_many_to_many_inflation) ... ERROR
+test_duplicate_crash_rejected (test_fars.Semantics.test_duplicate_crash_rejected) ... ERROR
+test_fatality_reconciliation_fails (test_fars.Semantics.test_fatality_reconciliation_fails) ... ERROR
+test_label_context_collision_rejected (test_fars.Semantics.test_label_context_collision_rejected) ... ERROR
+test_measured_bac_scale (test_fars.Semantics.test_measured_bac_scale) ... ERROR
+test_missing_transport_vehicle_rejected (test_fars.Semantics.test_missing_transport_vehicle_rejected) ... ERROR
+test_nonoccupant_retained_without_vehicle (test_fars.Semantics.test_nonoccupant_retained_without_vehicle) ... ERROR
+test_nonoccupant_with_vehicle_number_rejected (test_fars.Semantics.test_nonoccupant_with_vehicle_number_rejected) ... ERROR
+test_orphan_person_rejected (test_fars.Semantics.test_orphan_person_rejected) ... ERROR
+test_parked_occupant_retained_without_transport_vehicle (test_fars.Semantics.test_parked_occupant_retained_without_transport_vehicle) ... ERROR
+test_parked_transport_collision_rejected (test_fars.Semantics.test_parked_transport_collision_rejected) ... ERROR
+test_topcoded_bac_not_exact (test_fars.Semantics.test_topcoded_bac_not_exact) ... ERROR
+test_unknown_age_not_years (test_fars.Semantics.test_unknown_age_not_years) ... ERROR
+test_unknown_bac_not_zero (test_fars.Semantics.test_unknown_bac_not_zero) ... ERROR
+test_unknown_coordinate_not_map_point (test_fars.Semantics.test_unknown_coordinate_not_map_point) ... ERROR
+test_valid_fixture (test_fars.Semantics.test_valid_fixture) ... ERROR
+test_wrong_year_rejected (test_fars.Semantics.test_wrong_year_rejected) ... ERROR
+test_sampler_failure_stops_worker (test_guard.Guard.test_sampler_failure_stops_worker) ... ok
+test_worker_exits_before_kill (test_guard.Guard.test_worker_exits_before_kill) ... ok
+test_worker_exits_before_term (test_guard.Guard.test_worker_exits_before_term) ... ok
+
+======================================================================
+ERROR: test_bad_alcohol_code_rejected (test_fars.Semantics.test_bad_alcohol_code_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_crash_view_prevents_many_to_many_inflation (test_fars.Semantics.test_crash_view_prevents_many_to_many_inflation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_duplicate_crash_rejected (test_fars.Semantics.test_duplicate_crash_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_fatality_reconciliation_fails (test_fars.Semantics.test_fatality_reconciliation_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_label_context_collision_rejected (test_fars.Semantics.test_label_context_collision_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_measured_bac_scale (test_fars.Semantics.test_measured_bac_scale)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_missing_transport_vehicle_rejected (test_fars.Semantics.test_missing_transport_vehicle_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_nonoccupant_retained_without_vehicle (test_fars.Semantics.test_nonoccupant_retained_without_vehicle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_nonoccupant_with_vehicle_number_rejected (test_fars.Semantics.test_nonoccupant_with_vehicle_number_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_orphan_person_rejected (test_fars.Semantics.test_orphan_person_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_parked_occupant_retained_without_transport_vehicle (test_fars.Semantics.test_parked_occupant_retained_without_transport_vehicle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_parked_transport_collision_rejected (test_fars.Semantics.test_parked_transport_collision_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_topcoded_bac_not_exact (test_fars.Semantics.test_topcoded_bac_not_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_unknown_age_not_years (test_fars.Semantics.test_unknown_age_not_years)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_unknown_bac_not_zero (test_fars.Semantics.test_unknown_bac_not_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_unknown_coordinate_not_map_point (test_fars.Semantics.test_unknown_coordinate_not_map_point)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_valid_fixture (test_fars.Semantics.test_valid_fixture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+======================================================================
+ERROR: test_wrong_year_rejected (test_fars.Semantics.test_wrong_year_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/test_fars.py", line 41, in setUp
+    fars.labels(self.c);self.c.execute('CREATE VIEW crashes AS '+fars.crash_sql());self.c.execute('CREATE VIEW people AS '+fars.people_sql())
+    ^^^^^^^^^^^^^^^^^^^
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/fars.py", line 74, in labels
+    con.execute(f'INSERT INTO code_labels SELECT DISTINCT {lit(table)},{lit(field)},{lit(context or "")},{q(context) if context else "0"},{q(field)},{q(field+"name")} FROM {q(table)}')
+_duckdb.BinderException: Binder Error: Referenced column "modelname" not found in FROM clause!
+Candidate bindings: "model", "vpicmodelname", "mod_yearname", "makename", "monthname"
+
+LINE 1: ... SELECT DISTINCT 'vehicle','model','make',"make","model","modelname" FROM "vehicle"
+                                                                    ^
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.815s
+
+FAILED (errors=18)

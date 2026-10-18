@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/inason/datapond-maintenance/additions-2026-10-18/fars-database/profile_fars.py", line 39, in <module>
+    if c['type'].startswith('DECIMAL') and not re.fullmatch(r'-?[0-9]+(?:\.[0-9]{1,7})?',value):raise ValueError(name+' invalid decimal '+value)
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: LATITUDE invalid decimal 33.47131111

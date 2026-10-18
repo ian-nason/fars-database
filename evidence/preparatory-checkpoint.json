@@ -1,0 +1,18 @@
+{
+  "state": "Source/manual acquired and streamed; no DuckDB release or independent FARS audit yet",
+  "archive_sha256": "5112727a8c0dc91ffee27ca05bddb073934f2d192ce4fae997da767dccdbe04f",
+  "archive_bytes": 32672161,
+  "release": "2024 Annual Report File (first annual release, 2026-04-01); national 50 states and DC, not final file",
+  "rows": {
+    "accident": 36297,
+    "vehicle": 56011,
+    "person": 88326
+  },
+  "source_columns": 407,
+  "fatalities_from_accident_and_person": 39254,
+  "profile_sha256": "0f224961ada3df44b5daf50eab018d07b8d97e36f07f33ac50a0fd2f01d7faeb",
+  "schema_sha256": "ea8199526b1416ccfb96fd514ac01cc6fc1e1a2fc0e5992850b8948dcdb17120",
+  "profiler_sha256": "31c4a14a384f46e5faf1df765abe3815ea3d74e26dea5deb1a9a0b21bd579e95",
+  "manual_sha256": "210bc33d0572147bf695a39d5261e75158d88b269221e18e460b23d0504cc574",
+  "worker_state": "profile03 completed; none running"
+}
