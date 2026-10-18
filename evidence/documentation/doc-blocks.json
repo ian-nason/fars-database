@@ -1,0 +1,42 @@
+[
+  {
+    "language": "sql",
+    "code": "SET memory_limit = '128MiB';\nSET threads = 1;\nSET max_temp_directory_size = '0B';\nINSTALL httpfs;\nLOAD httpfs;\nATTACH 'https://huggingface.co/datasets/Nason/fars-database/resolve/adb6da02a314c39d8b6caf776529bf4a373075da/fars.duckdb' AS fars (READ_ONLY);\n\n-- Fatal crashes and fatalities by state; the crashes view never multiplies rows\nSELECT state, statename, count(*) AS fatal_crashes,\n       sum(fatals) AS fatalities, sum(nonoccupant_fatalities) AS nonoccupant_fatalities\nFROM fars.crashes\nGROUP BY state, statename\nORDER BY fatalities DESC, state LIMIT 15;"
+  },
+  {
+    "language": "python",
+    "code": "import duckdb\ncon = duckdb.connect(config={\"memory_limit\": \"128MiB\", \"threads\": \"1\", \"max_temp_directory_size\": \"0B\"})\ncon.sql(\"INSTALL httpfs; LOAD httpfs;\")\ncon.sql(\"ATTACH 'https://huggingface.co/datasets/Nason/fars-database/resolve/adb6da02a314c39d8b6caf776529bf4a373075da/fars.duckdb' AS fars (READ_ONLY)\")\ncon.sql(\"SELECT * FROM fars._metadata\").show()\ncon.sql(\"SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM fars.crashes\").show()\ncon.close()"
+  },
+  {
+    "language": "r",
+    "code": "library(DBI)\ncon <- dbConnect(duckdb::duckdb(config = list(memory_limit = \"128MiB\", threads = \"1\", max_temp_directory_size = \"0B\")))\ndbExecute(con, \"INSTALL httpfs\")\ndbExecute(con, \"LOAD httpfs\")\ndbExecute(con, \"ATTACH 'https://huggingface.co/datasets/Nason/fars-database/resolve/adb6da02a314c39d8b6caf776529bf4a373075da/fars.duckdb' AS fars (READ_ONLY)\")\ndbGetQuery(con, \"SELECT month, monthname, count(*) AS fatal_crashes, sum(fatals) AS fatalities\n                 FROM fars.crashes GROUP BY month, monthname ORDER BY month\")\ndbDisconnect(con, shutdown = TRUE)"
+  },
+  {
+    "language": "python",
+    "code": "import datapond\nprint(datapond.list())\ndatapond.describe('fars', table='person')\ncon = datapond.connect('fars')\ncon.sql('SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes').show()\ncon.close()"
+  },
+  {
+    "language": "r",
+    "code": "library(datapond)\ndp_list()\ncon <- dp_connect('fars')\ndp_describe(con, table = 'person')\nDBI::dbGetQuery(con, \"SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes\")\ndp_disconnect(con)"
+  },
+  {
+    "language": "python",
+    "code": "import datapond\ndatapond.download('fars')\ncon = datapond.connect('fars', local=True)\ncon.sql('SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes').show()\ncon.close()"
+  },
+  {
+    "language": "r",
+    "code": "library(datapond)\ndp_download('fars')\ncon <- dp_connect('fars', local = TRUE)\nDBI::dbGetQuery(con, \"SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes\")\ndp_disconnect(con)"
+  },
+  {
+    "language": "sql",
+    "code": "SELECT per_typ, per_typname,\n       CASE WHEN age_years IS NULL THEN 'Unknown/not reported'\n            WHEN age_years < 18 THEN '0-17'\n            WHEN age_years < 65 THEN '18-64' ELSE '65+' END AS age_group,\n       count(*) AS fatalities\nFROM fars.people\nWHERE inj_sev = 4\nGROUP BY ALL ORDER BY per_typ, age_group;"
+  },
+  {
+    "language": "sql",
+    "code": "SELECT alc_status, alc_statusname, count(*) AS drivers,\n       count(measured_bac_g_dl) AS exact_numeric_test_results,\n       count(*) FILTER (WHERE bac_top_coded_at_094_or_more) AS top_coded_test_results\nFROM fars.people\nWHERE per_typ = 1\nGROUP BY alc_status, alc_statusname ORDER BY alc_status;"
+  },
+  {
+    "language": "sql",
+    "code": "SELECT count(*) AS fatal_crashes,\n       count(*) FILTER (WHERE latitude_degrees IS NOT NULL AND longitude_degrees IS NOT NULL) AS coordinates_available,\n       count(*) FILTER (WHERE latitude_degrees IS NULL OR longitude_degrees IS NULL) AS coordinates_missing\nFROM fars.crashes;"
+  }
+]
