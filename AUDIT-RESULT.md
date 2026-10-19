@@ -1,5 +1,7 @@
 # FARS 2024 local release checkpoint
 
+> Historical October 18, 2026 checkpoint: the text below is retained as the record of that stage, including its then-pending gates and earlier candidate hashes. It is not current availability or a new approval. Publication and catalog integration are now complete; see the [current README](README.md), [publication receipt](PUBLICATION.md) and [consumer guidance](docs/CONSUMERS.md).
+
 **Locally audited and committed; not uploaded, published, registered or merged.** New public destination approval is pending in the parent task; this checkpoint does not request it again.
 
 The artifact contains **36,297 crashes, 56,011 vehicles in transport, 88,326 people and 10,164 observed code/label tuples: 190,798 rows, four tables, three views and 413 documented columns**. It is **26,488,832 bytes**, SHA-256 **`2bc31f9e9fdd973ddf728cc4e1e0811a7bacf9450dd80c7671c36fa6a1fc7442`**. The source is NHTSA's first 2024 national Annual Report File, released April 1, 2026, covering 50 states and DC. This is not the later final file.

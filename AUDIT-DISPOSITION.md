@@ -1,5 +1,7 @@
 # Independent review 01 disposition
 
+> Historical October 18, 2026 checkpoint: the text below is retained as the record of that stage, including its then-pending gates and earlier candidate hashes. It is not current availability or a new approval. Publication and catalog integration are now complete; see the [current README](README.md), [publication receipt](PUBLICATION.md) and [consumer guidance](docs/CONSUMERS.md).
+
 Claude session 6945c837-efac-4ee7-8206-17354fdf79f8 completed initial review on 2026-10-18. All five findings were accepted and corrected before publication. Initial reviewed files are retained in evidence/pre-review01-snapshot, and the original review/prompt/output/session remain inspectable. No waiver or invented approval is claimed.
 
 | Finding | Correction and evidence |

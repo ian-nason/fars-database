@@ -26,6 +26,8 @@ Built with [fars-database](https://github.com/ian-nason/fars-database). Publishe
 
 ## Quick Start
 
+Choose one route: the [datapond package](#datapond-package) finds the database by catalog ID; the direct [Python](#python-duckdb), [R](#r-with-dbi-and-duckdb) and SQL examples use a fixed artifact URL. These are alternatives, not steps that must all be run. The SQL block requires a DuckDB SQL client.
+
 ### DuckDB CLI
 
 ```sql
@@ -44,13 +46,17 @@ GROUP BY state, statename
 ORDER BY fatalities DESC, state LIMIT 15;
 ```
 
-The database is 26 MB. DuckDB fetches byte ranges as needed; transfer volume depends on the query. The examples use this immutable artifact URL:
+The database file is 25.3 MiB. DuckDB fetches byte ranges as needed; transfer volume depends on the query. File size is disk storage, not a RAM estimate. Remote queries still run on your machine and can transfer much of the file. A filter or `LIMIT` after a join or aggregate does not guarantee a small scan. The 128 MiB setting limits DuckDB's buffer pool, not the whole Python/R process; with spill disabled, a larger query can fail at that limit. Download only if you have room for the file, temporary download bytes and any existing copy.
+
+The examples use this immutable artifact URL:
 
 ```
 https://huggingface.co/datasets/Nason/fars-database/resolve/adb6da02a314c39d8b6caf776529bf4a373075da/fars.duckdb
 ```
 
 ### Python (duckdb)
+
+Install the Python dependency once in the environment that runs your query: `python -m pip install duckdb`.
 
 ```python
 import duckdb
@@ -62,7 +68,9 @@ con.sql("SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM fars.c
 con.close()
 ```
 
-### R (DBI + duckdb)
+### R with DBI and duckdb
+
+Install the R dependencies once: `install.packages(c("DBI", "duckdb"))`.
 
 ```r
 library(DBI)
@@ -79,13 +87,16 @@ In the tested R DuckDB 1.5.5 configuration, BIGINT and DECIMAL results are expos
 
 ### datapond package
 
-These examples use the public default catalog and the package's normal discovery and connection API:
+Install or upgrade the Python client with `python -m pip install --upgrade datapond`, or install the released R client from [CRAN](https://cran.r-project.org/package=datapond) with `install.packages("datapond")`. Remote examples are tested with Python datapond 0.1.5 (DuckDB 1.5.4) and CRAN R datapond 0.1.0 (DuckDB 1.5.5); older DuckDB reader versions are not verified here. R 0.1.1 is a separate development version, not the CRAN release.
+
+The examples below use the public default catalog. For limits set before attachment, use the direct DuckDB examples above; package examples here set limits immediately after connecting:
 
 ```python
 import datapond
 print(datapond.list())
 datapond.describe('fars', table='person')
 con = datapond.connect('fars')
+con.execute("SET memory_limit='128MiB'; SET threads=1; SET max_temp_directory_size='0B'")
 con.sql('SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes').show()
 con.close()
 ```
@@ -94,6 +105,7 @@ con.close()
 library(datapond)
 dp_list()
 con <- dp_connect('fars')
+DBI::dbExecute(con, "SET memory_limit='128MiB'; SET threads=1; SET max_temp_directory_size='0B'")
 dp_describe(con, table = 'person')
 DBI::dbGetQuery(con, "SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes")
 dp_disconnect(con)
@@ -117,12 +129,14 @@ DBI::dbGetQuery(con, "SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalitie
 dp_disconnect(con)
 ```
 
-Verify the recorded artifact SHA-256 after downloading. In tested Python 0.1.1, the optional Hugging Face download path follows the default branch rather than the pinned URL; see [consumer verification](https://github.com/ian-nason/fars-database/blob/main/docs/CONSUMERS.md) for the tested configuration.
+Verify the recorded artifact SHA-256 after downloading. In Python datapond 0.1.5 as well as 0.1.1, the optional `huggingface_hub` download path follows the repository default branch rather than the pinned URL. For an exact-version copy, download the immutable URL shown above and verify its checksum; see [consumer verification](https://github.com/ian-nason/fars-database/blob/main/docs/CONSUMERS.md) for the tested configuration.
 
 Default-catalog discovery and representative remote queries were verified after the registry merge. Earlier full-download checks used an isolated candidate registry. See [consumer verification](https://github.com/ian-nason/fars-database/blob/main/docs/CONSUMERS.md) for exact client versions, paths, resource limits and download behavior. The direct URL examples above work independently of the catalog. The SQL examples below use the `fars` catalog alias from the direct-URL quick start.
 
 
 ## Tables
+
+Choose the unit before querying: the `crashes` view over `accident` has one row per fatal crash; `vehicle` has one row per vehicle in transport; and the `people` view over `person` has one row per recorded person. A crash can have several vehicles and people; use `crashes` for crash totals.
 
 | Table | Description | Rows | Columns |
 |---|---|---:|---:|
@@ -189,7 +203,7 @@ The full set is in [examples.sql](https://github.com/ian-nason/fars-database/blo
 5. **Imputed alcohol estimates are not here.** The three multiple-imputation files (`MIACC`, `MIDRVACC`, `MIPER`) are not loaded; this release cannot reproduce NHTSA's imputed impairment estimates. Per the [alcohol README](https://static.nhtsa.gov/nhtsa/downloads/FARS/README-BAC.pdf), such analyses compute an estimate in each of ten imputations and combine them.
 6. **Labels can conflict.** Four city codes carry more than one official label (state 4 code 428; 13/2190; 36/4170; 42/3950). `unambiguous_code_labels` omits them; never join `code_labels` on code alone. `mak_mod` is the combined make/model code; raw `model` is only meaningful with `make`.
 7. **Vintage and identity.** `st_case` identifies a crash within one year only; include year when pooling releases. The first ARF may be replaced by a final file with added or revised cases.
-8. **Scope of this MVP.** Only `accident`, `vehicle` and `person` are loaded. Parkwork, multiple-response factors, drug/race, vPIC decode and auxiliary files are omitted; their archived identities are pinned in the source lock.
+8. **Scope of this release.** Only `accident`, `vehicle` and `person` are loaded. Parkwork, multiple-response factors, drug/race, vPIC decode and auxiliary files are omitted; their archived identities are pinned in the source lock.
 
 ## Data Source and Version
 

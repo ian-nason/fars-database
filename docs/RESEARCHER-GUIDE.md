@@ -78,9 +78,11 @@ Four city codes have conflicting official labels, preserved exactly:
 
 ## Useful queries
 
+If you already have a local copy, replace the path below with its location. Otherwise use the remote quick start in the [overview](../README.md#quick-start). The SQL examples here assume this single database is the default catalog.
+
 ```python
 import duckdb
-con = duckdb.connect('releases/2024-release-final02/fars.duckdb', read_only=True)
+con = duckdb.connect('/path/to/fars.duckdb', read_only=True)
 con.sql('SELECT count(*) AS fatal_crashes, sum(fatals) AS fatalities FROM crashes').show()
 ```
 
@@ -108,4 +110,4 @@ Annual file revisions, definitions, coding and geography can change. The first A
 
 Source: **National Highway Traffic Safety Administration, National Center for Statistics and Analysis, Fatality Analysis Reporting System, 2024 national Annual Report File**, first release April 1, 2026, acquired October 18, 2026. Cite this release vintage and derivative artifact checksum. The official [NHTSA Ownership policy](https://www.nhtsa.gov/about-nhtsa/privacy-policy) permits copying/distribution of information on its website. This derivative uses that primary-source public-information permission; it does not borrow a third-party compilation license or grant NHTSA trademark rights. See `LICENSE.md`.
 
-Changes: CSV-to-DuckDB typing, lowercase names, explicit numeric blank-to-NULL conversion, observed dictionaries, metadata and safe convenience views. Original codes/labels are retained. No NHTSA endorsement is implied. Public destination approval remains pending; no public repository or registry availability is claimed by this local checkpoint.
+Changes: CSV-to-DuckDB typing, lowercase names, explicit numeric blank-to-NULL conversion, observed dictionaries, metadata and safe convenience views. Original codes/labels are retained. No NHTSA endorsement is implied. The artifact is published and included in the public catalog; [PUBLICATION.md](../PUBLICATION.md) preserves the original release checks and links the later integration status.
