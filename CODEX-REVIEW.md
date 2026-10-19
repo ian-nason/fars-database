@@ -1,5 +1,7 @@
 # Codex implementation and validation review
 
+> Historical October 18, 2026 checkpoint: the text below is retained as the record of that stage, including its then-pending gates and earlier candidate hashes. It is not current availability or a new approval. Publication and catalog integration are now complete; see the [current README](README.md), [publication receipt](PUBLICATION.md) and [consumer guidance](docs/CONSUMERS.md).
+
 This is the primary Codex agent's review, not a claim of a second independent Codex agent. Artifact SHA-256: `2bc31f9e9fdd973ddf728cc4e1e0811a7bacf9450dd80c7671c36fa6a1fc7442`; 26,488,832 bytes. Public destination naming approval is pending; no source repository, dataset upload or registry PR exists for FARS.
 
 All 180,634 raw records and 407 original fields match independent CSV/Decimal parsing before checkpoint and after read-only reopening. The four tables total 190,798 rows, including 10,164 exact observed code/label tuples; _columns documents 413 fields. Every raw source NULL count and rounded dictionary NULL percentage matches. Metadata provenance/types/manual links and copied crash fields pass. The corrected rebuild reproduces every typed fingerprint, NULL count, sample and dictionary byte. All previous zero-violation checks remain zero, and explicit missing-child checks now also pass.

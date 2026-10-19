@@ -1,5 +1,7 @@
 # Verified public release
 
+> Historical checkpoint, recorded before catalog integration. The dataset is now in the public catalog: [registry PR #7](https://github.com/datapond-db/registry/pull/7) merged on October 18, 2026. The dated checks and version labels below are preserved; see [current consumer guidance](docs/CONSUMERS.md).
+
 Published October 18, 2026. [Dataset](https://huggingface.co/datasets/Nason/fars-database) and [immutable dataset commit](https://huggingface.co/datasets/Nason/fars-database/commit/adb6da02a314c39d8b6caf776529bf4a373075da). The corresponding registry submission is a draft PR; global datapond discovery is not claimed until that PR is merged.
 
 Artifact: `fars.duckdb`, 26,488,832 bytes, SHA-256 `2bc31f9e9fdd973ddf728cc4e1e0811a7bacf9450dd80c7671c36fa6a1fc7442`. All four uploaded files were streamed anonymously from the immutable public commit and matched their frozen sizes/checksums. A 4096-byte range request returned HTTP 206 with the exact Content-Range and original bytes. See publication/public-byte-verification.json.
